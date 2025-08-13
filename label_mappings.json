@@ -1,0 +1,50 @@
+{
+    "label2id": {
+        "COMPANY-positive": 0,
+        "COMPANY-negative": 1,
+        "COMPANY-neutral": 2,
+        "ORGANIZATION-positive": 3,
+        "ORGANIZATION-negative": 4,
+        "ORGANIZATION-neutral": 5,
+        "CURRENCY-positive": 6,
+        "CURRENCY-negative": 7,
+        "CURRENCY-neutral": 8,
+        "PERSON-positive": 9,
+        "PERSON-negative": 10,
+        "PERSON-neutral": 11,
+        "OTHER-positive": 12,
+        "OTHER-negative": 13,
+        "OTHER-neutral": 14
+    },
+    "id2label": {
+        "0": "COMPANY-positive",
+        "1": "COMPANY-negative",
+        "2": "COMPANY-neutral",
+        "3": "ORGANIZATION-positive",
+        "4": "ORGANIZATION-negative",
+        "5": "ORGANIZATION-neutral",
+        "6": "CURRENCY-positive",
+        "7": "CURRENCY-negative",
+        "8": "CURRENCY-neutral",
+        "9": "PERSON-positive",
+        "10": "PERSON-negative",
+        "11": "PERSON-neutral",
+        "12": "OTHER-positive",
+        "13": "OTHER-negative",
+        "14": "OTHER-neutral"
+    },
+    "entity_type2id": {
+        "COMPANY": 0,
+        "ORGANIZATION": 1,
+        "CURRENCY": 2,
+        "PERSON": 3,
+        "OTHER": 4
+    },
+    "id2entity_type": {
+        "0": "COMPANY",
+        "1": "ORGANIZATION",
+        "2": "CURRENCY",
+        "3": "PERSON",
+        "4": "OTHER"
+    }
+}
