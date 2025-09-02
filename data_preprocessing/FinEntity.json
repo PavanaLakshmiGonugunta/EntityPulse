@@ -19810,5 +19810,27 @@
                 "label": "Negative"
             }
         ]
-    }
+    },
+
+
+  {
+    "content": "Global stock markets traded in a narrow range on Monday amid investor caution.",
+    "annotations": []
+  },
+  {
+    "content": "Oil prices were little changed as traders awaited the outcome of the OPEC meeting.",
+    "annotations": []
+  },
+  {
+    "content": "The central bank kept interest rates steady during its latest policy review.",
+    "annotations": []
+  },
+  {
+    "content": "Bond yields remained flat as investors looked for more economic data.",
+    "annotations": []
+  },
+  {
+    "content": "Gold prices edged higher while the dollar index was largely unchanged.",
+    "annotations": []
+  }
 ]
