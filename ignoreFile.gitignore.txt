@@ -1,0 +1,3 @@
+# Ignore generated data files
+Preprocessed_FinEntity.csv
+label_mappings.json
