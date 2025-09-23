@@ -1,15 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css'; 
-import NewsAnalysis from './NewsAnalysis.js';
-
+import ResultsPage from './ResultsPage.js';
 function App() {
   return (
     <>
-    <h1>Entity Pulse</h1>
-    <h4>Entity level sentiment analysis of Financial Data</h4>
-    <NewsAnalysis/>
+      <ResultsPage />
     </>
-  );
+  )
 }
 
 export default App;
