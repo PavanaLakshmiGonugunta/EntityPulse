@@ -1,0 +1,21 @@
+.stock-details-card{
+    margin-right: 2vw; /*remove it later */
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    width: 25%;
+    height: 20vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+}
+
+.stock-detail-title-icon{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vh;
+    margin-bottom: 6vh;
+}
+
+#bodyDetail{
+    font-size: smaller;
+}
