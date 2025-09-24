@@ -1,0 +1,14 @@
+.sentiment-display-percentage-display{
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+}
+
+.percentage-text-negative{
+    color: red;
+}
+.percentage-text-positive{
+    color: green;
+}
+.percentage-text-neutral{
+    color: orange;
+}
