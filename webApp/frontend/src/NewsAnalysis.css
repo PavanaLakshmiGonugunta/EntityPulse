@@ -1,0 +1,10 @@
+.recent-news-headlines-div{
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    width: 45vw;
+    padding: 10px;
+}
+
+#recent-news-headlines-title{
+    padding: 0px;
+}
