@@ -3,9 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Search from './Search.jsx';
-// import Header from './Header.jsx';
-// import Home from './Home.jsx';
+import Header from './Header.jsx';
+import Home from './Home.jsx';
 import About from './About.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,7 +20,15 @@ function App() {
       {/* <Header/> */}
       {/* <Search/> */}
       {/* <Home/> */}
-      <About/>
+      {/* <About/> */}
+      <Router>
+        {/* <Header/> */}
+          <Routes>
+              <Route path="/" element={<Home/>}></Route>
+              <Route path="/search" element={<Search/>}></Route>
+              <Route path="/about" element={<About/>}></Route>
+          </Routes>
+      </Router>
     </>
   )
 }
