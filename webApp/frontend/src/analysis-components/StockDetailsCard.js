@@ -4,8 +4,8 @@ export default function StockDetailsCard(
     {title, icon, bodyText, bodyDetail}
 ){
     return(
-        <div class="stock-details-card">
-            <div class="stock-detail-title-icon">
+        <div className="stock-details-card">
+            <div className="stock-detail-title-icon">
                 <p>{title}</p>
                 <p id="stock-details-icon">{icon}</p>
             </div>
