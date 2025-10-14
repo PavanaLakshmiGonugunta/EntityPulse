@@ -8,11 +8,7 @@ import StockPerformance from './analysis-components/StockPerformance.jsx'
 import StockDetailsCard from './analysis-components/StockDetailsCard.jsx';
 
 // money / $ icons
-<<<<<<< HEAD
-import { FaDollarSign } from "react-icons/fa";     // FontAwesome
-=======
 import { FaDollarSign } from "react-icons/fa";    
->>>>>>> 22908ed05e857632b50adf1d3cb38377a1538e6d
 
 // increase / up arrow icons
 import { MdTrendingUp } from "react-icons/md";
@@ -30,11 +26,7 @@ export default function ResultsPage() {
   useEffect(()=>{
     const fetchData = async ()=>{
       try{
-<<<<<<< HEAD
-        const res = axios.get(`http://localhost:5000/get-current-price-market-cap/AAPL`);
-=======
         const res = await axios.get(`http://localhost:5000/get-current-price-market-cap/AAPL`);
->>>>>>> 22908ed05e857632b50adf1d3cb38377a1538e6d
         setEntityDetails(res);
         console.log("fetched data successfully!");
         console.log(res.data)
@@ -50,26 +42,18 @@ export default function ResultsPage() {
     <>
     <h1>Entity Pulse</h1>
     <h4>Entity level sentiment analysis of Financial Data</h4>
-<<<<<<< HEAD
-    <div class="details-about-stock">
-      <StockDetailsCard
-=======
     <div className="details-about-stock">
       {/* <StockDetailsCard
->>>>>>> 22908ed05e857632b50adf1d3cb38377a1538e6d
         title="Current Price"
         icon = {<FaDollarSign size={16} color='black'/>}
         bodyText = {entityDetails?.currentPrice}
         bodyDetail = "+2.04% from last month"
-<<<<<<< HEAD
-=======
       /> */}
        <StockDetailsCard
         title="Current Price"
         icon={<FaDollarSign size={16} color='black' />}
         bodyText={entityDetails?.currentPrice}
         bodyDetail="+2.04% from last month"
->>>>>>> 22908ed05e857632b50adf1d3cb38377a1538e6d
       />
       <StockDetailsCard
         title="Market Cap"
@@ -91,17 +75,6 @@ export default function ResultsPage() {
       />
     </div>
     {/*selection buttons*/}
-<<<<<<< HEAD
-    <div class="select-analysis-type">
-      <div 
-        class={`analysis-type ${selectedDataType == 'stock-performance' ? 'active' : ''}`}
-        onClick = {() => setSelectedDataType('stock-performance')}
-      >Stock performance</div>
-      <div class={`analysis-type ${selectedDataType == 'social-sentiment' ? 'active' : ''}`}
-        onClick = {() => setSelectedDataType('social-sentiment')}
-      >Social Sentiment</div>
-      <div class={`analysis-type ${selectedDataType == 'news-analysis' ? 'active' : ''}`}
-=======
     <div className="select-analysis-type">
       <div 
         className={`analysis-type ${selectedDataType == 'stock-performance' ? 'active' : ''}`}
@@ -111,45 +84,30 @@ export default function ResultsPage() {
         onClick = {() => setSelectedDataType('social-sentiment')}
       >Social Sentiment</div>
       <div className={`analysis-type ${selectedDataType == 'news-analysis' ? 'active' : ''}`}
->>>>>>> 22908ed05e857632b50adf1d3cb38377a1538e6d
         onClick = {() => setSelectedDataType('news-analysis')}
       >News Analysis</div>
     </div>
     {/*conditionally render components */}
     {selectedDataType ==='news-analysis' && (
-<<<<<<< HEAD
-      <div class='details-twin-components news-analysis'>
-=======
       <div className='details-twin-components news-analysis'>
->>>>>>> 22908ed05e857632b50adf1d3cb38377a1538e6d
         <NewsAnalysis/>
         <NewsSentimentTrend/>
       </div>
     )}
     {selectedDataType ==='social-sentiment' && (
-<<<<<<< HEAD
-      <div class='details-twin-components social-sentiment'>
-=======
       <div className='details-twin-components social-sentiment'>
->>>>>>> 22908ed05e857632b50adf1d3cb38377a1538e6d
         <OverallSentimentDistribution/>
         <SentimentByPlatform/>
       </div>
     )}
     {selectedDataType === 'stock-performance' && (
-<<<<<<< HEAD
-      <div class='details-twin-components stock-performance'>
-=======
       <div className='details-twin-components stock-performance'>
->>>>>>> 22908ed05e857632b50adf1d3cb38377a1538e6d
         <StockPerformance/>
       </div>
     )}
     </>
   );
 }
-<<<<<<< HEAD
-=======
 
 
 
@@ -189,4 +147,3 @@ export default function ResultsPage() {
 //   );
 // }
 
->>>>>>> 22908ed05e857632b50adf1d3cb38377a1538e6d
