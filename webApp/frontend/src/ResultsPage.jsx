@@ -85,7 +85,7 @@ export default function ResultsPage() {
       >Social Sentiment</div>
       <div className={`analysis-type ${selectedDataType == 'news-analysis' ? 'active' : ''}`}
         onClick = {() => setSelectedDataType('news-analysis')}
-      >News Analysis</div>
+      >News Analysis</div> 
     </div>
     {/*conditionally render components */}
     {selectedDataType ==='news-analysis' && (
