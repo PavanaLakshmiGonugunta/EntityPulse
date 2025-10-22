@@ -1,0 +1,35 @@
+.news-element-sentiment-div{
+    background-color:cadetblue ;
+    border-radius: 10px;
+    display: flex;
+    width:fit-content;
+    padding: 0.6vh;
+    margin-top: 1vh; 
+}
+
+.news-element-div{
+    margin-top: 2vh;
+    border-left: 6px solid green;
+    padding-left: 2vw;
+}
+
+
+/* later make this color palette universal for entire app */
+.negative-text{
+    border-left-color: red;
+}
+.neutral-text{
+    border-left-color: orange;
+}
+
+.negative-div{
+    background-color: red;
+    color: white;
+}
+
+.neutral-div{
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 0.2px;
+}
