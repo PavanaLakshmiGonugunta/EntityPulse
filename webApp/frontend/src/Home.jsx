@@ -2,12 +2,16 @@
 import React, { useState } from "react";
 import { MdOutlineFileUpload, MdOutlineKeyboardVoice, MdTitle } from "react-icons/md";
 import Header from "./Header.jsx";
+import {useNavigate} from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate()
     const [inputType, setInputType] = useState("text");
     const [voiceText, setVoiceText] = useState(""); // to store recognized speech
     const [isRecording, setIsRecording] = useState(false);
-
+    const [textInput, setTextInput] = useState("");
+    const [analysisResults, setAnalysisResults] = useState("")
+    const [isLoading, setIsLoading] = useState(false);
     // Check for browser support
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = SpeechRecognition ? new SpeechRecognition() : null;
@@ -40,12 +44,44 @@ const Home = () => {
         };
     };
 
+    const handleAnalyzeText = async (sourceText) => {
+        if(!sourceText.trim()){
+            alert("Please enter text before analyzing!");
+            return ;
+        }
+        setIsLoading(true);
+        setAnalysisResults(null)
+        try{
+            const response = await fetch('http://localhost:5000/get-text-data-analysis-results' , {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json',
+                },
+                body: JSON.stringify({text: sourceText})
+            });
+            if(!response.ok){
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Analysis failed on Server')
+            }
+            const data = await response.json();
+            console.log(data)
+            setAnalysisResults(data);
+            navigate("/analysis", {state: {analysisData: data}});
+        }
+        catch(err){
+            console.error("Backend API error: ", err)
+        }
+        finally{
+            setIsLoading(false);
+        }
+    };
+
     return (
         <>
             
             <div className="header">
-                  <header><Header/></header>
-                  <hr className="line"></hr>
+                    <header><Header/></header>
+                    <hr className="line"></hr>
             </div>
             <div className="top">
                 <h1>Entity Sentiment Analysis</h1>
@@ -79,8 +115,17 @@ const Home = () => {
                 {/* Conditional rendering */}
                 {inputType === "text" && (
                     <div className="input-entity">
-                        <input type="text" placeholder="Enter text to analyze..." />
-                        <button type="submit">Analyze Text</button>
+                        <input 
+                            type="text" 
+                            placeholder="Enter text to analyze..." 
+                            value={textInput}
+                            onChange={(e) => setTextInput(e.target.value)}
+                        />
+                        <button 
+                        type="submit" 
+                        onClick = {() =>{ handleAnalyzeText(textInput) }}
+                        disabled={isLoading}
+                        >Analyze Text</button>
                     </div>
                 )}
 
@@ -106,6 +151,29 @@ const Home = () => {
                     </div>
                 )}
             </div>
+            {/* Display Loading/Error/Results */}
+            {isLoading && <p>Processing analysis... please wait.</p>}
+            
+            {/* 4. Placeholder for displaying results */}
+            {analysisResults && (
+                <div className="analysis-results">
+                    <h2>Analysis Complete!</h2>
+                    {/* Render the overall sentiment bar */}
+                    <p>Overall Sentiment: {analysisResults.overallSentiment}</p>
+
+                    {/* Render entity cards using the analysisResult.entities array */}
+                    <div className="detected-entities">
+                        {analysisResults.entities.map((entity, index) => (
+                            <div key={index} className="entity-card">
+                                <h4>{entity.entityName}</h4>
+                                <p>{entity.mentions} mentions</p>
+                                <p>Sentiment: {entity.sentiment} ({Math.round(entity.confidence * 100)}%)</p>
+                                {/* Add 'View Details' button/logic here */}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
         </>
     );
 };

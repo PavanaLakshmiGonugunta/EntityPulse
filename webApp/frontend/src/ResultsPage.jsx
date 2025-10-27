@@ -6,6 +6,8 @@ import OverallSentimentDistribution from './analysis-components/OverallSentiment
 import SentimentByPlatform from './analysis-components/SentimentByPlatform.jsx';
 import StockPerformance from './analysis-components/StockPerformance.jsx'
 import StockDetailsCard from './analysis-components/StockDetailsCard.jsx';
+import TradingVolumeTrends from './analysis-components/TradingVolumeTrends.jsx';
+import { fetchCompanyData } from './utils/fetchCompanyData.js';
 
 // money / $ icons
 import { FaDollarSign } from "react-icons/fa";    
@@ -18,54 +20,163 @@ import { FaUsers } from "react-icons/fa";
 
 // calendar icons
 import { FaCalendar } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 
 export default function ResultsPage() {
   const [selectedDataType, setSelectedDataType]= useState('stock-performance'); // default
-  
+  const location = useLocation();
+  const [companyData, setCompanyData] = useState(location.state?.company);
+  const entityName = location.state?.entity.entityName
   const [entityDetails, setEntityDetails] = useState(null);
-  useEffect(()=>{
-    const fetchData = async ()=>{
-      try{
-        const res = await axios.get(`http://localhost:5000/get-current-price-market-cap/AAPL`);
-        setEntityDetails(res);
-        console.log("fetched data successfully!");
-        console.log(res.data)
-        console.log(entityDetails)
-      }catch(e){
-        console.error("There was error fetching stock data: ", e);
-      };
+
+  useEffect(() => {
+    if(!companyData){
+      const handleSearch = async () => {
+            if (!entityName){
+              console.log("No entity!")
+              return;
+            }
+            console.log("entity name: ", entityName.toLowerCase())
+    
+            setCompanyData(null);
+    
+            try {
+              const response = await axios.get(`http://localhost:5000/get-company-details/${entityName}`);
+              setCompanyData(response.data);
+            } catch (err) {
+              console.log("Error fetching company data. Please try again.");
+            }
+    
+          };
+      handleSearch();
     }
-    fetchData();
-  }, [])
+  }, [entityName])
+  // fetch current price and market capital
+  useEffect(()=>{
+    if(companyData?.symbol){
+      console.log(companyData.symbol);
+      const fetchData = async ()=>{
+        try{
+          const res = await axios.get(`http://localhost:5000/get-current-price-market-cap/${companyData.symbol}`);
+          setEntityDetails(res);
+          console.log("fetched data successfully!");
+          console.log(res.data)
+          setEntityDetails(res.data);
+        }catch(e){
+          console.error("There was error fetching stock data: ", e);
+        };
+      }
+      fetchData();
+    }
+  }, [companyData])
+
+  // useEffect(() => {
+  //   if (!companyData?.symbol) return; // 🧠 skip until companyData is available
+
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         `http://localhost:5000/get-current-price-market-cap/${companyData.symbol}`
+  //       );
+  //       console.log("Fetched price and market cap:", res.data);
+  //       setEntityDetails(res.data);
+  //     } catch (e) {
+  //       console.error("Error fetching stock data:", e);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [companyData]);
+
   
+  // fetch news data
+  const [newsData, setNewsData] = useState([]);
+  useEffect(()=>{
+      async function getNews(){
+          try{
+              const res = await axios.get(`http://localhost:5000/news-analysis/${companyData.symbol}`)
+              console.log("result ", res)
+              setNewsData(res.data);
+              console.log("result from api: ", res);
+          }
+          catch(e){
+              console.error(e);
+          }
+      }
+      getNews();
+  }, [companyData])
+  // useEffect(() => {
+  //   if (!companyData?.symbol) return;
+
+  //   const getNews = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         `http://localhost:5000/news-analysis/${companyData.symbol}`
+  //       );
+  //       setNewsData(res.data);
+  //     } catch (e) {
+  //       console.error("Error fetching news:", e);
+  //     }
+  //   };
+  //   getNews();
+  // }, [companyData]);
+
+  
+  // fetch stock price history and volume
+  const [stockPriceVolume, setStockPriceVolume] = useState(null);
+  useEffect(() => {
+    async function getStockPriceVolume(){
+      try{
+        const response = await axios.get(`http://localhost:5000/stock-price-history/${companyData.symbol}`)
+        console.log("stock data ",response.data)
+        setStockPriceVolume(response.data);
+      }
+      catch(err){
+        console.error("error fetching stock price and volumes, ",err);
+      }
+    }
+    getStockPriceVolume();
+  }, [companyData])
+  // useEffect(() => {
+  //   if (!companyData?.symbol) return;
+
+  //   const getStockPriceVolume = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `http://localhost:5000/stock-price-history/${companyData.symbol}`
+  //       );
+  //       setStockPriceVolume(response.data);
+  //     } catch (err) {
+  //       console.error("Error fetching stock price and volume:", err);
+  //     }
+  //   };
+  //   getStockPriceVolume();
+  // }, [companyData]);
+
+
   return (
     <>
-    <h1>Entity Pulse</h1>
-    <h4>Entity level sentiment analysis of Financial Data</h4>
+    {/* <div className="header">
+      <span className="back">← Back</span>
+      <h2>Entity Details</h2>
+    </div> */}
     <div className="details-about-stock">
-      {/* <StockDetailsCard
-        title="Current Price"
-        icon = {<FaDollarSign size={16} color='black'/>}
-        bodyText = {entityDetails?.currentPrice}
-        bodyDetail = "+2.04% from last month"
-      /> */}
-       <StockDetailsCard
+      <StockDetailsCard
         title="Current Price"
         icon={<FaDollarSign size={16} color='black' />}
         bodyText={entityDetails?.currentPrice}
-        bodyDetail="+2.04% from last month"
+        // bodyDetail="+2.04% from last month"
       />
       <StockDetailsCard
         title="Market Cap"
         icon = {<MdTrendingUp size={16} color='black'/>}
         bodyText = {entityDetails?.marketCap}
-        bodyDetail = "+2.3% from last quarter"
+        // bodyDetail = "+2.3% from last quarter"
       />
       <StockDetailsCard
         title="Social Sentiment"
         icon = {<FaUsers size={16} color='black' />}
         bodyText = "58%"
-        bodyDetail = "Positive sentiment"
+        // bodyDetail = "Positive sentiment"
       />
       <StockDetailsCard
         title="Last Updated"
@@ -90,8 +201,8 @@ export default function ResultsPage() {
     {/*conditionally render components */}
     {selectedDataType ==='news-analysis' && (
       <div className='details-twin-components news-analysis'>
-        <NewsAnalysis/>
-        <NewsSentimentTrend/>
+        <NewsAnalysis headlines = {newsData.headlines} symbol = {companyData.symbol}/>
+        <NewsSentimentTrend trendData = {newsData.trendData}/>
       </div>
     )}
     {selectedDataType ==='social-sentiment' && (
@@ -101,8 +212,9 @@ export default function ResultsPage() {
       </div>
     )}
     {selectedDataType === 'stock-performance' && (
-      <div className='details-twin-components stock-performance'>
-        <StockPerformance/>
+      <div className='details-twin-components stock-performance' style={{'flexDirection': "column"}}>
+        <StockPerformance stockData = {stockPriceVolume}/>
+        <TradingVolumeTrends volumeData = {stockPriceVolume}/>
       </div>
     )}
     </>

@@ -10,6 +10,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import { fetchCompanyData } from "./utils/fetchCompanyData";
 
 const icons = {
     Technology: <CiMobile2 />,
@@ -27,55 +28,23 @@ const Search = ()=>{
     const [error, setError] = useState("");
     const API_KEY = "d3hm9q1r01qi2vu1icn0d3hm9q1r01qi2vu1icng";
       const handleSearch = async () => {
-    if (!query) return;
+        if (!query) return;
+        console.log("query: ", query)
 
-    setLoading(true);
-    setError("");
-    setCompanyData(null);
+        setLoading(true);
+        setError("");
+        setCompanyData(null);
 
-    try {
-      // Step 1: Search for the company symbol using the name
-      const searchRes = await axios.get(
-        `https://finnhub.io/api/v1/search?q=${query}&token=${API_KEY}`
-      );
+        try {
+          const response = await axios.get(`http://localhost:5000/get-company-details/${entityName}`);
+          setCompanyData(response.data);
+        } catch (err) {
+          setError("Error fetching company data. Please try again.");
+        }
 
-      const results = searchRes.data.result;
-      
-
-      if (!results||results.length===0) {
-        setError("Company not found. Try a different name.");
         setLoading(false);
-        return;
-      }
-      const result = results.find(r=>r.type==="Common Stock")||results[0];
-      const symbol = result.symbol;
+      };
 
-      // Step 2: Fetch company profile using the symbol
-      const profileRes = await axios.get(
-        `https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${API_KEY}`
-      );
-
-      // Step 3: Generate random sentiment and confidence (placeholder)
-      const sentimentOptions = ["positive", "neutral", "negative"];
-      const randomSentiment =
-        sentimentOptions[Math.floor(Math.random() * sentimentOptions.length)];
-      const confidence = Math.floor(Math.random() * 30) + 70;
-
-      setCompanyData({
-        name: profileRes.data.name,
-        industry: profileRes.data.finnhubIndustry,
-        description: profileRes.data.description || "No description available",
-        marketCap: profileRes.data.marketCapitalization,
-        sentiment: randomSentiment,
-        confidence: confidence
-      });
-    } catch (err) {
-      console.error(err);
-      setError("Error fetching company data. Please try again.");
-    }
-
-    setLoading(false);
-  };
     return(
          <>
          

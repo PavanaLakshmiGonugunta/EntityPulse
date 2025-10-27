@@ -1,7 +1,6 @@
 import './styling/NewsElement.css'
 
 function NewsElement({headline, source, url, sentiment}){
-        console.log({headline, source});
     return (
         <div className={`news-element-div ${sentiment.toLowerCase()}-text`}>
             {/* <a href = {url}>{headline}</a> */}

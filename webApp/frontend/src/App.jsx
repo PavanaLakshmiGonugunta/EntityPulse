@@ -7,6 +7,7 @@ import Header from './Header.jsx';
 import Home from './Home.jsx';
 import About from './About.jsx';
 import ResultsPage from './ResultsPage.jsx';
+import Analysis from './Analysis.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -30,6 +31,7 @@ function App() {
               <Route path="/search" element={<Search/>}></Route>
               <Route path="/about" element={<About/>}></Route>
               <Route path="/result" element={<ResultsPage/>}></Route>
+              <Route path="/analysis" element={<Analysis/>}></Route>
           </Routes>
       </Router>
     </>

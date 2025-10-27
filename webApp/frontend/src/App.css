@@ -1,210 +1,234 @@
-
-.body h1{
-  margin-left: 70px;
-}
-
-.body p{
-  margin-left: 70px;
-}
-
-body{
-  margin: 3vw;
-}
-
-
 /* General Styles */
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  margin: 3vw;
-  padding: 0;
+  /* REVISED: Reset outer margin and use padding for page boundaries */
+  margin: 0;
+  padding: 0 3vw; 
   background-color: #f4f7f9;
   color: #333;
 }
 
-p, h1, h2, h3, h4, h5, h6{
-  margin: 0px;
-  color: black;
+/* 1. Standardize text element margins and ensure color is consistent */
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: #333;
 }
 
-<<<<<<< HEAD
 .header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
+  /* Extend across the full viewport width */
   width: 100%;
-  background-color: #fff; 
+  background-color: #fff;
   z-index: 1000;
-  padding: 10px 20px;
+  /* FIX: Use 3vw padding on the sides to match the body's padding and align content */
+  padding: 10px 3vw; 
+  box-sizing: border-box; 
 }
 
-.nav{
-  /* text-decoration: none; */
+.nav {
   text-decoration-line: none;
 }
 
 /* HOME PAGE */
 .top {
-  margin-top: 120px; 
+  margin-top: 120px;
   text-align: center;
 }
 
 /* horizontal line in header */
 .line {
-  border: solid;              
-  height: 0px;               
-  background: #393939;         
-  margin: 15px 0;   
-  color: #0f0f0f;  
-       
+  border: solid;
+  height: 0px;
+  background: #393939;
+  margin: 15px 0;
+  color: #0f0f0f;
 }
 
-
 /* Show active method in input */
-
 .option.active {
-  background-color: #ffffff; 
-  border-color: #007bff;     
+  background-color: #ffffff;
+  border-color: #007bff;
   font-weight: bold;
   border-radius: 1vw;
   width: 8vw;
 }
 
-
-.entities h2{
-  margin-left: 70px;
+/* 2. Primary Body Container - Focus on Centering Content */
+.body {
+  margin-top: 100px;
+  /* FIX: REMOVED text-align: center; */
+  padding: 0;
 }
-.head{
+
+/* 3. Entity Search Title and Description - Re-add text centering */
+.body h1,
+.body p {
+  margin: 10px auto;
+  max-width: 800px;
+  text-align: center; /* FIX: Center the text content specifically */
+}
+
+.entities h2 {
+  margin: 0;
+}
+
+.head {
   display: flex;
   justify-content: flex-end;
   width: 95%;
   padding: 10px 20px;
-  align-items:center;
-  gap:10px;
+  align-items: center;
+  gap: 10px;
 }
 
-.title{
+.title {
   text-align: left;
   padding-left: 5px;
   margin-left: 5px;
-  margin-right:950px;
+  margin-right: 950px;
   font-size: 20px;
 }
 
-.body{
-  margin-top: 7vw;
-  text-align: center;
+/* 4. Search Container Improvements - Centering with margin: auto */
+.search-container {
+  border-radius: 10px;
+  border: 1px solid rgb(185, 171, 171);
+  padding: 20px;
+  max-width: 1000px;
+  width: 90%;
+  margin: 20px auto; /* This centers the container block */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.search-container{
-  border-radius: 1px;
-  border-style: solid;
-  border-color: rgb(185, 171, 171);
-  border-width: 1px;
-  padding: 10px;
-  width: 1290px;
-  border-radius: 10px;
-  margin-left: 60px;
-
-  align-content: center;
+/* 5. Input Text Wrapper - Adapt to new search-container flex layout */
+.input-text {
+  border-style: none;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  
+  gap: 10px;
 }
 
-.input-text{
-  border-style: none; 
-  border-radius:none;
-  border-color:rgb(17, 15, 15);
-  padding: 10px;
-  border-width:2px;
-  
-}
-
-.input-text input{
-  background-color:whitesmoke;
-  width: 1100px;
-  height: 30px;
-  border-style: solid;
+/* 6. Input Field - Make responsive and manage width */
+.input-text input {
+  background-color: whitesmoke;
+  width: 100%;
+  max-width: 800px;
+  height: 40px;
+  border: 1px solid #0f0f0f;
   border-radius: 10px;
-  padding: 5px;
-  border-width: 1px;
-  border-color: #0f0f0f;
+  padding: 5px 10px;
+  box-sizing: border-box;
 }
 
-
-.input-text button{
-  margin: 10px;
-  background-color:black ;
+/* 7. Search Button - Simplify width and align */
+.input-text button {
+  margin: 0;
+  background-color: black;
   color: white;
-  height: 2rem;
-  width: 7rem;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* 8. Popular Entities Heading - Center the block and left align text */
+.popular-entities {
+  height: max-content;
+  width: 90%; /* Ensure it spans a good width for alignment */
+  max-width: 1000px;
+  margin: 30px auto 15px auto; /* FIX: Center the block element */
+  text-align: left;
+  padding-left: 0;
+}
+
+/* 9. Popular Entities Cards Container - Adjust for centering and responsiveness */
+.entities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 40px auto; /* This centers the grid block */
+  padding: 0 10px;
+}
+
+/* 10. Card Styles - Adjust margins and width */
+.card {
+  border: 1px solid rgb(208, 205, 205);
+  border-radius: 10px;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+/* 11. Card Button - Make responsive within the card */
+.card button {
+  margin-top: 15px;
+  margin-left: 0;
+  width: 100%;
+  height: 40px;
   border-radius: 5px;
 }
 
-/* .search-container{
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-} */
 
-.entities {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
+/* Existing button styles - adjusted to be more general */
+button {
+  background-color: #5f6368;
+  border-radius: 8px;
+  margin-top: 10px;
+  width: 100%;
+  height: 45px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 0;
+  border: none;
+}
+
+button:hover {
+  background-color: #4a4d52;
+}
+
+/* Other existing styles maintained below */
+
+.container {
+  border: 1px solid #837f7f;
+  border-radius: 10px;
   padding: 20px;
-}
-
-.popular-entities{
-  height: max-content;
-  width: max-content;
-  margin-top: 2vw;
-  margin-left: 5vw;
-}
-
-
-.card{
-  border-radius: 1px;
-  border-style: solid;
-  border-color: rgb(208, 205, 205);
-  border-width: 1px;
-  padding: 10px;
-  width: 23vw;
-  border-radius: 10px;
-  margin-left: 60px;
-  margin-top: 20px;
-  padding: 15px;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  justify-content: space-between;
-}
-
-.card button{
-  /* margin-left: 120px; */
-  width: 250px;
-}
-
-/* .top{
-  margin: 10px;
-  text-align: center;
-} */
-
-/* .container{
-  
-  border-radius: 1px;
-  border-color: #837f7f;
-  border-style: solid;
-  border-width: 0.5px;
-  border-radius: 10px;
-  height:40vh;
-  /* padding-bottom: 3vh; 
-  justify-content: center;
+  max-width: 800px;
+  width: 90%;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;  
-}*/
+  align-items: center;
+  gap: 15px;
+}
 
-.options{
+.container input {
+  width: 100%;
+  max-width: 50vw;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #cfcbcb;
+  background-color: #ebeced;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.options {
   border-radius: 20px;
   background-color: #b9b1b1;
   text-align: center;
@@ -212,104 +236,35 @@ p, h1, h2, h3, h4, h5, h6{
   flex-direction: row;
   justify-content: space-evenly;
   width: 50vw;
-  /* margin: 10px; */
   height: 25px;
   padding: 5px;
   align-items: center;
-  
 }
 
- .input-entity{
+.input-entity {
   border-radius: 0.5px;
   border-color: #837f7f;
-  /* margin: 10px; */ */
-  /* width: max-content; */
   height: 50px;
   border-width: 0.5px;
- } 
-/*
-.container input{
-  /* margin-top: 10px; 
-  width: 80vw;
-  /* height: 90px; 
-  height: 10vh;
-  border-radius: 5px;
-  border-color: #cfcbcb;
-  background-color: #ebeced;
 }
-
-button{
-  background-color: #5f6368;
-  border-radius: 1vw;
-  margin: 10px;
-  width: 70vw;
-  height: 2vw;
-} */
-
-
-.container {
-  border: 1px solid #837f7f;
-  border-radius: 10px;
-  padding: 20px; 
-  max-width: 800px; 
-  width: 90%; 
-  margin: 20px auto; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px; 
-}
-
-.container input {
-  /* width: 100%; */
-  width: 100vw;
-  max-width: 50vw; 
-  height: 50px;
-  border-radius: 5px;
-  border: 1px solid #cfcbcb;
-  background-color: #ebeced;
-  padding: 10px;
-  
-  font-size: 1rem;
-}
-
-button {
-  background-color: #5f6368;
-  border-radius: 8px;
-  margin-top: 10px;
-  width: 100%;
-  max-width: 700px;
-  height: 45px; 
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  margin-left: 3vw;
-}
-
-button:hover {
-  background-color: #4a4d52;
-}
-
 
 /* ABOUT Page */
 
-.scope{
+.scope {
   margin-top: 10vw;
   text-align: center;
 }
 
-.features{
+.features {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.key-features{
+.key-features {
   text-align: center;
 }
 
-.working{
+.working {
   margin-top: 5vw;
   padding-left: 1vw;
   padding-top: 1vw;
@@ -322,34 +277,30 @@ button:hover {
   margin-left: 4vw;
 }
 
-.step-container{
+.step-container {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
-
 }
-.steps{
-  /* padding-top: 10vw; */
+
+.steps {
   margin: 1vw;
 }
 
-.numbers{
-  
+.numbers {
   font-size: larger;
   justify-content: center;
 }
 
-
-.input-methods{
+.input-methods {
   justify-content: space-between;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin-left: 6vw;
 }
 
-.methods{
+.methods {
   border-color: #837f7f;
-  /* border-width: 3px; */
   border-style: solid;
   justify-content: space-between;
   border-radius: 15px;
@@ -358,29 +309,29 @@ button:hover {
   height: 7vw;
 }
 
-.input-head{
+.input-head {
   text-align: center;
   margin: 3vw;
 }
 
-.icon{
+.icon {
   font-size: larger;
   align-items: center;
 }
 
-.choose-head{
-  margin:3vw;
+.choose-head {
+  margin: 3vw;
   text-align: center;
 }
 
-.choose{
+.choose {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   margin-left: 6vw;
 }
 
-.choice{
+.choice {
   border-style: solid;
   border-width: 3px;
   border-color: #5f6368;
@@ -416,7 +367,6 @@ button:hover {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  
 }
 
 .sources-block {
@@ -424,11 +374,9 @@ button:hover {
   background: #fafafa;
   border: 3px solid #696161;
   border-radius: 12px;
-  /* border-color: #0f0f0f;
-  border-width: 10px; */
   padding: 1.5rem;
   text-align: left;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .sources-block h4 {
@@ -455,40 +403,52 @@ button:hover {
   cursor: default;
 }
 
-/* .tag:hover {
-  background: #eaeaea;
-  border-color: #ccc;
-} */
-
 /* entity type analysis */
 
-.sentiment-display-percentage-display{
-  display: flex;
-}
-
-.details-twin-components{
+/* FIX: Centering the overall card container and adding responsiveness */
+.details-twin-components {
   display: flex;
   flex-direction: row;
-  align-content: space-between;
-  gap: 2vw;
+  flex-wrap: wrap; 
+  gap: 20px; 
+  max-width: 1200px; 
+  width: 95%; /* Adjust width to fit nicely inside body 3vw padding */
+  margin: 20px auto; /* FIX: Center the container block horizontally */
+  justify-content: space-between; 
 }
 
-.component-div{
+/* FIX: Styling individual card-like components */
+.details-twin-components > div {
+    flex: 1 1 200px; /* Allows cards to wrap and grow/shrink evenly */
+    padding: 15px; 
+    background-color: white; 
+    border: 1px solid #eee; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.sentiment-display-percentage-display {
+  display: flex;
+}
+
+.component-div {
   border: 1px solid gainsboro;
-    border-radius: 10px;
-    width: 45vw;
-    padding: 10px;
-    margin-top: 2vh;
+  border-radius: 10px;
+  /* FIX: Limit and center the component wrapper for the chart/tabs */
+  max-width: 1200px; 
+  width: 95%; 
+  margin: 2vh auto; /* FIX: Center the block and add vertical margin */
+  padding: 10px;
 }
 
-#component-title{
+#component-title {
   padding: 0px;
   margin: 0px;
 }
 
 /* for selecting entity type */
 
-.select-analysis-type{
+.select-analysis-type {
   display: flex;
   flex-direction: row;
   background-color: #E0E0E0;
@@ -497,7 +457,7 @@ button:hover {
   border-radius: 20px;
 }
 
-.analysis-type{
+.analysis-type {
   align-items: center;
   border-radius: 20px;
   padding-left: 1vw;
@@ -508,33 +468,32 @@ button:hover {
 }
 
 /* for the div being active selecting the type of data user wants */
-.active{
+.active {
   background-color: white;
 }
 
-
-.details-about-stock{
+.details-about-stock {
   display: flex;
   margin-top: 5vh;
   margin-bottom: 5vh;
   justify-content: space-between;
 }
 
-.negative-text{
-    border-left-color: red;
-}
-.neutral-text{
-    border-left-color: orange;
+.negative-text {
+  border-left-color: red;
 }
 
-.negative-div{
-    background-color: red;
+.neutral-text {
+  border-left-color: orange;
 }
 
-.neutral-div{
-    background-color: white;
-    border-color: black;
-    border-style: solid;
-    border-width: 0.2px;
+.negative-div {
+  background-color: red;
 }
 
+.neutral-div {
+  background-color: white;
+  border-color: black;
+  border-style: solid;
+  border-width: 0.2px;
+}
