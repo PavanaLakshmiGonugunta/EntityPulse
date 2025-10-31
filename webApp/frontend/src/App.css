@@ -27,7 +27,6 @@ p, h1, h2, h3, h4, h5, h6{
   color: black;
 }
 
-<<<<<<< HEAD
 .header {
   position: fixed; 
   top: 0;
@@ -222,7 +221,7 @@ p, h1, h2, h3, h4, h5, h6{
  .input-entity{
   border-radius: 0.5px;
   border-color: #837f7f;
-  /* margin: 10px; */ */
+  /* margin: 10px; */ 
   /* width: max-content; */
   height: 50px;
   border-width: 0.5px;
