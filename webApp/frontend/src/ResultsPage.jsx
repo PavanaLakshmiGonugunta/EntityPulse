@@ -28,29 +28,33 @@ export default function ResultsPage() {
   const [companyData, setCompanyData] = useState(location.state?.company);
   const entityName = location.state?.entity.entityName
   const [entityDetails, setEntityDetails] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [newsData, setNewsData] = useState({ headlines: [], trendData: [] });
+   const [isLoadingNews, setIsLoadingNews] = useState(false);
+  const [newsError, setNewsError] = useState(null);
+
 
   useEffect(() => {
-    if(!companyData){
-      const handleSearch = async () => {
-            if (!entityName){
-              console.log("No entity!")
-              return;
-            }
-            console.log("entity name: ", entityName.toLowerCase())
-    
-            setCompanyData(null);
-    
-            try {
-              const response = await axios.get(`http://localhost:5000/get-company-details/${entityName}`);
-              setCompanyData(response.data);
-            } catch (err) {
-              console.log("Error fetching company data. Please try again.");
-            }
-    
-          };
-      handleSearch();
-    }
-  }, [entityName])
+    const handleSearch = async () => {
+      if (!entityName) {
+        console.log("No entity name provided!");
+        return;
+      }
+
+      console.log("Fetching data for entity:", entityName.toLowerCase());
+
+      try {
+        const response = await axios.get(`http://localhost:5000/get-company-details/${entityName}`);
+        setCompanyData(response.data);
+      } catch (err) {
+        console.error("Error fetching company data:", err);
+        setErrorMessage(`Sorry, we could not find any data on ${entityName}.`);
+      }
+    };
+
+    handleSearch();
+  }, [entityName]);
+
   // fetch current price and market capital
   useEffect(()=>{
     if(companyData?.symbol){
@@ -70,56 +74,6 @@ export default function ResultsPage() {
     }
   }, [companyData])
 
-  // useEffect(() => {
-  //   if (!companyData?.symbol) return; // 🧠 skip until companyData is available
-
-  //   const fetchData = async () => {
-  //     try {
-  //       const res = await axios.get(
-  //         `http://localhost:5000/get-current-price-market-cap/${companyData.symbol}`
-  //       );
-  //       console.log("Fetched price and market cap:", res.data);
-  //       setEntityDetails(res.data);
-  //     } catch (e) {
-  //       console.error("Error fetching stock data:", e);
-  //     }
-  //   };
-  //   fetchData();
-  // }, [companyData]);
-
-  
-  // fetch news data
-  const [newsData, setNewsData] = useState([]);
-  useEffect(()=>{
-      async function getNews(){
-          try{
-              const res = await axios.get(`http://localhost:5000/news-analysis/${companyData.symbol}`)
-              console.log("result ", res)
-              setNewsData(res.data);
-              console.log("result from api: ", res);
-          }
-          catch(e){
-              console.error(e);
-          }
-      }
-      getNews();
-  }, [companyData])
-  // useEffect(() => {
-  //   if (!companyData?.symbol) return;
-
-  //   const getNews = async () => {
-  //     try {
-  //       const res = await axios.get(
-  //         `http://localhost:5000/news-analysis/${companyData.symbol}`
-  //       );
-  //       setNewsData(res.data);
-  //     } catch (e) {
-  //       console.error("Error fetching news:", e);
-  //     }
-  //   };
-  //   getNews();
-  // }, [companyData]);
-
   
   // fetch stock price history and volume
   const [stockPriceVolume, setStockPriceVolume] = useState(null);
@@ -135,23 +89,37 @@ export default function ResultsPage() {
       }
     }
     getStockPriceVolume();
-  }, [companyData])
-  // useEffect(() => {
-  //   if (!companyData?.symbol) return;
+  }, [companyData]);
 
-  //   const getStockPriceVolume = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:5000/stock-price-history/${companyData.symbol}`
-  //       );
-  //       setStockPriceVolume(response.data);
-  //     } catch (err) {
-  //       console.error("Error fetching stock price and volume:", err);
-  //     }
-  //   };
-  //   getStockPriceVolume();
-  // }, [companyData]);
+  // to fetch news data about the entity
+  useEffect(() => {
+    async function fetchNewsData() {
+      if (!companyData?.symbol) return;
+      setIsLoadingNews(true);
+      setNewsError(null);
+      setNewsData({ headlines: [], trendData: [] }); // reset old data
+      try {
+        const response = await axios.get(`http://localhost:5000/news-analysis`, {
+          params: {
+            symbol: companyData.symbol,
+            companyName: companyData.name
+          }
+        });
+        setNewsData(response.data);
+      } catch (err) {
+        console.error("Error fetching news data: ", err);
+        setNewsError("Couldn't load news sentiment right now.");
+      } finally {
+        setIsLoadingNews(false);
+      }
+    }
+    fetchNewsData();
+  }, [companyData]);
 
+
+  if (errorMessage) {
+    return <div style={{ textAlign: 'center', marginTop: '2rem', color: 'red' }}>{errorMessage}</div>;
+  }
 
   return (
     <>
@@ -191,9 +159,9 @@ export default function ResultsPage() {
         className={`analysis-type ${selectedDataType == 'stock-performance' ? 'active' : ''}`}
         onClick = {() => setSelectedDataType('stock-performance')}
       >Stock performance</div>
-      <div className={`analysis-type ${selectedDataType == 'social-sentiment' ? 'active' : ''}`}
-        onClick = {() => setSelectedDataType('social-sentiment')}
-      >Social Sentiment</div>
+      <div className={`analysis-type ${selectedDataType == 'trading-volume' ? 'active' : ''}`}
+        onClick = {() => setSelectedDataType('trading-volume')}
+      >Trading Volume</div>
       <div className={`analysis-type ${selectedDataType == 'news-analysis' ? 'active' : ''}`}
         onClick = {() => setSelectedDataType('news-analysis')}
       >News Analysis</div>
@@ -201,20 +169,29 @@ export default function ResultsPage() {
     {/*conditionally render components */}
     {selectedDataType ==='news-analysis' && (
       <div className='details-twin-components news-analysis'>
-        <NewsAnalysis headlines = {newsData.headlines} symbol = {companyData.symbol}/>
-        <NewsSentimentTrend trendData = {newsData.trendData}/>
+        <NewsAnalysis 
+          headlines = {newsData.headlines} 
+          symbol = {companyData.symbol}
+          isLoading={isLoadingNews}
+          error={newsError}
+        />
+        {/* <NewsSentimentTrend trendData = {newsData.trendData}/> */}
       </div>
     )}
-    {selectedDataType ==='social-sentiment' && (
+    {/* {selectedDataType ==='social-sentiment' && (
       <div className='details-twin-components social-sentiment'>
         <OverallSentimentDistribution/>
         <SentimentByPlatform/>
+      </div>
+    )} */}
+    {selectedDataType ==='trading-volume' && (
+      <div className='details-twin-components trading-volume'>
+        <TradingVolumeTrends volumeData = {stockPriceVolume}/>
       </div>
     )}
     {selectedDataType === 'stock-performance' && (
       <div className='details-twin-components stock-performance' style={{'flexDirection': "column"}}>
         <StockPerformance stockData = {stockPriceVolume}/>
-        <TradingVolumeTrends volumeData = {stockPriceVolume}/>
       </div>
     )}
     </>

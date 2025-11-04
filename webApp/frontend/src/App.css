@@ -497,3 +497,29 @@ button:hover {
   border-style: solid;
   border-width: 0.2px;
 }
+
+
+/* simple spinner */
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(0,0,0,0.15);
+  border-top-color: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  margin: 8px 0 12px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.skeleton-row {
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  margin: 8px 0;
+}
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}

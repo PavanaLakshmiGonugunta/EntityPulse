@@ -145,7 +145,11 @@ const Home = () => {
                             <div>
                                 <h4>Recognized Text:</h4>
                                 <p>{voiceText}</p>
-                                <button type="submit">Analyze Voice Text</button>
+                                <button 
+                                    type="submit"
+                                    onClick = {() =>{ handleAnalyzeText(voiceText) }}
+                                    disabled={isLoading}
+                                >Analyze Text</button>
                             </div>
                         )}
                     </div>

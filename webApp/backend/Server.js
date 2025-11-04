@@ -17,37 +17,49 @@ const TWELVE_API_KEY = "96c92ea18dfd481495a9c4e557c1d9b8"
  * NOTE: This function uses a RANDOM sentiment classification as a placeholder.
  * You must replace the random logic with your actual custom model call or Finnhub's score later.
  */
-function aggregateSentiment(allNews, today) {
+
+export async function aggregateSentiment(allNews, today, companyName) {
     const sentimentBuckets = {
-        'This Week': { positive: 0, neutral: 0, negative: 0, total: 0 }, // Last 7 days (day 0 to day 6)
-        'Last Week': { positive: 0, neutral: 0, negative: 0, total: 0 }, // Days 7 through 13
-        'Last Month': { positive: 0, neutral: 0, negative: 0, total: 0 }, // Days 14 through 29
+        'This Week': { positive: 0, neutral: 0, negative: 0, total: 0 },
+        'Last Week': { positive: 0, neutral: 0, negative: 0, total: 0 },
+        'Last Month': { positive: 0, neutral: 0, negative: 0, total: 0 },
     };
 
     const msPerDay = 24 * 60 * 60 * 1000;
     const todayMs = today.getTime();
 
-    const newsWithSentiment = allNews.map(item => {
-        // Finnhub uses UNIX timestamp, convert to milliseconds
-        const itemDate = new Date(item.datetime * 1000); 
+    // Convert each news item into a promise that resolves with sentiment
+    const sentimentPromises = allNews.map(async (item) => {
+        const itemDate = new Date(item.datetime * 1000);
         const ageInDays = Math.floor((todayMs - itemDate.getTime()) / msPerDay);
-        
-        // --- PLACEHOLDER FOR CUSTOM SENTIMENT MODEL ---
-        // 1. In production, you would call your model here.
-        // 2. For now, we use the random classification logic from your original code.
-        const classification = ["Positive", "Negative", "Neutral"][Math.floor(Math.random() * 3)];
-        // ---------------------------------------------
 
-        let bucketName;
-        if (ageInDays >= 0 && ageInDays <= 6) {
-            bucketName = 'This Week';
-        } else if (ageInDays >= 7 && ageInDays <= 13) {
-            bucketName = 'Last Week';
-        } else if (ageInDays >= 14 && ageInDays <= 29) { 
-            bucketName = 'Last Month';
-        } else {
-            return null; // Ignore news older than 30 days
+        // Ignore news older than 30 days
+        if (ageInDays > 29) return null;
+
+        let classification = "Neutral";
+
+        try {
+            // Call your Flask API for sentiment
+            const response = await axios.post("http://localhost:5001/analyze-text-ner-sentiment", {
+                text: item.headline,
+                summary: item.summary,
+                entity: companyName
+            });
+
+            console.log("response from ner&sentiment model, ", response.data)
+
+            // Use Python’s sentiment output (from your Flask API)
+            classification = response.data.overallSentiment || "Neutral";
+
+        } catch (err) {
+            console.error("Error calling Python service:", err.message);
         }
+
+        // Assign bucket based on age
+        let bucketName;
+        if (ageInDays <= 6) bucketName = 'This Week';
+        else if (ageInDays <= 13) bucketName = 'Last Week';
+        else bucketName = 'Last Month';
 
         const bucket = sentimentBuckets[bucketName];
         if (bucket) {
@@ -63,13 +75,16 @@ function aggregateSentiment(allNews, today) {
             ageInDays,
             bucketName
         };
-    }).filter(n => n !== null);
+    });
 
-    // Format the aggregated trend results
+    // Wait for all API calls to finish
+    const newsWithSentiment = (await Promise.all(sentimentPromises)).filter(n => n !== null);
+
+    // Prepare aggregated trend data
     const trendResults = Object.keys(sentimentBuckets).map(period => {
         const bucket = sentimentBuckets[period];
         const total = bucket.total;
-        
+
         if (total === 0) {
             return { period, positive: 0, neutral: 0, negative: 0, mainSentiment: 'Neutral', totalArticles: 0 };
         }
@@ -78,16 +93,15 @@ function aggregateSentiment(allNews, today) {
         const negative = Math.round((bucket.negative / total) * 100);
         const neutral = Math.round((bucket.neutral / total) * 100);
 
-        // Determine the overall dominant sentiment for the visualization
+        // Determine dominant sentiment
         let mainSentiment = 'Neutral';
-        let mainSentimentPercentage = neutral / (positive+negative+neutral) * 100;
-        if (positive > negative && positive > neutral){
+        let mainSentimentPercentage = neutral;
+        if (positive > negative && positive > neutral) {
             mainSentiment = 'Positive';
-            mainSentimentPercentage = positive / (positive+negative+neutral) * 100;
-        }
-        else if (negative > positive && negative > neutral){
+            mainSentimentPercentage = positive;
+        } else if (negative > positive && negative > neutral) {
             mainSentiment = 'Negative';
-            mainSentimentPercentage = negative / (positive+negative+neutral) * 100;
+            mainSentimentPercentage = negative;
         }
 
         return {
@@ -101,12 +115,12 @@ function aggregateSentiment(allNews, today) {
         };
     });
 
-    // Return the processed news for filtering the top headlines in the next step
     return {
         trendData: trendResults,
         newsWithSentiment
     };
 }
+
 
 
 // --- API ENDPOINTS ---
@@ -207,10 +221,18 @@ app.get("/get-current-price-market-cap/:entitySymbol", async (req, res)=> {
 })
 
 // Refactored Endpoint: Fetches news once and returns both Headlines and Trend Data
-app.get("/news-analysis/:entitySymbol", async (req, res) => {
+app.get("/news-analysis", async (req, res) => {
     console.log("Request for combined news analysis (headlines and trend) made.");
 
-    const symbol = req.params.entitySymbol.toUpperCase();
+    const symbol = (req.query.symbol || "").toUpperCase();
+    const companyName = req.query.companyName || "";
+
+    console.log("company: ",companyName)
+
+    if (!symbol) {
+        return res.status(400).json({ error: "Missing symbol in query" });
+    }
+
     const today = new Date();
     
     // Set 'from' date to 30 days ago to cover all trend buckets
@@ -227,7 +249,7 @@ app.get("/news-analysis/:entitySymbol", async (req, res) => {
         const allNews = response.data;
 
         // 1. Calculate Sentiment Trend
-        const { trendData, newsWithSentiment } = aggregateSentiment(allNews, today);
+        const { trendData, newsWithSentiment } = await aggregateSentiment(allNews, today, companyName);
 
         // 2. Extract Top 3 Recent Headlines (from the "This Week" bucket)
         const recentHeadlines = newsWithSentiment
@@ -237,7 +259,6 @@ app.get("/news-analysis/:entitySymbol", async (req, res) => {
                 headline: item.headline,
                 source: item.source,
                 url: item.url,
-                // Use the calculated sentiment for the display
                 sentiment: item.sentiment 
             }));
 
