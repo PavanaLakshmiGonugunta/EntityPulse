@@ -2,8 +2,7 @@
 Preprocessed_FinEntity.csv
 label_mappings.json
 
-/Models/
-  /finbert_ner_model/
-  /finbert-entity-sentiment/
-
+# Ignore models
 Models/finbert_ner_model.zip
+Models/finbert_ner_model/
+Models/finbert-entity-sentiment/
