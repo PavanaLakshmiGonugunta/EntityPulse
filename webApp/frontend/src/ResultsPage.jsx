@@ -26,7 +26,9 @@ export default function ResultsPage() {
   const [selectedDataType, setSelectedDataType]= useState('stock-performance'); // default
   const location = useLocation();
   const [companyData, setCompanyData] = useState(location.state?.company);
-  const entityName = location.state?.entity.entityName
+  const entityName =
+  location.state?.entity?.entityName || // from analysis → ResultsPage
+  location.state?.companyData?.symbol   // from search → ResultsPage
   const [entityDetails, setEntityDetails] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [newsData, setNewsData] = useState({ headlines: [], trendData: [] });

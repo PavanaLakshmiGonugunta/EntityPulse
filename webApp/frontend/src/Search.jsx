@@ -26,22 +26,19 @@ const Search = ()=>{
     const [companyData, setCompanyData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-    const API_KEY = "d3hm9q1r01qi2vu1icn0d3hm9q1r01qi2vu1icng";
       const handleSearch = async () => {
-        if (!query) return;
-        console.log("query: ", query)
+        if (!query.trim()) return;
 
         setLoading(true);
         setError("");
         setCompanyData(null);
 
         try {
-          const response = await axios.get(`http://localhost:5000/get-company-details/${entityName}`);
+          const response = await axios.get(`http://localhost:5000/get-company-details/${query}`);
           setCompanyData(response.data);
         } catch (err) {
           setError("Error fetching company data. Please try again.");
         }
-
         setLoading(false);
       };
 
@@ -103,7 +100,7 @@ const Search = ()=>{
                 <p>Confidence:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;85%</p>
                 
                 
-                <button className="btn" onClick={()=>navigate('/result')}>View Analysis</button>
+                <button className="btn" onClick={()=>navigate('/result', { state: { company: companyData } })}>View Analysis</button>
             </div>
 
             <div className="card">
@@ -115,7 +112,7 @@ const Search = ()=>{
                 <p>Sentiment:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;negative</p>
                 <p>Confidence:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;72%</p>
                
-                <button  className="btn" onClick={()=>navigate('/result')}>View Analysis</button>
+                <button  className="btn" onClick={()=>navigate('/result', { state: { company: companyData } })}>View Analysis</button>
             </div>
 
             <div className="card">
@@ -128,7 +125,7 @@ const Search = ()=>{
                 <p>Confidence:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;68%</p>
                 
                
-                <button  className="btn" onClick={()=>navigate('/result')}>View Analysis</button>
+                <button  className="btn" onClick={()=>navigate('/result', { state: { company: companyData } })}>View Analysis</button>
             </div>
 
             <div className="card">
@@ -141,7 +138,7 @@ const Search = ()=>{
                 <p>Confidence:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;91%</p>
                 
                 
-                <button  className="btn" onClick={()=>navigate('/result')}>View Analysis</button>
+                <button  className="btn" onClick={()=>navigate('/result', { state: { company: companyData } })}>View Analysis</button>
             </div>
 
             <div className="card">
@@ -154,19 +151,19 @@ const Search = ()=>{
                 <p>Confidence:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;78%</p>
                 
                 
-                <button  className="btn" onClick={()=>navigate('/result')}>View Analysis</button>
+                <button  className="btn" onClick={()=>navigate('/result', { state: { company: companyData } })}>View Analysis</button>
             </div>
 
             <div className="card">
                 <i><FaMeta />Meta</i>
                 <p>Social Media</p>
-                <small>Social media and virtuak reality company</small>
+                <small>Social media and virtual reality company</small>
                 
                 <p>Market Cap:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$800B</p>
                 <p>Sentiment:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neutral</p>
                 <p>Confidence:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;64%</p>
                
-                <button  className="btn" onClick={()=>navigate('/result')}>View Analysis</button>
+                <button  className="btn" onClick={()=>navigate('/result', { state: { company: companyData } })}>View Analysis</button>
             </div>
         </div>
         

@@ -208,7 +208,7 @@ app.get("/get-current-price-market-cap/:entitySymbol", async (req, res)=> {
             previousClose: priceData.data.pc,
             marketCap: profileData.data.marketCapitalization,
             companyName: profileData.data.name,
-            industry: profileData.data.industry,
+            industry: profileData.data.finnhubIndustry,
             country: profileData.data.country,
         }
 
@@ -226,8 +226,6 @@ app.get("/news-analysis", async (req, res) => {
 
     const symbol = (req.query.symbol || "").toUpperCase();
     const companyName = req.query.companyName || "";
-
-    console.log("company: ",companyName)
 
     if (!symbol) {
         return res.status(400).json({ error: "Missing symbol in query" });

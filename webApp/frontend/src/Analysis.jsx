@@ -48,6 +48,7 @@ function Analysis() {
       <h3>Detected Entities</h3>
       <div className="entities">
         {analysisData.entities.map((entity) => {
+          console.log("entity: ", entity)
           // Decide tag color based on sentiment
           const sentimentClass =
             entity.sentiment.toLowerCase() === "positive"
