@@ -5,7 +5,7 @@ import numpy as np
 import pytesseract
 from flask_cors import CORS
 
-pytesseract.pytesseract.tesseract_cmd = r"D:\Softwares\Tesseract-OCR\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 app = Flask(__name__)
 CORS(app)
