@@ -273,8 +273,8 @@ NER_ID2LABEL: Dict[int, str] = {}
 DEVICE = torch.device("cpu")
 
 # Paths (adjust if needed)
-NER_PATH = r"D:/Project/EntityPulse/finbert_ner_model"
-SENTIMENT_PATH = r"D:/Project/EntityPulse/finbert-entity-sentiment"
+NER_PATH = r"D:/Project/EntityPulse/EntityPulse/Models/finbert_ner_model"
+SENTIMENT_PATH = r"D:/Project/EntityPulse/EntityPulse/Models/finbert-entity-sentiment"
 LABEL_MAP_PATH = r"./label_mappings.json"
 
 # Token caps
