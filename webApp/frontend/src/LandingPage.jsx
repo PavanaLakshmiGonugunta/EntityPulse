@@ -60,7 +60,7 @@ const LandingPage = () => {
         <div className="logo"><i><BsFileBarGraph /></i> <strong>Sentiment Scope</strong></div>
         <ul className="nav-links">
           
-          <li><Link to="/signin">Sign In</Link></li>
+          <li><Link to="/login">Sign In</Link></li>
           <li><Link to="/signup" className="signup-btn">Sign Up</Link></li>
           <li><Link to="/search">Search</Link></li>
           <li><Link to="/about">About Us</Link></li>

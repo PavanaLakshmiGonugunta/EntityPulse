@@ -4,21 +4,24 @@ body {
   padding: 0;
   background: #fafafa;
   color: #222;
-  min-height: 100vh;   /* full height */
-  width: 96em;        /* full width */
+  min-height: 100vh;
+  width: 96em; /* full width */
 }
 
+/* Reserve space for navbar */
 .app {
-  padding: 20px;
-  width: 100%;        /* take full width */
-  height: 100%;       /* take full height */
+  padding: 80px 20px 20px 20px; /* top padding for navbar */
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
 }
 
+/* Header */
 .header {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 20px 0;
+  margin:  0;
 }
 
 .back {
@@ -28,20 +31,35 @@ body {
 
 /* Overall sentiment */
 .overall {
-  padding: 15px;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 12px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.overall .tag {
+  margin-left: 5px;
 }
 
 .overall.positive {
   background: #e6f9ec;
 }
 
+.overall.negative {
+  background: #fee2e2;
+}
+
+.overall.neutral {
+  background: #fef3c7;
+}
+
 .progress {
   background: #eee;
   height: 8px;
   border-radius: 4px;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .progress-bar {
@@ -55,23 +73,26 @@ body {
   color: #555;
 }
 
-/* Entities */
+/* Entities grid - dynamic */
 .entities {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 10px;
-  flex-wrap: wrap;        
-  justify-content: space-between; 
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 90rem;
 }
 
 .card {
-  flex: 1;
-  min-width: 250px;
   background: #fff;
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 250px;
 }
 
 .card h4 {
@@ -83,7 +104,6 @@ body {
   border-radius: 6px;
   font-size: 12px;
   text-transform: capitalize;
-  
 }
 
 .tag.positive {
@@ -96,15 +116,19 @@ body {
   color: #7a6d2d;
 }
 
+.tag.negative {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
 button {
   margin: 10px;
-  /* margin-left: 3rem; */
   padding: 6px 12px;
   border: none;
   background: #000;
   color: #fff;
   border-radius: 6px;
   cursor: pointer;
-  width:25rem;
-  align-items: flex-start;
+  width: 50rem;
+  text-align: center;
 }

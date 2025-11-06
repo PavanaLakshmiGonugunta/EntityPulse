@@ -1,0 +1,276 @@
+/* ===============================
+   Overall Wrapper
+=============================== */
+.signup-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f7f6;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Main Container
+=============================== */
+.signup-container {
+  display: flex;
+  width: 900px;
+  max-width: 95%;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   LEFT SECTION
+=============================== */
+.left-section {
+  flex: 1;
+  background: linear-gradient(160deg, #0eae85 0%, #007e66 100%);
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+.left-content {
+  max-width: 85%;
+  z-index: 2;
+}
+
+.left-content h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+}
+
+.left-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ===============================
+   RIGHT SECTION
+=============================== */
+.right-section {
+  flex: 1.2;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+
+.right-section h2 {
+  color: #0eae85;
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.right-section p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+/* ===============================
+   FORM STYLING
+=============================== */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Input fields */
+form input {
+  width: 66%;
+  max-width: 360px;
+  height: 48px;
+  padding: 0 48px 0 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  background-color: #edf5f2;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+form input:focus {
+  border-color: #0eae85;
+  background-color: #ffffff;
+}
+/* ===============================
+   PERFECT PASSWORD BOX ALIGNMENT
+=============================== */
+.password-wrapper {
+  position: relative;
+  width: 80%;
+  max-width: 360px;
+  margin:0%
+}
+
+.password-wrapper input {
+  
+  box-sizing: border-box; 
+  width: 100%;
+  max-width: 360px;
+  height: 48px;
+  padding: 0 20px 0 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  background-color: #edf5f2;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  margin:0;
+}
+
+.password-wrapper input:focus {
+  border-color: #0eae85;
+  background-color: #ffffff;
+}
+
+/* Eye icon styling and vertical centering */
+.toggle-password {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #0eae85;
+  font-size: 1.1rem;
+  transition: color 0.2s ease-in-out;
+  margin-top: 1.5rem;
+}
+
+.toggle-password:hover {
+  color: #007e66;
+}
+
+/* Ensures uniform width and button alignment */
+.signup-btn {
+  width: 80%;
+  max-width: 360px;
+  height: 48px;
+  margin-top: 0.5rem;
+  background-color: #0eae85;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #007e66;
+  transform: scale(1.02);
+}
+
+
+/* ===============================
+   SIGNUP BUTTON
+=============================== */
+.signup-btn {
+  width: 80%;
+  max-width: 360px;
+  height: 48px;
+  background-color: #0eae85;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.signup-btn:hover {
+  background-color: #007e66;
+  transform: scale(1.02);
+}
+
+/* ===============================
+   BOTTOM LINK
+=============================== */
+.login-link {
+  margin-top: 1.3rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.login-link a {
+  color: #0eae85;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=============================== */
+@media (max-width: 900px) {
+  .signup-container {
+    flex-direction: column;
+    width: 95%;
+    max-width: 600px;
+  }
+
+  .left-section {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .left-content {
+    max-width: 100%;
+  }
+
+  .right-section {
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+
+  form input,
+  .password-wrapper,
+  .signup-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .signup-btn {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .right-section h2 {
+    font-size: 1.6rem;
+  }
+}

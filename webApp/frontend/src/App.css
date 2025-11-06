@@ -1,19 +1,16 @@
-
-.body h1{
+.body h1 {
   margin-left: 70px;
 }
 
-.body p{
+.body p {
   margin-left: 70px;
 }
 
-body{
+body {
   margin: 3vw;
 }
 
-
 /* General Styles */
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   margin: 3vw;
@@ -22,45 +19,134 @@ body {
   color: #333;
 }
 
-p, h1, h2, h3, h4, h5, h6{
+p, h1, h2, h3, h4, h5, h6 {
   margin: 0px;
   color: black;
 }
 
+/* ===============================
+   NAVBAR (Logo left, links right)
+=============================== */
 .header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  background-color: #fff; 
+  width: 95%;
+  background-color: #fff;
   z-index: 1000;
-  padding: 10px 20px;
+  padding:20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes logo left and links right */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.nav{
-  /* text-decoration: none; */
-  text-decoration-line: none;
+/* Left side title */
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
 }
 
-/* HOME PAGE */
+/* Right side links */
+.head {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Nav links */
+.nav {
+  text-decoration: none;
+  color: #4b0082;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.nav:hover {
+  color: #232124;
+}
+
+/* Remove bullet/dot artifacts */
+.head ul, .head li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ===============================
+   CONTENT ALIGNMENT
+=============================== */
 .top {
-  margin-top: 120px; 
+  margin-top: 120px; /* adjusted for navbar height */
   text-align: center;
 }
 
-/* horizontal line in header */
-.line {
-  border: solid;              
-  height: 0px;               
-  background: #393939;         
-  margin: 15px 0;   
-  color: #0f0f0f;  
-       
+.body {
+  margin-top: 7vw;
+  text-align: center;
 }
 
+/* ===============================
+   INPUT TEXT + BUTTON FIXED
+=============================== */
+.container {
+  border: 1px solid #837f7f;
+  border-radius: 10px;
+  padding: 20px; 
+  max-width: 800px; 
+  width: 90%; 
+  margin: 40px auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; 
+}
 
-/* Show active method in input */
+.container input {
+  width: 100%;
+  max-width: 600px;
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid #cfcbcb;
+  background-color: #ebeced;
+  padding: 10px;
+  font-size: 1rem;
+  margin:0rem 7rem;
+  margin-bottom: 0.2rem;
+}
 
+/* Centered Analyze Text Button */
+button {
+  background-color: #000;
+  border: none;
+  border-radius: 8px;
+  width: 200px;
+  height: 45px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 15px auto; /* center horizontally */
+  display: block;
+}
+
+button:hover {
+  background-color: #484848;
+}
+
+/* ===============================
+   OTHER ORIGINAL STYLES
+=============================== */
 .option.active {
   background-color: #ffffff; 
   border-color: #007bff;     
@@ -69,34 +155,11 @@ p, h1, h2, h3, h4, h5, h6{
   width: 8vw;
 }
 
-
-.entities h2{
+.entities h2 {
   margin-left: 70px;
 }
-.head{
-  display: flex;
-  justify-content: flex-end;
-  width: 95%;
-  padding: 10px 20px;
-  align-items:center;
-  gap:10px;
-}
 
-.title{
-  text-align: left;
-  padding-left: 5px;
-  margin-left: 5px;
-  margin-right:950px;
-  font-size: 20px;
-}
-
-.body{
-  margin-top: 7vw;
-  text-align: center;
-}
-
-.search-container{
-  border-radius: 1px;
+.search-container {
   border-style: solid;
   border-color: rgb(185, 171, 171);
   border-width: 1px;
@@ -104,24 +167,13 @@ p, h1, h2, h3, h4, h5, h6{
   width: 1290px;
   border-radius: 10px;
   margin-left: 60px;
-
   align-content: center;
   align-items: center;
   justify-content: center;
-  
 }
 
-.input-text{
-  border-style: none; 
-  border-radius:none;
-  border-color:rgb(17, 15, 15);
-  padding: 10px;
-  border-width:2px;
-  
-}
-
-.input-text input{
-  background-color:whitesmoke;
+.input-text input {
+  background-color: whitesmoke;
   width: 1100px;
   height: 30px;
   border-style: solid;
@@ -131,22 +183,16 @@ p, h1, h2, h3, h4, h5, h6{
   border-color: #0f0f0f;
 }
 
-
-.input-text button{
+.input-text button {
   margin: 10px;
-  background-color:black ;
+  background-color: black;
   color: white;
   height: 2rem;
   width: 7rem;
   border-radius: 5px;
 }
 
-/* .search-container{
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-} */
-
+/* entities display */
 .entities {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -154,56 +200,32 @@ p, h1, h2, h3, h4, h5, h6{
   padding: 20px;
 }
 
-.popular-entities{
+.popular-entities {
   height: max-content;
   width: max-content;
   margin-top: 2vw;
   margin-left: 5vw;
 }
 
-
-.card{
-  border-radius: 1px;
+.card {
   border-style: solid;
   border-color: rgb(208, 205, 205);
   border-width: 1px;
-  padding: 10px;
+  padding: 15px;
   width: 23vw;
   border-radius: 10px;
   margin-left: 60px;
   margin-top: 20px;
-  padding: 15px;
   background: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  justify-content: space-between;
 }
 
-.card button{
-  /* margin-left: 120px; */
-  width: 250px;
+.card button {
+  width: 330px;
 }
 
-/* .top{
-  margin: 10px;
-  text-align: center;
-} */
-
-/* .container{
-  
-  border-radius: 1px;
-  border-color: #837f7f;
-  border-style: solid;
-  border-width: 0.5px;
-  border-radius: 10px;
-  height:40vh;
-  /* padding-bottom: 3vh; 
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-}*/
-
-.options{
+/* options section */
+.options {
   border-radius: 20px;
   background-color: #b9b1b1;
   text-align: center;
@@ -211,104 +233,34 @@ p, h1, h2, h3, h4, h5, h6{
   flex-direction: row;
   justify-content: space-evenly;
   width: 50vw;
-  /* margin: 10px; */
   height: 25px;
   padding: 5px;
   align-items: center;
-  
 }
 
- .input-entity{
+.input-entity {
   border-radius: 0.5px;
   border-color: #837f7f;
-  /* margin: 10px; */ 
-  /* width: max-content; */
   height: 50px;
   border-width: 0.5px;
- } 
-/*
-.container input{
-  /* margin-top: 10px; 
-  width: 80vw;
-  /* height: 90px; 
-  height: 10vh;
-  border-radius: 5px;
-  border-color: #cfcbcb;
-  background-color: #ebeced;
 }
-
-button{
-  background-color: #5f6368;
-  border-radius: 1vw;
-  margin: 10px;
-  width: 70vw;
-  height: 2vw;
-} */
-
-
-.container {
-  border: 1px solid #837f7f;
-  border-radius: 10px;
-  padding: 20px; 
-  max-width: 800px; 
-  width: 90%; 
-  margin: 20px auto; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px; 
-}
-
-.container input {
-  /* width: 100%; */
-  width: 100vw;
-  max-width: 50vw; 
-  height: 50px;
-  border-radius: 5px;
-  border: 1px solid #cfcbcb;
-  background-color: #ebeced;
-  padding: 10px;
-  
-  font-size: 1rem;
-}
-
-button {
-  background-color: #5f6368;
-  border-radius: 8px;
-  margin-top: 10px;
-  width: 100%;
-  max-width: 700px;
-  height: 45px; 
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  margin-left: 3vw;
-}
-
-button:hover {
-  background-color: #4a4d52;
-}
-
 
 /* ABOUT Page */
-
-.scope{
+.scope {
   margin-top: 10vw;
   text-align: center;
 }
 
-.features{
+.features {
   display: grid;
   grid-template-columns: repeat(3,1fr);
 }
 
-.key-features{
+.key-features {
   text-align: center;
 }
 
-.working{
+.working {
   margin-top: 5vw;
   padding-left: 1vw;
   padding-top: 1vw;
@@ -321,65 +273,60 @@ button:hover {
   margin-left: 4vw;
 }
 
-.step-container{
+.step-container {
   display: grid;
   grid-template-columns: repeat(4,1fr);
   justify-content: space-between;
-
 }
-.steps{
-  /* padding-top: 10vw; */
+
+.steps {
   margin: 1vw;
 }
 
-.numbers{
-  
+.numbers {
   font-size: larger;
   justify-content: center;
 }
 
-
-.input-methods{
+.input-methods {
   justify-content: space-between;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   margin-left: 6vw;
 }
 
-.methods{
+.methods {
   border-color: #837f7f;
-  /* border-width: 3px; */
   border-style: solid;
-  justify-content: space-between;
   border-radius: 15px;
   text-align: center;
   width: 20vw;
   height: 7vw;
 }
 
-.input-head{
+.input-head {
   text-align: center;
   margin: 3vw;
 }
 
-.icon{
+.icon {
   font-size: larger;
   align-items: center;
 }
 
-.choose-head{
-  margin:3vw;
+.choose-head {
+  margin: 3vw;
   text-align: center;
 }
 
-.choose{
+.choose {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   justify-content: space-between;
   margin-left: 6vw;
 }
 
-.choice{
+.choice {
   border-style: solid;
   border-width: 3px;
   border-color: #5f6368;
@@ -390,7 +337,7 @@ button:hover {
   text-align: center;
 }
 
-
+/* Tech sources section */
 .tech-sources {
   text-align: center;
   margin: 4rem auto;
@@ -415,7 +362,6 @@ button:hover {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  
 }
 
 .sources-block {
@@ -423,8 +369,6 @@ button:hover {
   background: #fafafa;
   border: 3px solid #696161;
   border-radius: 12px;
-  /* border-color: #0f0f0f;
-  border-width: 10px; */
   padding: 1.5rem;
   text-align: left;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -450,44 +394,35 @@ button:hover {
   border-radius: 20px;
   font-size: 0.9rem;
   color: #333;
-  transition: all 0.2s ease;
-  cursor: default;
 }
 
-/* .tag:hover {
-  background: #eaeaea;
-  border-color: #ccc;
-} */
-
 /* entity type analysis */
-
-.sentiment-display-percentage-display{
+.sentiment-display-percentage-display {
   display: flex;
 }
 
-.details-twin-components{
+.details-twin-components {
   display: flex;
   flex-direction: row;
   align-content: space-between;
   gap: 2vw;
 }
 
-.component-div{
+.component-div {
   border: 1px solid gainsboro;
-    border-radius: 10px;
-    width: 45vw;
-    padding: 10px;
-    margin-top: 2vh;
+  border-radius: 10px;
+  width: 45vw;
+  padding: 10px;
+  margin-top: 2vh;
 }
 
-#component-title{
+#component-title {
   padding: 0px;
   margin: 0px;
 }
 
 /* for selecting entity type */
-
-.select-analysis-type{
+.select-analysis-type {
   display: flex;
   flex-direction: row;
   background-color: #E0E0E0;
@@ -496,7 +431,7 @@ button:hover {
   border-radius: 20px;
 }
 
-.analysis-type{
+.analysis-type {
   align-items: center;
   border-radius: 20px;
   padding-left: 1vw;
@@ -506,34 +441,32 @@ button:hover {
   font-weight: 500;
 }
 
-/* for the div being active selecting the type of data user wants */
-.active{
+.active {
   background-color: white;
 }
 
-
-.details-about-stock{
+.details-about-stock {
   display: flex;
   margin-top: 5vh;
   margin-bottom: 5vh;
   justify-content: space-between;
 }
 
-.negative-text{
-    border-left-color: red;
-}
-.neutral-text{
-    border-left-color: orange;
+.negative-text {
+  border-left-color: red;
 }
 
-.negative-div{
-    background-color: red;
+.neutral-text {
+  border-left-color: orange;
 }
 
-.neutral-div{
-    background-color: white;
-    border-color: black;
-    border-style: solid;
-    border-width: 0.2px;
+.negative-div {
+  background-color: red;
 }
 
+.neutral-div {
+  background-color: white;
+  border-color: black;
+  border-style: solid;
+  border-width: 0.2px;
+}
