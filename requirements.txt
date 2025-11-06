@@ -1,0 +1,33 @@
+Steps to run app
+
+1. clone from the repo
+
+git lfs install
+git clone https://github.com/PavanaLakshmiGonugunta/EntityPulse.git
+
+2. download tesseract ocr for text extraction from image
+
+https://github.com/UB-Mannheim/tesseract/wiki
+
+3. run following commands 
+
+open your entityPulse folder
+
+cmd 1:
+cd webApp/frontend 
+npm run dev
+
+cmd 2:
+cd webApp/backend 
+npm start
+
+cmd 3:
+cd webApp/backend 
+python ner_and_sentiment_classification.....py(I don't remember the complete name okasari chudu bro python file )
+
+cmd 4: 
+cd ocr
+python image-textExtract.py
+
+4. connect mongodb compass
+open mongodb compass and connect to localhost
