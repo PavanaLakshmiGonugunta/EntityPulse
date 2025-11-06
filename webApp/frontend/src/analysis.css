@@ -1,3 +1,14 @@
+/* =========================
+   ANALYSIS PAGE – responsive, tidy, no palette change
+   ========================= */
+
+/* Base */
+:root {
+  /* Use same header height token app-wide so content never overlaps */
+  --header-h: clamp(56px, 7vh, 80px);
+  --page-x: clamp(16px, 4vw, 48px);
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,14 +18,14 @@ body {
   min-height: 100vh;
 }
 
-/* Reserve space for navbar */
+/* Reserve space for navbar + add left/top margins */
 .app {
-  padding: 80px 20px 20px 20px; /* top padding for navbar */
+  padding: calc(var(--header-h) + 16px) var(--page-x) 24px var(--page-x);
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Overall sentiment */
+/* Overall sentiment card */
 .overall {
   padding: 20px;
   border-radius: 12px;
@@ -24,21 +35,11 @@ body {
   gap: 10px;
 }
 
-.overall .tag {
-  margin-left: 5px;
-}
+.overall .tag { margin-left: 5px; }
 
-.overall.positive {
-  background: #e6f9ec;
-}
-
-.overall.negative {
-  background: #fee2e2;
-}
-
-.overall.neutral {
-  background: #fef3c7;
-}
+.overall.positive { background: #e6f9ec; }
+.overall.negative { background: #fee2e2; }
+.overall.neutral  { background: #fef3c7; }
 
 .progress {
   background: #eee;
@@ -46,34 +47,30 @@ body {
   border-radius: 4px;
   margin: 5px 0;
 }
-
 .progress-bar {
   height: 8px;
   background: #000;
   border-radius: 4px;
 }
 
-/* Entities grid - dynamic */
+/* Entities grid – fluid columns */
 .entities {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
   margin-top: 10px;
 }
 
 .card {
   background: #fff;
-  padding: 15px;
+  padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
-.card h4 {
-  margin: 0 0 5px;
-}
+.card h4 { margin: 0 0 5px; }
 
 .card .tag {
   padding: 3px 8px;
@@ -81,29 +78,29 @@ body {
   font-size: 12px;
   text-transform: capitalize;
 }
-
-.tag.positive {
-  background: #d9f5dc;
-  color: #2d7a35;
-}
-
-.tag.neutral {
-  background: #f9f6d9;
-  color: #7a6d2d;
-}
-
-.tag.negative {
-  background: #fee2e2;
-  color: #991b1b;
-}
+.tag.positive { background: #d9f5dc; color: #2d7a35; }
+.tag.neutral  { background: #f9f6d9; color: #7a6d2d; }
+.tag.negative { background: #fee2e2; color: #991b1b; }
 
 button {
-  padding: 6px 12px;
+  padding: 10px 12px;
   border: none;
   background: #000;
   color: #fff;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   width: 100%;
   text-align: center;
+}
+
+/* Spacing helpers */
+.section { margin-block: 20px; }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .app { padding: calc(var(--header-h) + 12px) 20px 20px 20px; }
+  .card { padding: 14px; }
+}
+@media (max-width: 480px) {
+  .app { padding: calc(var(--header-h) + 10px) 16px 16px 16px; }
 }

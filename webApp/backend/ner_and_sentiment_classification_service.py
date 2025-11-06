@@ -273,8 +273,8 @@ NER_ID2LABEL: Dict[int, str] = {}
 DEVICE = torch.device("cpu")
 
 # Paths (adjust if needed)
-NER_PATH = r"D:/Project/EntityPulse/EntityPulse/Models/finbert_ner_model"
-SENTIMENT_PATH = r"D:/Project/EntityPulse/EntityPulse/Models/finbert-entity-sentiment"
+NER_PATH = r"D:/Project/EntityPulse/finbert_ner_model"
+SENTIMENT_PATH = r"D:/Project/EntityPulse/finbert-entity-sentiment"
 LABEL_MAP_PATH = r"./label_mappings.json"
 
 # Token caps
@@ -426,6 +426,7 @@ def run_sentiment_model(text: str, entity: str) -> Tuple[str, float]:
 # -------------------------
 @app.route("/analyze-text-ner-sentiment", methods=["POST"])
 def analyze_text():
+    print("received text to analyze sentiment.")
     """
     Enhanced endpoint: 
     - If 'entity' provided → runs direct sentiment (no NER)
@@ -526,6 +527,59 @@ def analyze_text():
     except Exception as e:
         logging.exception("Error during analysis")
         return _safe_json_error(f"Analysis failed: {str(e)}", 500)
+    
+
+@app.route("/analyze-batch", methods=["POST"])
+def analyze_batch():
+    """
+    Body: { items: [{ text, summary, entity } ... up to e.g. 10 ] }
+    Returns: [{ overallSentiment, overallConfidence, analyzedText, meta }, ...]
+    """
+    data = request.get_json(silent=True) or {}
+    items = data.get("items") or []
+    if not isinstance(items, list) or not items:
+        return _safe_json_error("items[] required", 400)
+
+    results = []
+    for it in items[:10]:
+        text = (it.get("text") or "").strip()
+        summary = (it.get("summary") or "").strip()
+        entity = (it.get("entity") or "").strip()
+        if summary:
+            text = f"{text}. {summary}"
+
+        if not text:
+            results.append({"error": "Missing text"})
+            continue
+
+        try:
+            if entity:
+                sentiment, confidence = run_sentiment_model(text, entity)
+            else:
+                # reuse analyze_text’s logic via direct functions
+                cands = run_ner_model(text)
+                if cands:
+                    scores = []
+                    for c in cands[:30]:
+                        s, conf = run_sentiment_model(text, c["text"])
+                        scores.append(conf if s == "Positive" else (-conf if s == "Negative" else 0.0))
+                    avg = float(np.mean(scores)) if scores else 0.0
+                    sentiment = "Positive" if avg >= 0.05 else ("Negative" if avg <= -0.05 else "Neutral")
+                    confidence = abs(avg)
+                else:
+                    s, conf = run_sentiment_model(text, "entity")
+                    sentiment, confidence = s, conf
+
+            results.append({
+                "overallSentiment": sentiment,
+                "overallConfidence": float(confidence),
+                "analyzedText": text,
+            })
+        except Exception as e:
+            results.append({"error": f"Analysis failed: {str(e)}"})
+
+    return jsonify({"results": results}), 200
+
 
 # -------------------------
 # Entrypoint
@@ -535,7 +589,7 @@ if __name__ == "__main__":
         load_models()
         logging.info("Starting Flask server on 0.0.0.0:5001 …")
         # single-threaded while stabilizing
-        app.run(host="0.0.0.0", port=5001, threaded=False)
+        app.run(host="0.0.0.0", port=5001, threaded=True)
     except Exception as e:
         logging.exception("FATAL: Error loading models or starting server: %s", e)
         raise

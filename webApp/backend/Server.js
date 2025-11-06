@@ -1,6 +1,7 @@
 import express from "express"
 import axios from "axios"
 import cors from "cors"
+import mongoose from "mongoose";
 
 const app = express();
 app.use(cors());
@@ -9,6 +10,26 @@ app.use(express.json());
 // NOTE: Replace with your actual key
 const FINNHUB_API_KEY = "d354c51r01qhorbgi6g0d354c51r01qhorbgi6gg"
 const TWELVE_API_KEY = "96c92ea18dfd481495a9c4e557c1d9b8"
+
+// --- MONGO CONNECTION ---
+const MONGO_URI = "mongodb://127.0.0.1:27017/entity_pulse_users";
+
+mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("✅ MongoDB connected successfully"))
+.catch(err => console.error("❌ MongoDB connection error:", err));
+
+
+// --- (OPTIONAL) USER SCHEMA ---
+const userSchema = new mongoose.Schema({
+  username: String,
+  email: { type: String, unique: true },
+  password: String,
+});
+const User = mongoose.model("User", userSchema);
+
 
 // --- UTILITY FUNCTIONS ---
 
@@ -125,6 +146,40 @@ export async function aggregateSentiment(allNews, today, companyName) {
 
 // --- API ENDPOINTS ---
 
+
+
+// --- SIGNUP ROUTE ---
+app.post("/signup", async (req, res) => {
+  const { username, email, password } = req.body;
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) return res.status(400).json({ message: "User already exists!" });
+
+    const newUser = new User({ username, email, password });
+    await newUser.save();
+    res.status(201).json({ message: "User registered successfully!" });
+  } catch (error) {
+    console.error("Signup error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+
+// --- LOGIN ROUTE ---
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) return res.status(400).json({ message: "User not found!" });
+    if (user.password !== password) return res.status(400).json({ message: "Incorrect password!" });
+
+    res.status(200).json({ message: "Login successful!" });
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 // end point to fetch entity details 
 app.get('/get-company-details/:entityName', async(req, res) => {
     const entityName = req.params.entityName.toLowerCase();
@@ -220,58 +275,146 @@ app.get("/get-current-price-market-cap/:entitySymbol", async (req, res)=> {
     }
 })
 
-// Refactored Endpoint: Fetches news once and returns both Headlines and Trend Data
 app.get("/news-analysis", async (req, res) => {
-    console.log("Request for combined news analysis (headlines and trend) made.");
+  console.log("Request for TOP-3 news analysis made.");
+  console.log("req query for new analysis in server.js", req.query)
 
-    const symbol = (req.query.symbol || "").toUpperCase();
-    const companyName = req.query.companyName || "";
+  const symbol = (req.query.symbol || "").toUpperCase();
+  const companyName = req.query.companyName || "";
 
-    if (!symbol) {
-        return res.status(400).json({ error: "Missing symbol in query" });
-    }
+  if (!symbol) {
+    return res.status(400).json({ error: "Missing symbol in query" });
+  }
 
+  // axios instance with timeout
+  const http = axios.create({ timeout: 12000 });
+
+  try {
     const today = new Date();
-    
-    // Set 'from' date to 30 days ago to cover all trend buckets
     const fromDate = new Date();
-    fromDate.setDate(today.getDate() - 30); 
-    
-    // Format dates as YYYY-MM-DD for Finnhub API
+    fromDate.setDate(today.getDate() - 14);
+
     const from = fromDate.toISOString().slice(0, 10);
     const to = today.toISOString().slice(0, 10);
 
-    try {
-        const newsURL = `https://finnhub.io/api/v1/company-news?symbol=${symbol}&from=${from}&to=${to}&token=${FINNHUB_API_KEY}`;
-        const response = await axios.get(newsURL); 
-        const allNews = response.data;
+    const newsURL = `https://finnhub.io/api/v1/company-news?symbol=${symbol}&from=${from}&to=${to}&token=${FINNHUB_API_KEY}`;
 
-        // 1. Calculate Sentiment Trend
-        const { trendData, newsWithSentiment } = await aggregateSentiment(allNews, today, companyName);
+    // --- get company news
+    const newsResp = await http.get(newsURL);
+    const allNews = Array.isArray(newsResp.data) ? newsResp.data : [];
 
-        // 2. Extract Top 3 Recent Headlines (from the "This Week" bucket)
-        const recentHeadlines = newsWithSentiment
-            .filter(item => item.ageInDays >= 0 && item.ageInDays <= 6) // Filter to only "This Week"
-            .slice(0, 3) // Take the top 3 (most recent)
-            .map(item => ({
-                headline: item.headline,
-                source: item.source,
-                url: item.url,
-                sentiment: item.sentiment 
-            }));
-
-        const data = {
-            headlines: recentHeadlines,
-            trendData: trendData
-        };
-
-        res.json(data); 
-        console.log("Combined news analysis fetched successfully.");
-    } catch (e) {
-        console.log("Error fetching news:", e.message);
-        res.status(500).json({ error: "Failed to fetch news analysis." });
+    if (!allNews.length) {
+      return res.json({ headlines: [], asOf: to, count: 0 });
     }
+
+    // newest first, top 3
+    const top3 = allNews
+      .slice()
+      .sort((a, b) => (b.datetime || 0) - (a.datetime || 0))
+      .slice(0, 3);
+
+    // --- try batch path first
+    let sentiments = [];
+    try {
+      const batchItems = top3.map((item) => ({
+        text: item.headline || "",
+        summary: item.summary || "",
+        entity: companyName,
+      }));
+
+      const py = await http.post(
+        "http://localhost:5001/analyze-batch", // works if you added the batch endpoint
+        { items: batchItems }
+      );
+      sentiments = py?.data?.results || [];
+    } catch (batchErr) {
+      console.warn("Batch sentiment failed, falling back:", batchErr?.message);
+
+      // fallback: call one by one
+      sentiments = await Promise.all(
+        top3.map(async (item) => {
+          try {
+            const py = await http.post(
+              "http://localhost:5001/analyze-text-ner-sentiment",
+              {
+                text: item.headline || "",
+                summary: item.summary || "",
+                entity: companyName,
+              }
+            );
+            return {
+              overallSentiment: py?.data?.overallSentiment || "Neutral",
+            };
+          } catch (e) {
+            console.warn("Single sentiment error:", e?.message);
+            return { overallSentiment: "Neutral" };
+          }
+        })
+      );
+    }
+
+    // merge
+    const analyzed = top3.map((item, idx) => ({
+      headline: item.headline,
+      source: item.source,
+      url: item.url,
+      datetime: item.datetime, // unix seconds
+      image: item.image || null,
+      category: item.category || null,
+      sentiment: sentiments[idx]?.overallSentiment || "Neutral",
+    }));
+
+    return res.json({
+      headlines: analyzed,
+      asOf: to,
+      count: analyzed.length,
+    });
+  } catch (e) {
+    console.error("Error fetching top-3 news:", e.message);
+    return res.status(500).json({ error: "Failed to fetch news." });
+  }
 });
+
+
+// end point to do image processing to extract text from it
+app.post(
+  "/extract-text",
+  express.raw({ type: "application/octet-stream", limit: "20mb" }),
+  async (req, res) => {
+    const imageBuffer = req.body; // Buffer with image bytes
+
+    if (!Buffer.isBuffer(imageBuffer) || imageBuffer.length === 0) {
+      return res.status(400).json({ error: "Empty image body" });
+    }
+
+    try {
+      // Forward to your OCR service (adjust URL if needed)
+      const ocrResp = await axios.post(
+        "http://127.0.0.1:5002/extract-text",
+        imageBuffer,
+        {
+          headers: { "Content-Type": "application/octet-stream" },
+          responseType: "json",
+        }
+      );
+
+      // Normalize response field name to what the frontend expects
+      const extracted =
+        ocrResp.data?.extracted_text ??
+        ocrResp.data?.text ??
+        ocrResp.data?.data ??
+        "";
+
+      return res.json({ extracted_text: extracted });
+    } catch (err) {
+      console.error(
+        "error while doing text extraction from image:",
+        err?.response?.data || err.message
+      );
+      return res.status(500).json({ error: "Failed to extract text" });
+    }
+  }
+);
 
 // Original endpoint (now obsolete or should be deleted/redirected)
 app.get("/social-sentiment-summary")

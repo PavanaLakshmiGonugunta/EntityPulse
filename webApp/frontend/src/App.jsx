@@ -9,7 +9,9 @@ import About from './About.jsx';
 import ResultsPage from './ResultsPage.jsx';
 import Analysis from './Analysis.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import LandingPage from './LandingPage.jsx';
+import Login from "./Login.jsx";
+import Signup from "./Signup.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,7 +29,11 @@ function App() {
       <Router>
         {/* <Header/> */}
           <Routes>
-              <Route path="/" element={<Home/>}></Route>
+              <Route path="/" element={<LandingPage/>}></Route>
+              {/* <Route path="/" element={<Login/>}></Route> */}
+              <Route path="/login" element={<Login/>}></Route>
+              <Route path="/signup" element={<Signup/>}></Route>
+              <Route path="/home" element={<Home/>}></Route>
               <Route path="/search" element={<Search/>}></Route>
               <Route path="/about" element={<About/>}></Route>
               <Route path="/result" element={<ResultsPage/>}></Route>

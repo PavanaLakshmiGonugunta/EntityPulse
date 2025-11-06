@@ -4,6 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   /* REVISED: Reset outer margin and use padding for page boundaries */
   margin: 0;
+  /* Use a consistent, responsive side padding */
   padding: 0 3vw; 
   background-color: #f4f7f9;
   color: #333;
@@ -26,6 +27,7 @@ p, h1, h2, h3, h4, h5, h6 {
   /* FIX: Use 3vw padding on the sides to match the body's padding and align content */
   padding: 10px 3vw; 
   box-sizing: border-box; 
+  /* DO NOT CHANGE: Header styling is preserved as requested */
 }
 
 .nav {
@@ -53,13 +55,16 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #007bff;
   font-weight: bold;
   border-radius: 1vw;
-  width: 8vw;
+  /* Make width more responsive */
+  width: 25%;
+  /* Match the visual style from the image (a light background tab) */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
 
 /* 2. Primary Body Container - Focus on Centering Content */
 .body {
-  margin-top: 100px;
-  /* FIX: REMOVED text-align: center; */
+  
+  margin-top: 120px;
   padding: 0;
 }
 
@@ -78,8 +83,9 @@ p, h1, h2, h3, h4, h5, h6 {
 .head {
   display: flex;
   justify-content: flex-end;
-  width: 95%;
-  padding: 10px 20px;
+  /* Adjusted width for better centering context */
+  width: 100%; 
+  padding: 10px 0;
   align-items: center;
   gap: 10px;
 }
@@ -88,63 +94,269 @@ p, h1, h2, h3, h4, h5, h6 {
   text-align: left;
   padding-left: 5px;
   margin-left: 5px;
-  margin-right: 950px;
+  /* Removed fixed margin to rely on flex/auto-sizing */
+  margin-right: auto;
   font-size: 20px;
 }
 
 /* 4. Search Container Improvements - Centering with margin: auto */
+/* This container holds the whole input analysis section and needs to be tall enough for all content */
 .search-container {
   border-radius: 10px;
   border: 1px solid rgb(185, 171, 171);
-  padding: 20px;
-  max-width: 1000px;
-  width: 90%;
+  padding: 30px; /* Increased padding */
+  max-width: 800px; /* Max width to match the image layout */
+  /* height: 30vh; Removed fixed height for dynamic content */
+  height: auto;
+  /* Increased width for smaller screens */
+  width: 95%; 
   margin: 20px auto; /* This centers the container block */
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
+  background-color: white; /* Added white background as seen in image */
+}
+.input-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
 }
 
-/* 5. Input Text Wrapper - Adapt to new search-container flex layout */
-.input-text {
-  border-style: none;
-  padding: 10px 0;
-  width: 100%;
+.input-text input {
+  width: 320px;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-text input:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.input-text button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 6px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
-/* 6. Input Field - Make responsive and manage width */
-.input-text input {
-  background-color: whitesmoke;
+.input-text button:hover {
+  background-color: #333;
+}
+
+.input-text i {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 500px) {
+  .input-text {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-text input,
+  .input-text button {
+    width: 100%;
+  }
+}
+
+
+.search-container h5, .search-container p {
+    align-self: flex-start; /* Left align the text headers */
+    width: 100%;
+    max-width: 700px; /* Aligned with options container if possible */
+}
+
+/* 5. Options Container for Text/Image/Voice selection */
+.options {
+  border-radius: 20px;
+  background-color: #e9ecef; /* Lighter background for the toggle bar */
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* Responsive width for options container */
+  width: 100%; 
+  max-width: 700px; /* Set max width for centering */
+  height: 50px; /* Taller height for tabs */
+  padding: 5px;
+  align-items: center;
+  margin-bottom: 25px; /* Space below the options bar */
+}
+
+.option {
+    /* Style for the text inside the tab */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 10px;
+    border-radius: 15px; /* Rounded corners for the tabs */
+    transition: background-color 0.2s;
+    flex-grow: 1; /* Allow options to fill space */
+}
+
+/* 6. The dynamic input area (Text, Image, Voice) */
+.input-entity {
+    /* FIX: Standardize the dynamic input area layout */
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column; /* Stack input fields/buttons */
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: none; /* Remove previous border styling */
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Text Input Field */
+.input-entity input[type="text"] {
+    width: 100%;
+    height: 100px; /* Taller input box for text, like in image */
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Text Input Button */
+.input-entity button[type="submit"] {
+    width: 100%;
+    max-width: 300px; /* Match the width of the analyze button in the image */
+    height: 45px;
+    margin-top: 10px;
+    background-color: black; 
+}
+.input-entity button:hover {
+  background-color: #333;
+}
+
+/* Image Upload Specific Styling */
+.input-entity input[type="file"] {
+    /* Minimal styling for file input in the image section */
+    border: 1px dashed #ced4da;
+    padding: 50px 20px; /* Large padding for the upload area */
+    text-align: center;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    height: auto;
+}
+
+.ocr-result {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+    background-color: #fefefe;
+    border-radius: 8px;
+}
+
+/* Voice Recording Specific Styling */
+.input-entity .voice-recorder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+/* The Start Recording Button */
+.input-entity button[type="button"] {
+    width: 100%;
+    max-width: 300px;
+    height: 45px;
+    background-color: black; /* Black button for recording, as seen in image */
+    color: white;
+    border-radius: 5px;
+    margin-top: 50px; /* Push the button down to center it visually */
+}
+
+.input-entity h4 {
+    margin-top: 15px;
+}
+/* End of Home Page specific changes */
+
+
+/* The rest of the CSS remains largely unchanged, preserving the structure and look of other pages (About, Results) as requested. */
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+/* Existing button styles - adjusted to be more general */
+button {
+  background-color: black;
+  border-radius: 8px;
+  margin-top: 10px;
   width: 100%;
-  max-width: 800px;
-  height: 40px;
-  border: 1px solid #0f0f0f;
+  height: 45px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 0;
+  border: none;
+}
+
+button:hover {
+  background-color: #4a4d52;
+}
+
+
+.container {
+  border: 1px solid #837f7f;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 20px;
+  max-width: 800px;
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   box-sizing: border-box;
 }
 
-/* 7. Search Button - Simplify width and align */
-.input-text button {
-  margin: 0;
-  background-color: black;
-  color: white;
-  height: 40px;
-  width: 100px;
+.container input {
+  width: 100%;
+  /* Using responsive max-width */
+  max-width: 600px;
+  height: 50px;
   border-radius: 5px;
-  flex-shrink: 0;
-  border: none;
-  cursor: pointer;
+  border: 1px solid #cfcbcb;
+  background-color: #ebeced;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
+
+/* ---------------------------------------------------------------------------------------------------------------- */
 
 /* 8. Popular Entities Heading - Center the block and left align text */
 .popular-entities {
   height: max-content;
-  width: 90%; /* Ensure it spans a good width for alignment */
+  /* Use 95% width to match other centered containers */
+  width: 95%; 
   max-width: 1000px;
   margin: 30px auto 15px auto; /* FIX: Center the block element */
   text-align: left;
@@ -154,7 +366,8 @@ p, h1, h2, h3, h4, h5, h6 {
 /* 9. Popular Entities Cards Container - Adjust for centering and responsiveness */
 .entities {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Ensures cards are at least 250px wide and auto-fits */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
   gap: 20px;
   max-width: 1000px;
   margin: 0 auto 40px auto; /* This centers the grid block */
@@ -172,7 +385,26 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
+  min-height: 220px;
+
+  /* NEW: keep the “matched” card from stretching full width */
+  max-width: 720px;   /* tweak as you like */
+  width: 95%;
+  margin: 12px auto 24px;  /* center it */
 }
+
+
+/* Center the Loading... text */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;            /* adjust as you like */
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
 
 /* 11. Card Button - Make responsive within the card */
 .card button {
@@ -181,168 +413,130 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 40px;
   border-radius: 5px;
-}
-
-
-/* Existing button styles - adjusted to be more general */
-button {
-  background-color: #5f6368;
-  border-radius: 8px;
-  margin-top: 10px;
-  width: 100%;
-  height: 45px;
+  /* Ensure the button is styled consistently */
+  background-color: black; 
   color: white;
   font-size: 1rem;
   cursor: pointer;
-  margin-left: 0;
   border: none;
+  flex-shrink: 0;
 }
 
-button:hover {
-  background-color: #4a4d52;
+.card button:hover{
+  background-color: #333;
 }
 
-/* Other existing styles maintained below */
 
-.container {
-  border: 1px solid #837f7f;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 800px;
-  width: 90%;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.container input {
-  width: 100%;
-  max-width: 50vw;
-  height: 50px;
-  border-radius: 5px;
-  border: 1px solid #cfcbcb;
-  background-color: #ebeced;
-  padding: 10px;
-  font-size: 1rem;
-}
-
-.options {
-  border-radius: 20px;
-  background-color: #b9b1b1;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 50vw;
-  height: 25px;
-  padding: 5px;
-  align-items: center;
-}
-
-.input-entity {
-  border-radius: 0.5px;
-  border-color: #837f7f;
-  height: 50px;
-  border-width: 0.5px;
-}
-
-/* ABOUT Page */
+/* ABOUT Page - COLOR ADDITIONS & Responsiveness */
 
 .scope {
-  margin-top: 10vw;
+  /* Adjusted margin for modern screens */
+  margin-top: 150px;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .features {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* Adjusted grid for better responsiveness */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Added explicit styling for the feature cards for visual appeal */
+.features > div {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .key-features {
   text-align: center;
 }
 
+/* How It Works Section */
 .working {
-  margin-top: 5vw;
-  padding-left: 1vw;
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-  height: 10vw;
+  /* Removed fixed sizing, using margin: auto and max-width for centering */
+  margin: 5vw auto;
+  padding: 20px;
+  height: auto;
   border-style: solid;
   border-color: #a5a5a5;
   border-radius: 15px;
-  width: 85vw;
-  margin-left: 4vw;
+  /* Set max-width and center */
+  width: 90%;
+  max-width: 1000px;
+  box-sizing: border-box;
 }
 
 .step-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* Responsive grid for steps */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+  gap: 20px;
   justify-content: space-between;
 }
 
 .steps {
-  margin: 1vw;
+  margin: 0;
+  padding: 15px;
+  text-align: center;
 }
 
+/* Color additions for 'How It Works' steps */
+.steps:nth-child(1) .numbers { color: #007bff; } /* Blue for step 1 */
+.steps:nth-child(2) .numbers { color: #28a745; } /* Green for step 2 */
+.steps:nth-child(3) .numbers { color: #ffc107; } /* Yellow/Orange for step 3 */
+.steps:nth-child(4) .numbers { color: #dc3545; } /* Red for step 4 */
+
 .numbers {
-  font-size: larger;
-  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Supported Input Methods Section */
+.input-head {
+  text-align: center;
+  margin: 3vw auto;
 }
 
 .input-methods {
   justify-content: space-between;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-left: 6vw;
+  /* Responsive grid for input methods */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 20px;
+  /* Center the container */
+  max-width: 1000px;
+  margin: 0 auto; 
 }
 
 .methods {
   border-color: #837f7f;
   border-style: solid;
-  justify-content: space-between;
+  border-width: 1px;
   border-radius: 15px;
   text-align: center;
-  width: 20vw;
-  height: 7vw;
-}
-
-.input-head {
-  text-align: center;
-  margin: 3vw;
+  /* Removed fixed width/height */
+  width: 100%;
+  height: auto;
+  padding: 20px 10px;
+  box-sizing: border-box;
 }
 
 .icon {
-  font-size: larger;
+  font-size: 2rem;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-.choose-head {
-  margin: 3vw;
-  text-align: center;
-}
-
-.choose {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: space-between;
-  margin-left: 6vw;
-}
-
-.choice {
-  border-style: solid;
-  border-width: 3px;
-  border-color: #5f6368;
-  border-radius: 15px;
-  width: 20vw;
-  height: 7vw;
-  padding: 5px;
-  text-align: center;
-}
-
-
+/* Technology & Data Sources Section */
 .tech-sources {
   text-align: center;
   margin: 4rem auto;
@@ -372,7 +566,8 @@ button:hover {
 .sources-block {
   flex: 1 1 400px;
   background: #fafafa;
-  border: 3px solid #696161;
+  /* Color change requested in image for this block border */
+  border: 3px solid #007bff; 
   border-radius: 12px;
   padding: 1.5rem;
   text-align: left;
@@ -392,18 +587,49 @@ button:hover {
   gap: 0.75rem;
 }
 
+/* Color change requested in image for these tags */
 .tag {
-  background: #d6d3d3;
-  border: 1px solid #ddd;
+  background: #28a745; 
+  border: 1px solid #1e7e34;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.9rem;
-  color: #333;
+  color: white; /* Text color change for readability */
   transition: all 0.2s ease;
   cursor: default;
 }
 
-/* entity type analysis */
+
+/* Entity Sentiment Analysis Page */
+.choose-head {
+  margin: 3vw;
+  text-align: center;
+}
+
+.choose {
+  display: grid;
+  /* Responsive grid for input method tabs */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.choice {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #5f6368;
+  border-radius: 15px;
+  /* Use 100% width of grid column */
+  width: 100%; 
+  height: auto;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* RESULTS PAGE CSS (DO NOT CHANGE/REVISED MINIMALLY FOR RESPONSIVENESS) */
 
 /* FIX: Centering the overall card container and adding responsiveness */
 .details-twin-components {
@@ -439,6 +665,7 @@ button:hover {
   width: 95%; 
   margin: 2vh auto; /* FIX: Center the block and add vertical margin */
   padding: 10px;
+  box-sizing: border-box;
 }
 
 #component-title {
@@ -455,6 +682,8 @@ button:hover {
   width: fit-content;
   padding: 0.6vh 1vw 0.6vh 1vw;
   border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .analysis-type {
@@ -522,4 +751,119 @@ button:hover {
 @keyframes shimmer {
   0% { background-position: 100% 0; }
   100% { background-position: 0 0; }
+}
+
+/* Media Queries for better mobile responsiveness */
+
+@media (max-width: 768px) {
+    /* Adjust input container size on smaller screens */
+    .container, .search-container {
+        width: 95%;
+        padding: 15px;
+    }
+    .options {
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* Ensure search input and button stack or wrap nicely */
+    .input-entity {
+        /* No need for flex-direction: column here as it's already set */
+        gap: 15px;
+        padding: 10px;
+    }
+    .input-entity input[type="text"] {
+        height: 70px;
+    }
+    .input-entity input[type="file"] {
+      padding: 30px 15px;
+    }
+    .input-entity button {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Cards will naturally stack due to grid auto-fit */
+    .entities {
+      padding: 0;
+    }
+    
+    /* About page adjustments */
+    .features, .input-methods {
+        grid-template-columns: 1fr;
+    }
+    .sources-container {
+        flex-direction: column;
+    }
+    .sources-block {
+        flex: 1 1 auto;
+    }
+    
+    /* Input method tabs for analysis page */
+    .choose {
+      grid-template-columns: 1fr;
+    }
+    .choice {
+      height: auto;
+    }
+    
+    /* Ensure fixed header doesn't hide content */
+    .top, .body {
+        margin-top: 80px;
+    }
+}
+
+/* Full-screen overlay to center the button */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;  /* no dim, clean background */
+  z-index: 2000;            /* on top of everything */
+}
+/* Center the processing button just below input area */
+.loading-below {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;   /* space below the input box */
+}
+
+/* Compact, neat loading button */
+.loading-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: default;
+  width: auto;
+  min-width: fit-content;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Small spinner beside text */
+.loading-btn .spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

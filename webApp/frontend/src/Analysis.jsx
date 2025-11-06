@@ -14,7 +14,7 @@ function Analysis() {
     <div className="app">
       {/* Back + Title */}
       <div className="header">
-        <span className="back">← Back</span>
+        <span className="back" onClick={() => navigate(-1)} role="button">← Back</span>
         <h2>Analysis Results</h2>
       </div>
 
@@ -71,7 +71,10 @@ function Analysis() {
                   style={{ width: `${entity.confidence * 100}%` }}
                 ></div>
               </div>
-              <button className="btn" onClick={() => navigate('/result', { state: { entity: entity } })}>View Details</button>
+              <button className="btn" onClick={() => {
+                console.log("sending entity to result, ",entity);
+                navigate('/result', { state: { entity: entity} })}
+              }>View Details</button>
             </div>
           );
         })}
