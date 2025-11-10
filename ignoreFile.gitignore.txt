@@ -1,8 +1,3 @@
 # Ignore generated data files
 Preprocessed_FinEntity.csv
 label_mappings.json
-
-# Ignore models
-Models/finbert_ner_model.zip
-Models/finbert_ner_model/
-Models/finbert-entity-sentiment/

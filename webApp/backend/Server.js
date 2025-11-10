@@ -14,7 +14,7 @@ const TWELVE_API_KEY = "96c92ea18dfd481495a9c4e557c1d9b8"
 // --- MONGO CONNECTION ---
 const MONGO_URI = "mongodb://127.0.0.1:27017/entity_pulse_users";
 
-mongoose.connect(MONGO_URI, {
+mongoose.connect(MONGO_URI, { 
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
