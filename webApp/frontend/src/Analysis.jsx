@@ -1,21 +1,20 @@
 import React from 'react';
 import "./analysis.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Analysis() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { analysisData } = location.state || {};
-
-  if (!analysisData) {
-    return <h3>Sorry! We could not find any Analysis Data.</h3>;
-  }
-
+  const {analysisData} = location.state || {};
+  console.log(analysisData)
+  if(!analysisData) return (
+    <h3> Sorry! We could not find any Analysis Data.</h3>
+  )
   return (
     <div className="app">
       {/* Back + Title */}
       <div className="header">
-        <span className="back" onClick={() => navigate(-1)}>← Back</span>
+        <span className="back" onClick={() => navigate(-1)} role="button">← Back</span>
         <h2>Analysis Results</h2>
       </div>
 
@@ -44,10 +43,13 @@ function Analysis() {
         </p>
       </div>
 
+
       {/* Entities */}
       <h3>Detected Entities</h3>
       <div className="entities">
         {analysisData.entities.map((entity) => {
+          console.log("entity: ", entity)
+          // Decide tag color based on sentiment
           const sentimentClass =
             entity.sentiment.toLowerCase() === "positive"
               ? "positive"
@@ -60,45 +62,19 @@ function Analysis() {
               <h4>{entity.entityName}</h4>
               <p>
                 Sentiment:{" "}
-                <span className={`tag ${sentimentClass}`}>
-                  {entity.sentiment}
-                </span>
+                <span className={`tag ${sentimentClass}`}>{entity.sentiment}</span>
               </p>
-              <p style={{ marginTop: "7px" }}>
-                Confidence: {parseInt(entity.confidence * 100)}%
-              </p>
-
+              <p style={{marginTop: "7px"}}>Confidence: {parseInt(entity.confidence * 100)}%</p>
               <div className="progress">
                 <div
                   className="progress-bar"
                   style={{ width: `${entity.confidence * 100}%` }}
                 ></div>
               </div>
-
-              {/* ✅ Fixed Button Navigation */}
-              <button
-                className="btn"
-                onClick={() =>
-                  navigate("/results", {
-                    state: {
-                      company: {
-                        name: entity.entityName,
-                        sentiment: entity.sentiment,
-                        confidence: entity.confidence,
-                        // industry: entity.entityType,
-                       
-
-                        currentPrice: "N/A",
-                        marketCap: 0,
-                      },
-                      entity: { entityName: entity.entityName },
-                    },
-                  })
-                }
-              >
-                View Analysis
-              </button>
-
+              <button className="btn" onClick={() => {
+                console.log("sending entity to result, ",entity);
+                navigate('/result', { state: { entity: entity} })}
+              }>View Details</button>
             </div>
           );
         })}

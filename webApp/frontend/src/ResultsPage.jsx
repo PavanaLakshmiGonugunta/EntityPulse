@@ -1,195 +1,212 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import NewsAnalysis from './analysis-components/NewsAnalysis.jsx';
-import NewsSentimentTrend from './analysis-components/NewsSentimentTrend.jsx';
-import StockPerformance from './analysis-components/StockPerformance.jsx';
-import StockDetailsCard from './analysis-components/StockDetailsCard.jsx';
-import TradingVolumeTrends from './analysis-components/TradingVolumeTrends.jsx';
+import Header from "./Header.jsx";
+import NewsAnalysis from "./analysis-components/NewsAnalysis.jsx";
+import StockPerformance from "./analysis-components/StockPerformance.jsx";
+import StockDetailsCard from "./analysis-components/StockDetailsCard.jsx";
+import TradingVolumeTrends from "./analysis-components/TradingVolumeTrends.jsx";
 import { FaDollarSign, FaUsers, FaCalendar } from "react-icons/fa";
 import { MdTrendingUp } from "react-icons/md";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 export default function ResultsPage() {
-  const navigate = useNavigate();
+  const [selectedDataType, setSelectedDataType] = useState("stock-performance");
   const location = useLocation();
 
-  // ✅ Extract data passed from previous page
-  const [companyData, setCompanyData] = useState(location.state?.company || null);
-  const [entityName, setEntityName] = useState(
-    location.state?.entity?.entityName ||
-    location.state?.company?.name ||
-    ""
-  );
+  // Accepts: { company } OR { entity } (entity can be string or {entityName})
+  const initialCompany = location.state?.company ?? null;
+  const rawEntity = location.state?.entity;
 
-  const [selectedDataType, setSelectedDataType] = useState('stock-performance');
+  // If entity is a string, use it directly; if object, use its entityName
+  const entityFromAnalysis =
+    typeof rawEntity === "string" ? rawEntity : rawEntity?.entityName;
+
+  const [companyData, setCompanyData] = useState(initialCompany);
   const [entityDetails, setEntityDetails] = useState(null);
-  const [stockPriceVolume, setStockPriceVolume] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
   const [newsData, setNewsData] = useState({ headlines: [], trendData: [] });
-  const [errorMessage, setErrorMessage] = useState('');
   const [isLoadingNews, setIsLoadingNews] = useState(false);
   const [newsError, setNewsError] = useState(null);
+  const [stockPriceVolume, setStockPriceVolume] = useState(null);
 
-  // ✅ Detect navigation changes and update entity
-  useEffect(() => {
-    if (location.state?.company) {
-      setCompanyData(location.state.company);
-    }
-    if (location.state?.entity?.entityName || location.state?.company?.name) {
-      setEntityName(location.state?.entity?.entityName || location.state?.company?.name);
-    }
-  }, [location.state]);
+  // Decide the lookup key we’ll use to fetch if companyData isn't present
+  const entityName =
+    entityFromAnalysis ||
+    companyData?.symbol ||
+    companyData?.name || // last resort if your backend accepts names
+    null;
 
-  // ✅ Fetch company details if not already provided
+  // Fetch company details only if we DON'T already have companyData
   useEffect(() => {
-    async function fetchCompany() {
+    const handleSearch = async () => {
       if (!entityName || companyData) return;
       try {
-        console.log("Fetching data for entity:", entityName);
-        const response = await axios.get(`http://localhost:5000/get-company-details/${entityName}`);
+        const response = await axios.get(
+          `http://localhost:5000/get-company-details/${entityName}`
+        );
         setCompanyData(response.data);
       } catch (err) {
         console.error("Error fetching company data:", err);
         setErrorMessage(`Sorry, we could not find any data on ${entityName}.`);
       }
-    }
-    fetchCompany();
-  }, [entityName]);
+    };
+    handleSearch();
+    // include companyData so we don't refetch once it's filled
+  }, [entityName, companyData]);
 
-  // ✅ Fetch price & market cap
+  // current price & market cap
   useEffect(() => {
     if (!companyData?.symbol) return;
-    const fetchDetails = async () => {
+    const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/get-current-price-market-cap/${companyData.symbol}`);
+        const res = await axios.get(
+          `http://localhost:5000/get-current-price-market-cap/${companyData.symbol}`
+        );
         setEntityDetails(res.data);
-      } catch (err) {
-        console.error("Error fetching entity details:", err);
+      } catch (e) {
+        console.error("There was error fetching stock data: ", e);
       }
     };
-    fetchDetails();
-  }, [companyData]);
+    fetchData();
+  }, [companyData?.symbol]);
 
-  // ✅ Fetch stock price & volume
+  // stock price history & volume
   useEffect(() => {
     if (!companyData?.symbol) return;
-    async function fetchStock() {
+    async function getStockPriceVolume() {
       try {
-        const response = await axios.get(`http://localhost:5000/stock-price-history/${companyData.symbol}`);
+        const response = await axios.get(
+          `http://localhost:5000/stock-price-history/${companyData.symbol}`
+        );
         setStockPriceVolume(response.data);
+        console.log("stock data: ", stockPriceVolume)
       } catch (err) {
-        console.error("Error fetching stock data:", err);
+        console.error("error fetching stock price and volumes, ", err);
       }
     }
-    fetchStock();
-  }, [companyData]);
+    getStockPriceVolume();
+  }, [companyData?.symbol]);
 
-  // ✅ Fetch news & sentiment trend
+  // news data
   useEffect(() => {
     if (!companyData?.symbol) return;
+    const controller = new AbortController();
+
     async function fetchNewsData() {
       setIsLoadingNews(true);
       setNewsError(null);
+      setNewsData({ headlines: [], trendData: [] });
+
       try {
-        const response = await axios.get(`http://localhost:5000/news-analysis`, {
-          params: {
-            symbol: companyData.symbol,
-            companyName: companyData.name
-          }
+        const res = await axios.get(`http://localhost:5000/news-analysis`, {
+          params: { symbol: companyData.symbol, companyName: companyData.name },
+          timeout: 15000,          // <-- client timeout
+          signal: controller.signal // <-- abortable
         });
-        setNewsData(response.data);
+        setNewsData(res.data);
       } catch (err) {
-        console.error("Error fetching news data:", err);
-        setNewsError("Couldn't load news sentiment right now.");
+        if (axios.isCancel(err)) {
+          console.log("News request cancelled");
+        } else {
+          console.error("Error fetching news data: ", err?.message);
+          setNewsError("Couldn't load news sentiment right now.");
+        }
       } finally {
         setIsLoadingNews(false);
       }
     }
-    fetchNewsData();
-  }, [companyData]);
 
-  // ✅ Handle error or missing data
+    fetchNewsData();
+    return () => controller.abort();
+  }, [companyData?.symbol, companyData?.name]);
+
+
   if (errorMessage) {
     return (
-      <div style={{ textAlign: 'center', marginTop: '2rem', color: 'red' }}>
-        {errorMessage}
-        <br />
-        <button className="btn" onClick={() => navigate(-1)}>Go Back</button>
-      </div>
+      <>
+        <Header />
+        <main className="page">
+          <div style={{ textAlign: "center", marginTop: "2rem", color: "red" }}>
+            {errorMessage}
+          </div>
+        </main>
+      </>
     );
   }
 
-  if (!companyData) {
-    return <div style={{ textAlign: 'center', marginTop: '2rem' }}>Loading company data...</div>;
-  }
-
-  // ✅ Render UI
   return (
     <>
-      <div className="details-about-stock">
-        <StockDetailsCard
-          title="Current Price"
-          icon={<FaDollarSign size={16} color='black' />}
-          bodyText={entityDetails?.currentPrice || "N/A"}
-        />
-        <StockDetailsCard
-          title="Market Cap"
-          icon={<MdTrendingUp size={16} color='black' />}
-          bodyText={entityDetails?.marketCap || "N/A"}
-        />
-        <StockDetailsCard
-          title="Social Sentiment"
-          icon={<FaUsers size={16} color='black' />}
-          bodyText="58%"
-        />
-        <StockDetailsCard
-          title="Last Updated"
-          icon={<FaCalendar size={16} color='black' />}
-          bodyText="Today"
-          bodyDetail="Real-time data"
-        />
-      </div>
-
-      {/* Selection buttons */}
-      <div className="select-analysis-type">
-        {['stock-performance', 'trading-volume', 'news-analysis'].map((type) => (
-          <div
-            key={type}
-            className={`analysis-type ${selectedDataType === type ? 'active' : ''}`}
-            onClick={() => setSelectedDataType(type)}
-          >
-            {type === 'stock-performance' && 'Stock Performance'}
-            {type === 'trading-volume' && 'Trading Volume'}
-            {type === 'news-analysis' && 'News Analysis'}
-          </div>
-        ))}
-      </div>
-
-      {/* Conditional rendering */}
-      {selectedDataType === 'news-analysis' && (
-        <div className='details-twin-components news-analysis'>
-          <NewsAnalysis
-            headlines={newsData.headlines}
-            symbol={companyData.symbol}
-            isLoading={isLoadingNews}
-            error={newsError}
+      <Header /> {/* ← header at top */}
+      <main className="page">
+        <div className="details-about-stock">
+          <StockDetailsCard
+            title="Current Price"
+            icon={<FaDollarSign size={16} color="black" />}
+            bodyText={entityDetails?.currentPrice}
           />
-          {newsData.trendData?.length > 0 && (
-            <NewsSentimentTrend trendData={newsData.trendData} />
-          )}
+          <StockDetailsCard
+            title="Market Cap"
+            icon={<MdTrendingUp size={16} color="black" />}
+            bodyText={entityDetails?.marketCap}
+          />
+          {/* <StockDetailsCard
+            title="Social Sentiment"
+            icon={<FaUsers size={16} color="black" />}
+            bodyText="58%"
+          /> */}
+          <StockDetailsCard
+            title="Last Updated"
+            icon={<FaCalendar size={16} color="black" />}
+            bodyText="Today"
+            bodyDetail="Real-time data"
+          />
         </div>
-      )}
 
-      {selectedDataType === 'trading-volume' && (
-        <div className='details-twin-components trading-volume'>
-          <TradingVolumeTrends volumeData={stockPriceVolume} />
+        <div className="select-analysis-type">
+          <div
+            className={`analysis-type ${selectedDataType === "stock-performance" ? "active" : ""}`}
+            onClick={() => setSelectedDataType("stock-performance")}
+          >
+            Stock performance
+          </div>
+          <div
+            className={`analysis-type ${selectedDataType === "trading-volume" ? "active" : ""}`}
+            onClick={() => setSelectedDataType("trading-volume")}
+          >
+            Trading Volume
+          </div>
+          <div
+            className={`analysis-type ${selectedDataType === "news-analysis" ? "active" : ""}`}
+            onClick={() => setSelectedDataType("news-analysis")}
+          >
+            News Analysis
+          </div>
         </div>
-      )}
 
-      {selectedDataType === 'stock-performance' && (
-        <div className='details-twin-components stock-performance' style={{ flexDirection: "column" }}>
-          <StockPerformance stockData={stockPriceVolume} />
-        </div>
-      )}
+        {selectedDataType === "news-analysis" && (
+          <div className="details-twin-components news-analysis">
+            <NewsAnalysis
+              headlines={newsData.headlines}
+              symbol={companyData?.symbol}
+              isLoading={isLoadingNews}
+              error={newsError}
+            />
+            {/* <NewsSentimentTrend trendData={newsData.trendData}/> */}
+          </div>
+        )}
+
+        {selectedDataType === "trading-volume" && (
+          <div className="details-twin-components trading-volume">
+            <TradingVolumeTrends volumeData={stockPriceVolume} />
+          </div>
+        )}
+
+        {selectedDataType === "stock-performance" && (
+          <div className="details-twin-components stock-performance" style={{ flexDirection: "column" }}>
+            <StockPerformance stockData={stockPriceVolume} />
+          </div>
+        )}
+      </main>
     </>
   );
 }

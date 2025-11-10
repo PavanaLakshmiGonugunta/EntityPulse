@@ -1,25 +1,65 @@
-from flask import Flask,request,jsonify
+
+from flask import Flask, request, jsonify
 import cv2
 import numpy as np
-import easyocr
+import pytesseract
+from flask_cors import CORS
+
+pytesseract.pytesseract.tesseract_cmd = r"D:\Softwares\Tesseract-OCR\tesseract.exe"
+
 app = Flask(__name__)
-reader = easyocr.Reader(['en'],gpu=False)
-@app.route("/extract-text",methods =["POST"])
-def extract_test():
+CORS(app)
+@app.route("/extract-text", methods=["POST"])
+def extract_text():
     try:
-        img_bytes=np.frombuffer(request.data,np.uint8)
-        image = cv2.imdecode(img_bytes,cv2.IMREAD_COLOR)
-        scale_percent = 200
-        width = int(image.shape[1]*scale_percent/100)
-        height = int(image.shape[0]*scale_percent/100)
-        image = cv2.resize(image,(width,height),interpolation=cv2.INTER_LINEAR)
-        gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-        results = reader.readtext(gray)
-        extracted_text = " ".join([res[1] for res in results])
-        return jsonify({"extracted_text":extracted_text.strip()})
+        # Check if image data was received
+        if not request.data:
+            return jsonify({"error": "No image data received"}), 400
+
+        # Decode the image from bytes
+        img_bytes = np.frombuffer(request.data, np.uint8)
+        image = cv2.imdecode(img_bytes, cv2.IMREAD_COLOR)
+
+        if image is None:
+            return jsonify({"error": "Invalid image format"}), 400
+
+        # ----- IMAGE PREPROCESSING -----
+        # Convert to grayscale
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+        # Apply CLAHE (contrast enhancement)
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+        gray = clahe.apply(gray)
+
+        # Remove small noise
+        kernel = np.ones((1, 1), np.uint8)
+        gray = cv2.morphologyEx(gray, cv2.MORPH_OPEN, kernel)
+        gray = cv2.morphologyEx(gray, cv2.MORPH_CLOSE, kernel)
+
+        # Adaptive thresholding
+        thresh = cv2.adaptiveThreshold(
+            gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+            cv2.THRESH_BINARY, 31, 2
+        )
+
+        # OCR with Tesseract
+        custom_config = r'--oem 3 --psm 6'
+        text = pytesseract.image_to_string(thresh, config=custom_config)
+
+        # Clean the text
+        clean_text = " ".join(text.split())
+
+        print("\n✅ Request received!")
+        print("📸 Image processed successfully.")
+        print("📜 Extracted Text:", clean_text if clean_text else "[No text detected]")
+
+        return jsonify({"extracted_text": clean_text})
+
     except Exception as e:
-        print("Error: ",e)
-        return jsonify({"error":str(2)}),500
-if __name__=="__main__":
-    print("Flask OCR service running on http://localhost:5001")
-    app.run(host="127.0.0.1",port = 5001)
+        print("❌ Error:", e)
+        return jsonify({"error": str(e)}), 500
+
+
+if __name__ == "__main__":
+    print("🚀 OCR Flask service running on http://127.0.0.1:5002")
+    app.run(host="127.0.0.1", port=5002)

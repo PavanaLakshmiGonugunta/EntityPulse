@@ -19,9 +19,12 @@ const About = ()=>{
         </div>
         
         <div className="scope">
-            
-            <h1>Sentiment Scope</h1>
-            <p>Advanced entity-level sentiment analysis platform that combines AI-powered text processing with real-time market data and social media monitoring to provide comprehensive insights into public sentiment towards companies, brands, and other entities.</p>
+            <h1>Entity Pulse</h1>
+            <pre>Advanced entity-level sentiment analysis platform that 
+                combines AI-powered text processing with real-time market data and 
+                social media monitoring to provide comprehensive insights into public sentiment 
+                towards companies, brands, and other entities.
+            </pre>
         </div>
         <h2 className="key-features">Key Features</h2>
         <div className="features">
