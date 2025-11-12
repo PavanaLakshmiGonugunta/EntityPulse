@@ -1,0 +1,9 @@
+ocr/paddle_env/
+Models/
+__pycache__/
+*.pyc
+*.pyd
+*.dll
+*.log
+env/
+venv/
