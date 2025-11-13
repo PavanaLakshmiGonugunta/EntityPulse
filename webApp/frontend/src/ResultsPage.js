@@ -21,7 +21,7 @@ export default function ResultsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // Load company data from navigation, session, or fetch API
+  // Load company data from navigation → session → fetch API
   useEffect(() => {
     const navCompany = location.state?.company;
     const entity =
@@ -34,20 +34,17 @@ export default function ResultsPage() {
         if (navCompany) {
           setCompany(navCompany);
           sessionStorage.setItem("companyData", JSON.stringify(navCompany));
-          setLoading(false);
           return;
         }
 
-
-        // Case 2: Cached company data in sessionStorage
+        // Case 2: Cached data in sessionStorage
         const stored = sessionStorage.getItem("companyData");
         if (stored) {
-          const parsed = JSON.parse(stored);
-          setCompany(parsed);
+          setCompany(JSON.parse(stored));
           return;
         }
 
-        // Case 3: Fetch new company data
+        // Case 3: Fetch new data using entity name
         if (entity) {
           const data = await fetchCompanyData(entity);
           setCompany(data);
@@ -55,7 +52,7 @@ export default function ResultsPage() {
           return;
         }
 
-        // Case 4: No data found
+        // Case 4: Nothing found
         setError("No company data available.");
       } catch (err) {
         console.error(err);
@@ -68,7 +65,7 @@ export default function ResultsPage() {
     loadCompany();
   }, [location.state]);
 
-  // 🧠 Loading or error states
+  // Loading / Error states
   if (loading) {
     return (
       <div style={{ padding: "20px" }}>
@@ -89,7 +86,7 @@ export default function ResultsPage() {
     );
   }
 
-  // ✅ Main Page
+  // MAIN PAGE
   return (
     <>
       <h1>{company.name}</h1>
@@ -97,7 +94,7 @@ export default function ResultsPage() {
         {company.industry} — Entity-level sentiment analysis of financial data
       </h4>
 
-      {/* Stock Info Cards */}
+      {/* Stock Details Cards */}
       <div className="details-about-stock">
         <StockDetailsCard
           title="Current Price"
@@ -105,18 +102,21 @@ export default function ResultsPage() {
           bodyText={`$${company.currentPrice || "N/A"}`}
           bodyDetail="Realtime price"
         />
+
         <StockDetailsCard
           title="Market Cap"
           icon={<MdTrendingUp size={16} color="black" />}
           bodyText={`$${(company.marketCap / 1000).toLocaleString()}B`}
           bodyDetail="Market capitalization"
         />
+
         <StockDetailsCard
           title="Social Sentiment"
           icon={<FaUsers size={16} color="black" />}
           bodyText={company.sentiment || "Neutral"}
           bodyDetail={`Confidence: ${company.confidence || 0}%`}
         />
+
         <StockDetailsCard
           title="Last Updated"
           icon={<FaCalendar size={16} color="black" />}
@@ -125,7 +125,7 @@ export default function ResultsPage() {
         />
       </div>
 
-      {/* Section Buttons */}
+      {/* Analysis Type Buttons */}
       <div className="select-analysis-type">
         {["stock-performance", "social-sentiment", "news-analysis"].map(
           (type) => (
@@ -144,7 +144,8 @@ export default function ResultsPage() {
         )}
       </div>
 
-      {/* Conditional Rendering for Analysis */}
+      {/* CONDITIONAL RENDERING */}
+
       {selectedDataType === "news-analysis" && (
         <div className="details-twin-components news-analysis">
           <NewsAnalysis company={company} />

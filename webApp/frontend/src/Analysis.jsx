@@ -73,7 +73,7 @@ function Analysis() {
               </div>
               <button className="btn" onClick={() => {
                 console.log("sending entity to result, ",entity);
-                navigate('/result', { state: { entity: entity} })}
+                navigate('/results', { state: { entity: entity} })}
               }>View Details</button>
             </div>
           );

@@ -41,7 +41,6 @@
 .overlay-shape {
   position: absolute;
   inset: 0;
-  background: url("/leaf-shape.svg") no-repeat center/cover;
   opacity: 0.15;
 }
 .left-content {

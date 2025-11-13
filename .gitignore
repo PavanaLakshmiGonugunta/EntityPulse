@@ -1,4 +1,15 @@
+
 node_modules/
-.env
+
 webApp/backend/node_modules/
 webApp/frontend/node_modules/
+
+ocr/paddle_env/
+Models/
+__pycache__/
+*.pyc
+*.pyd
+*.dll
+*.log
+
+

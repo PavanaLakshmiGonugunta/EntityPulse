@@ -12,10 +12,15 @@ export default function StockPerformance({ stockData }) {
   const [openPrices, setOpenPrices] = useState([]);
 
   useEffect(() => {
-    if (stockData?.values) {
-      const prices = stockData.values
+    const values = stockData?.values || stockData?.stockData?.values;
+
+    if (values) {
+      const prices = values
         .filter((_, index) => index % 30 === 0) // roughly one point per month
-        .map((el) => ({ open: el.open, datetime: el.datetime }));
+        .map((el) => ({
+          open: el.open,
+          datetime: el.datetime,
+        }));
 
       setOpenPrices(prices);
     }

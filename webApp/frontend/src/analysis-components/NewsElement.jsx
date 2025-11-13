@@ -1,11 +1,9 @@
 import "./styling/NewsElement.css";
 
 function NewsElement({ headline, source, url, sentiment }) {
-  console.log({ headline, source });
-
   return (
     <div className={`news-element-div ${sentiment.toLowerCase()}-text`}>
-      {/* Optional: make the headline clickable */}
+      {/* Optional clickable headline */}
       {/* <a href={url} target="_blank" rel="noopener noreferrer">{headline}</a> */}
       <p>{headline}</p>
       <p>2 hours ago · {source}</p>

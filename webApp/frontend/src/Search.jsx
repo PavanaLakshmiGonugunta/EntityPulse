@@ -124,7 +124,7 @@ const Search = () => {
   };
 
   const goToResult = (symbol, name) => {
-    navigate("/result", { state: { company: { symbol, name } } });
+    navigate("/results", { state: { company: { symbol, name } } });
   };
 
   return (

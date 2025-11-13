@@ -9,6 +9,7 @@ import Search from "./Search.jsx";
 import About from "./About.jsx";
 import Login from "./Login.jsx";
 import Signup from "./Signup.jsx";
+import History from "./History.jsx";
 function App() {
   return (
       <Routes>
@@ -20,10 +21,9 @@ function App() {
         <Route path="/results" element={<ResultsPage />} />
         <Route path="/analysis" element={<Analysis />} />
         <Route path="/search"  element={<Search />} />
-
+        <Route path="/history" element={<History />} />
 
       </Routes>
   );
 }
-
 export default App;

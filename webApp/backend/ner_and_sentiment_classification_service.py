@@ -272,14 +272,15 @@ NER_ID2LABEL: Dict[int, str] = {}
 
 DEVICE = torch.device("cpu")
 
-# Paths (adjust if needed)
-NER_PATH = r"D:/Project/EntityPulse/EntityPulse/Models/finbert_ner_model"
-SENTIMENT_PATH = r"D:/Project/EntityPulse/EntityPulse/Models/finbert-entity-sentiment"
+# Paths 
+NER_PATH = r"C:\Users\JAYASHREE\Downloads\EntityPulse\Models\finbert_ner_model"
+SENTIMENT_PATH = r"C:\Users\JAYASHREE\Downloads\EntityPulse\Models\finbert-entity-sentiment"
 LABEL_MAP_PATH = r"./label_mappings.json"
 
 # Token caps
 MAX_NER_TOKENS = 128
 MAX_SENT_TOKENS = 256
+
 
 # -------------------------
 # Utilities
@@ -287,15 +288,18 @@ MAX_SENT_TOKENS = 256
 def _safe_json_error(message: str, http_status: int):
     return jsonify({"error": message}), http_status
 
+
 def _trim_text(s: str, max_chars: int) -> str:
     s = (s or "").strip()
     return s if len(s) <= max_chars else s[:max_chars]
+
 
 def _exists(p: str) -> bool:
     try:
         return os.path.exists(p)
     except Exception:
         return False
+
 
 # -------------------------
 # Model loading
@@ -306,7 +310,7 @@ def load_models():
 
     logging.info("--- Starting Model Loading ---")
 
-    # Validate paths for clear errors
+    # Validate paths
     if not _exists(NER_PATH):
         raise FileNotFoundError(f"NER_PATH not found: {NER_PATH}")
     if not _exists(SENTIMENT_PATH):
@@ -314,14 +318,16 @@ def load_models():
     if not _exists(LABEL_MAP_PATH):
         raise FileNotFoundError(f"Label mapping JSON not found: {LABEL_MAP_PATH}")
 
-    # Label map
+    # Load label map
     with open(LABEL_MAP_PATH, "r", encoding="utf-8") as f:
         mappings = json.load(f)
+
     if "id2label" not in mappings:
         raise ValueError("label_mappings.json must contain an 'id2label' object")
+
     NER_ID2LABEL = {int(k): v for k, v in mappings["id2label"].items()}
 
-    # NER
+    # Load NER model
     logging.info(f"Loading NER from: {NER_PATH}")
     NER_TOKENIZER = AutoTokenizer.from_pretrained(
         NER_PATH, trust_remote_code=True, local_files_only=True
@@ -333,7 +339,7 @@ def load_models():
     NER_MODEL.to(device=DEVICE, dtype=torch.float32)
     logging.info("NER loaded.")
 
-    # Sentiment
+    # Load sentiment model
     logging.info(f"Loading Sentiment from: {SENTIMENT_PATH}")
     SENTIMENT_TOKENIZER = AutoTokenizer.from_pretrained(
         SENTIMENT_PATH, trust_remote_code=True, local_files_only=True
@@ -347,11 +353,12 @@ def load_models():
 
     logging.info("--- All models loaded successfully ---")
 
+
 # -------------------------
 # Inference helpers
 # -------------------------
 def run_ner_model(text: str) -> List[Dict]:
-    """Return unique entities: [{'text': 'Apple', 'type':'ORG'}, ...]"""
+    """Return unique entities."""
     global NER_MODEL, NER_TOKENIZER, NER_ID2LABEL
 
     text = _trim_text(text, 20000)
@@ -364,7 +371,7 @@ def run_ner_model(text: str) -> List[Dict]:
 
     tokens = NER_TOKENIZER.convert_ids_to_tokens(inputs["input_ids"].cpu().squeeze(0).tolist())
 
-    entities: Dict[str, Dict] = {}
+    entities = {}
     current = {"text": "", "type": None}
 
     for token, pred_id in zip(tokens, pred):
@@ -383,8 +390,10 @@ def run_ner_model(text: str) -> List[Dict]:
                 if key not in entities:
                     entities[key] = dict(current)
             current = {"text": clean, "type": etype}
+
         elif prefix in ("I", "L") and current["text"]:
             current["text"] += " " + clean
+
         elif prefix == "O" and current["text"]:
             key = current["text"].strip().lower()
             if key not in entities:
@@ -398,6 +407,7 @@ def run_ner_model(text: str) -> List[Dict]:
 
     return list(entities.values())
 
+
 def run_sentiment_model(text: str, entity: str) -> Tuple[str, float]:
     """Return (label, confidence) for text + entity pair."""
     global SENTIMENT_MODEL, SENTIMENT_TOKENIZER, SENTIMENT_MAPPING
@@ -405,8 +415,13 @@ def run_sentiment_model(text: str, entity: str) -> Tuple[str, float]:
     text = _trim_text(text, 20000)
     entity = _trim_text(entity, 256)
 
-    inputs = SENTIMENT_TOKENIZER(text, entity, return_tensors="pt",
-                                 truncation=True, max_length=MAX_SENT_TOKENS)
+    inputs = SENTIMENT_TOKENIZER(
+        text,
+        entity,
+        return_tensors="pt",
+        truncation=True,
+        max_length=MAX_SENT_TOKENS,
+    )
     inputs = {k: v.to(DEVICE) for k, v in inputs.items()}
 
     with torch.inference_mode():
@@ -421,29 +436,25 @@ def run_sentiment_model(text: str, entity: str) -> Tuple[str, float]:
     logging.info(f"Scores: {scores} Predicted label: {label}")
     return label, confidence
 
+
 # -------------------------
 # API Endpoint
 # -------------------------
 @app.route("/analyze-text-ner-sentiment", methods=["POST"])
 def analyze_text():
     print("received text to analyze sentiment.")
-    """
-    Enhanced endpoint: 
-    - If 'entity' provided → runs direct sentiment (no NER)
-    - Else → runs NER, then sentiment per entity
-    - If NER finds none → runs fallback sentiment on text only
-    """
+
     data = request.get_json(silent=True) or {}
     text = (data.get("text") or "").strip()
     entity = (data.get("entity") or "").strip()
     summary = (data.get("summary") or "").strip()
 
-    # Combine summary if given
     if summary:
         text = f"{text}. {summary}"
 
     if not text:
         return _safe_json_error("Missing text", 400)
+
     if len(text) > 20000:
         return _safe_json_error("Text too long. Max 20,000 characters.", 413)
 
@@ -452,10 +463,11 @@ def analyze_text():
     meta = {"mode": None, "target": None, "entityCount": 0}
 
     try:
-        # --- CASE 1: Direct sentiment if entity is provided ---
+        # CASE 1: Direct entity provided
         if entity:
             meta["mode"] = "direct"
             meta["target"] = entity
+
             sentiment, confidence = run_sentiment_model(text, entity)
 
             final_entities.append({
@@ -464,46 +476,61 @@ def analyze_text():
                 "confidence": confidence,
                 "entityType": "DIRECT"
             })
-            score_val = confidence if sentiment == "Positive" else (-confidence if sentiment == "Negative" else 0.0)
+
+            score_val = (
+                confidence if sentiment == "Positive" else
+                (-confidence if sentiment == "Negative" else 0.0)
+            )
             overall_scores.append(score_val)
 
         else:
-            # --- CASE 2: Run NER first ---
+            # CASE 2: Run NER
             meta["mode"] = "ner"
             entity_candidates = run_ner_model(text)
             meta["entityCount"] = len(entity_candidates)
 
             if entity_candidates:
                 for candidate in entity_candidates[:30]:
-                    ent_text = (candidate.get("text") or "").strip()
+                    ent_text = candidate.get("text", "").strip()
                     if not ent_text:
                         continue
 
                     sentiment, confidence = run_sentiment_model(text, ent_text)
-                    score_val = confidence if sentiment == "Positive" else (-confidence if sentiment == "Negative" else 0.0)
+
+                    score_val = (
+                        confidence if sentiment == "Positive" else
+                        (-confidence if sentiment == "Negative" else 0.0)
+                    )
                     overall_scores.append(score_val)
 
                     final_entities.append({
                         "entityName": ent_text.title(),
                         "sentiment": sentiment,
                         "confidence": float(confidence),
-                        "entityType": candidate.get("type") or "OTHER",
+                        "entityType": candidate.get("type", "OTHER"),
                     })
+
             else:
-                # --- CASE 3: Fallback when NER finds no entity ---
+                # CASE 3: No NER result → fallback
                 meta["mode"] = "fallback"
                 meta["target"] = "entity"
+
                 sentiment, confidence = run_sentiment_model(text, "entity")
+
                 final_entities.append({
                     "entityName": "entity",
                     "sentiment": sentiment,
                     "confidence": confidence,
                     "entityType": "FALLBACK"
                 })
-                score_val = confidence if sentiment == "Positive" else (-confidence if sentiment == "Negative" else 0.0)
+
+                score_val = (
+                    confidence if sentiment == "Positive" else
+                    (-confidence if sentiment == "Negative" else 0.0)
+                )
                 overall_scores.append(score_val)
 
-        # --- Compute overall sentiment ---
+        # Compute overall sentiment
         if overall_scores:
             avg = float(np.mean(overall_scores))
             if avg >= 0.05:
@@ -512,6 +539,7 @@ def analyze_text():
                 overall_sentiment = "Negative"
             else:
                 overall_sentiment = "Neutral"
+
             overall_confidence = abs(avg)
         else:
             overall_sentiment, overall_confidence = "Neutral", 0.0
@@ -527,24 +555,25 @@ def analyze_text():
     except Exception as e:
         logging.exception("Error during analysis")
         return _safe_json_error(f"Analysis failed: {str(e)}", 500)
-    
+
 
 @app.route("/analyze-batch", methods=["POST"])
 def analyze_batch():
-    """
-    Body: { items: [{ text, summary, entity } ... up to e.g. 10 ] }
-    Returns: [{ overallSentiment, overallConfidence, analyzedText, meta }, ...]
-    """
+    print("received group of texts to analyze sentiment.")
+
     data = request.get_json(silent=True) or {}
     items = data.get("items") or []
+
     if not isinstance(items, list) or not items:
         return _safe_json_error("items[] required", 400)
 
     results = []
+
     for it in items[:10]:
         text = (it.get("text") or "").strip()
         summary = (it.get("summary") or "").strip()
         entity = (it.get("entity") or "").strip()
+
         if summary:
             text = f"{text}. {summary}"
 
@@ -556,25 +585,35 @@ def analyze_batch():
             if entity:
                 sentiment, confidence = run_sentiment_model(text, entity)
             else:
-                # reuse analyze_text’s logic via direct functions
                 cands = run_ner_model(text)
+
                 if cands:
                     scores = []
+
                     for c in cands[:30]:
                         s, conf = run_sentiment_model(text, c["text"])
-                        scores.append(conf if s == "Positive" else (-conf if s == "Negative" else 0.0))
+                        scores.append(
+                            conf if s == "Positive" else
+                            (-conf if s == "Negative" else 0.0)
+                        )
+
                     avg = float(np.mean(scores)) if scores else 0.0
-                    sentiment = "Positive" if avg >= 0.05 else ("Negative" if avg <= -0.05 else "Neutral")
+
+                    sentiment = (
+                        "Positive" if avg >= 0.05 else
+                        ("Negative" if avg <= -0.05 else "Neutral")
+                    )
                     confidence = abs(avg)
+
                 else:
-                    s, conf = run_sentiment_model(text, "entity")
-                    sentiment, confidence = s, conf
+                    sentiment, confidence = run_sentiment_model(text, "entity")
 
             results.append({
                 "overallSentiment": sentiment,
                 "overallConfidence": float(confidence),
                 "analyzedText": text,
             })
+
         except Exception as e:
             results.append({"error": f"Analysis failed: {str(e)}"})
 
@@ -588,8 +627,8 @@ if __name__ == "__main__":
     try:
         load_models()
         logging.info("Starting Flask server on 0.0.0.0:5001 …")
-        # single-threaded while stabilizing
         app.run(host="0.0.0.0", port=5001, threaded=True)
+
     except Exception as e:
         logging.exception("FATAL: Error loading models or starting server: %s", e)
         raise

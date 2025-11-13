@@ -1,0 +1,82 @@
+.history-page {
+  padding: 40px;
+  max-width: 850px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+}
+
+.history-page h2 {
+  margin-bottom: 25px;
+  color: #0e0e0e;
+  text-align: center;
+  font-weight: 600;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+
+.history-item {
+  background: #f9f9f9;
+  margin-bottom: 12px;
+  padding: 15px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.history-item:hover {
+  background: #e9f9f3;
+  transform: scale(1.02);
+}
+
+.sentence {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.sentiment {
+  font-weight: 600;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sentiment.positive {
+  color: #2ecc71;
+}
+
+.sentiment.negative {
+  color: #e74c3c;
+}
+
+.sentiment.neutral {
+  color: #494949;
+}
+
+.timestamp {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.empty-message,
+.loading-text,
+.error-text {
+  text-align: center;
+  margin-top: 40px;
+  color: #555;
+}
