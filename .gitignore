@@ -1,5 +1,5 @@
 ocr/paddle_env/
-Models/
+
 __pycache__/
 *.pyc
 *.pyd
