@@ -10,6 +10,7 @@ import { MdOutlineKeyboardVoice } from "react-icons/md";
 import { HiOutlineLightningBolt } from "react-icons/hi";
 import { MdOutlineShield } from "react-icons/md";
 import { CiMobile2 } from "react-icons/ci";
+import "./About.css";
 const About = ()=>{
     return (
         <>
@@ -20,43 +21,137 @@ const About = ()=>{
         
         <div className="scope">
             <h1>Entity Pulse</h1>
-            <pre>Advanced entity-level sentiment analysis platform that 
-                combines AI-powered text processing with real-time market data and 
-                social media monitoring to provide comprehensive insights into public sentiment 
-                towards companies, brands, and other entities.
-            </pre>
+            <div className="marquee">
+                <p>
+                Advanced entity-level sentiment analysis platform that combines AI-powered 
+                text processing with real-time market data and social media monitoring to 
+                provide comprehensive insights into public sentiment towards companies, 
+                brands, and other entities.
+                </p>
+            </div>
         </div>
         <h2 className="key-features">Key Features</h2>
         <div className="features">
             
-            <div className="card">
+            {/* <div className="card">
                 <h5>AI-Powered Entity Recognition</h5>
                 <p>Advanced natural language processing to identify and extract entities from any text with high accuracy.</p>
+            </div> */}
+            <div className="flip-card">
+                <div className="flip-card-inner">
+
+                    <div className="flip-card-front">
+                    <h5>AI-Powered Entity Recognition</h5>
+                    </div>
+
+                    <div className="flip-card-back">
+                    <p>
+                        Advanced natural language processing to identify and extract entities from any text with high accuracy.
+                    </p>
+                    </div>
+
+                </div>
             </div>
 
-            <div className="card">
+
+            {/* <div className="card">
                 <h5>Sentiment Analysis</h5>
                 <p>Comprehensive sentiment analysis for each detected entity, providing confidence scores and detailed insights..</p>
+            </div> */}
+            <div className="flip-card">
+                <div className="flip-card-inner">
+
+                    <div className="flip-card-front">
+                    <h5>Sentiment Analysis</h5>
+                    </div>
+
+                    <div className="flip-card-back">
+                    <p>
+                        Comprehensive sentiment analysis for each detected entity, providing confidence scores and detailed insights..
+                    </p>
+                    </div>
+
+                </div>
             </div>
 
-            <div className="card">
+            {/* <div className="card">
                 <h5>Market Data Integration</h5>
                 <p>Real-time stock market data, historical trends, and financial metrics for publicly traded companies.</p>
+            </div> */}
+            <div className="flip-card">
+                <div className="flip-card-inner">
+
+                    <div className="flip-card-front">
+                    <h5>Market Data Integration</h5>
+                    </div>
+
+                    <div className="flip-card-back">
+                    <p>
+                        Real-time stock market data, historical trends, and financial metrics for publicly traded companies.
+                    </p>
+                    </div>
+
+                </div>
             </div>
 
-            <div className="card">
+            {/* <div className="card">
                 <h5>Social Media Monitoring</h5>
                 <p>Track sentiment across multiple platforms including Twitter, Reddit, news outlets, and blogs..</p>
+            </div> */}
+            <div className="flip-card">
+                <div className="flip-card-inner">
+
+                    <div className="flip-card-front">
+                    <h5>Social Media Monitoring</h5>
+                    </div>
+
+                    <div className="flip-card-back">
+                    <p>
+                        Track sentiment across multiple platforms including Twitter, Reddit, news outlets, and blogs..
+                    </p>
+                    </div>
+
+                </div>
             </div>
 
-            <div className="card">
+            {/* <div className="card">
                 <h5>Multi-Input Support</h5>
                 <p>Analyze text from direct input, image uploads with OCR, or voice recordings with speech-to-text.</p>
+            </div> */}
+            <div className="flip-card">
+                <div className="flip-card-inner">
+
+                    <div className="flip-card-front">
+                    <h5>Multi-Input Support</h5>
+                    </div>
+
+                    <div className="flip-card-back">
+                    <p>
+                        Analyze text from direct input, image uploads with OCR, or voice recordings with speech-to-text.
+                    </p>
+                    </div>
+
+                </div>
             </div>
 
-            <div className="card">
+            {/* <div className="card">
                 <h5>Entity Search & History</h5>
                 <p>Search for any entity and view comprehensive historical data, trends, and sentiment patterns..</p>
+            </div> */}
+            <div className="flip-card">
+                <div className="flip-card-inner">
+
+                    <div className="flip-card-front">
+                    <h5>Entity Search & History</h5>
+                    </div>
+
+                    <div className="flip-card-back">
+                    <p>
+                        Search for any entity and view comprehensive historical data, trends, and sentiment patterns..
+                    </p>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -136,10 +231,10 @@ const About = ()=>{
 
         
             <div className="tech-sources">
-            <h2>Technology & Data Sources</h2>
-            <p>Built with cutting-edge technology and reliable data sources</p>
+            {/* <h2>Technology & Data Sources</h2>
+            <p>Built with cutting-edge technology and reliable data sources</p> */}
 
-            <div className="sources-container">
+            {/* <div className="sources-container">
                 <div className="sources-block">
                     <h4>AI &amp; Machine Learning</h4>
                     <div className="tags">
@@ -162,7 +257,36 @@ const About = ()=>{
                         <span className="tag">Market Analytics</span>
                     </div>
                 </div>
+            </div> */}
+            <div className="section-capsule">
+    <h2>Technology & Data Sources</h2>
+    <p>Built with cutting-edge technology and reliable data sources</p>
+
+    <div className="sources-container">
+        <div className="sources-block">
+            <h4>AI &amp; Machine Learning</h4>
+            <div className="tags">
+                <span className="tag">Natural Language Processing</span>
+                <span className="tag">Named Entity Recognition</span>
+                <span className="tag">Sentiment Classification</span>
+                <span className="tag">OCR Technology</span>
+                <span className="tag">Speech-to-Text</span>
             </div>
+        </div>
+
+        <div className="sources-block">
+            <h4>Data Sources</h4>
+            <div className="tags">
+                <span className="tag">Real-time Stock APIs</span>
+                <span className="tag">Social Media Platforms</span>
+                <span className="tag">News Aggregators</span>
+                <span className="tag">Financial Data Providers</span>
+                <span className="tag">Market Analytics</span>
+            </div>
+        </div>
+    </div>
+</div>
+
         </div>
 
     </>

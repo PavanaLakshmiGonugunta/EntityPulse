@@ -1,184 +1,300 @@
-import express from "express"
-import axios from "axios"
-import cors from "cors"
+import express from "express";
+import axios from "axios";
+import cors from "cors";
 import mongoose from "mongoose";
 import session from "express-session";
 import MongoStore from "connect-mongo";
-import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
+import bcrypt from "bcrypt";
+
+dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin: "http://localhost:5173", 
-  credentials: true,
-}));
-app.use(cookieParser());
+
+// ---------- CONFIG / SECRETS (from env) ----------
+const FINNHUB_API_KEY = process.env.FINNHUB_API_KEY || "";
+const TWELVE_API_KEY = process.env.TWELVE_API_KEY || "";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/entity_pulse_users";
+const SESSION_SECRET = process.env.SESSION_SECRET || "dev-session-secret";
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:3000";
+const DEV_ORIGIN = "http://localhost:5173"; 
+
+const allowedOrigins = [CLIENT_ORIGIN, DEV_ORIGIN].filter(Boolean);
+// --------------------------------------------------
+
+// Basic middleware
 app.use(express.json());
-
-const FINNHUB_API_KEY = "d354c51r01qhorbgi6g0d354c51r01qhorbgi6gg"
-const TWELVE_API_KEY = "96c92ea18dfd481495a9c4e557c1d9b8"
-
+// Enable CORS with credentials so frontend using `fetch(..., { credentials: 'include' })` works
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // allow non-browser requests (like curl/postman/server-to-server) where origin is undefined
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("CORS policy: origin not allowed"));
+    },
+    credentials: true,
+  })
+);
 // --- MONGO CONNECTION ---
-const MONGO_URI = "mongodb://127.0.0.1:27017/entity_pulse_users";
+mongoose
+  .connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("✅ MongoDB connected successfully"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
 
+// ---------- Session store (save sessions in MongoDB) ----------
+app.use(
+  session({
+    name: "entitypulse.sid",
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: MONGO_URI,
+      ttl: 14 * 24 * 60 * 60, // 14 days
+    }),
+    cookie: {
+      httpOnly: true,
+      secure: false, // set true if using HTTPS in production
+      maxAge: 14 * 24 * 60 * 60 * 1000,
+    },
+  })
+);
 
-// session middleware
-app.use(session({
-  name: "sid", // session cookie name
-  secret: process.env.SESSION_SECRET || "dev-secret-change-me",
-  resave: false,
-  saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: MONGO_URI }),
-  cookie: {
-    httpOnly: true,
-    secure: false,     // set true in production (requires HTTPS)
-    sameSite: "lax",   // helps with CSRF in many cases; change to 'strict' if desired
-    maxAge: 1000 * 60 * 60 * 24 // 1 day
+// auth middleware
+function requireAuth(req, res, next) {
+  if (!req.session?.userId) return res.status(401).json({ error: "Not authenticated" });
+  return next();
+}
+
+async function requireAdmin(req, res, next) {
+  if (!req.session?.userId) return res.status(401).json({ error: "Not authenticated" });
+  try {
+    const user = await User.findById(req.session.userId).select("role");
+    if (!user) return res.status(401).json({ error: "Not authenticated" });
+    if (user.role !== "admin") return res.status(403).json({ error: "Requires admin role" });
+    return next();
+  } catch (err) {
+    console.error("Admin check failed:", err);
+    return res.status(500).json({ error: "Server error" });
   }
-}));
-
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("✅ MongoDB connected successfully"))
-.catch(err => console.error("❌ MongoDB connection error:", err));
+}
 
 
-// --- (OPTIONAL) USER SCHEMA ---
+// --- USER SCHEMA ---
 const userSchema = new mongoose.Schema({
   username: String,
   email: { type: String, unique: true },
   password: String,
+  role: { type: String, enum: ["user", "admin"], default: "user" },
 });
 const User = mongoose.model("User", userSchema);
 
+// History Schema
+const historySchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 
-// --- UTILITY FUNCTIONS ---
+  sentence: {
+    type: String,
+    required: true,
+  },
 
-/**
- * Helper to calculate sentiment percentages for the required time buckets.
- * NOTE: This function uses a RANDOM sentiment classification as a placeholder.
- * You must replace the random logic with your actual custom model call or Finnhub's score later.
- */
+  sentimentResult: {
+    type: Object, 
+    required: true,
+  },
 
+  entities: {
+    type: Array,
+    default: [],
+  },
+
+  // ⭐ NEW FIELD (what input user used: text / image / voice)
+  inputMethod: {
+    type: String,
+    enum: ["text", "image", "voice"],
+    default: "text",
+  },
+
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+const History = mongoose.model("History", historySchema);
+
+// -------------------------------
+// 🧠 Helper Function (for sentiment aggregation)
+// -------------------------------
 export async function aggregateSentiment(allNews, today, companyName) {
-    const sentimentBuckets = {
-        'This Week': { positive: 0, neutral: 0, negative: 0, total: 0 },
-        'Last Week': { positive: 0, neutral: 0, negative: 0, total: 0 },
-        'Last Month': { positive: 0, neutral: 0, negative: 0, total: 0 },
-    };
+  const sentimentBuckets = {
+    "This Week": { positive: 0, neutral: 0, negative: 0, total: 0 },
+    "Last Week": { positive: 0, neutral: 0, negative: 0, total: 0 },
+    "Last Month": { positive: 0, neutral: 0, negative: 0, total: 0 },
+  };
 
-    const msPerDay = 24 * 60 * 60 * 1000;
-    const todayMs = today.getTime();
+  const msPerDay = 24 * 60 * 60 * 1000;
+  const todayMs = today.getTime();
 
-    // Convert each news item into a promise that resolves with sentiment
-    const sentimentPromises = allNews.map(async (item) => {
-        const itemDate = new Date(item.datetime * 1000);
-        const ageInDays = Math.floor((todayMs - itemDate.getTime()) / msPerDay);
+  const sentimentPromises = allNews.map(async (item) => {
+    const itemDate = new Date(item.datetime * 1000);
+    const ageInDays = Math.floor((todayMs - itemDate.getTime()) / msPerDay);
+    if (ageInDays > 29) return null;
 
-        // Ignore news older than 30 days
-        if (ageInDays > 29) return null;
+    let classification = "Neutral";
 
-        let classification = "Neutral";
-
-        try {
-            // Call your Flask API for sentiment
-            const response = await axios.post("http://localhost:5001/analyze-text-ner-sentiment", {
-                text: item.headline,
-                summary: item.summary,
-                entity: companyName
-            });
-
-            console.log("response from ner&sentiment model, ", response.data)
-
-            // Use Python’s sentiment output (from your Flask API)
-            classification = response.data.overallSentiment || "Neutral";
-
-        } catch (err) {
-            console.error("Error calling Python service:", err.message);
+    try {
+      const response = await axios.post(
+        "http://localhost:5001/analyze-text-ner-sentiment",
+        {
+          text: item.headline,
+          summary: item.summary,
+          entity: companyName,
         }
+      );
+      classification = response.data.overallSentiment || "Neutral";
+    } catch (err) {
+      console.error("Error calling Python service:", err.message);
+    }
 
-        // Assign bucket based on age
-        let bucketName;
-        if (ageInDays <= 6) bucketName = 'This Week';
-        else if (ageInDays <= 13) bucketName = 'Last Week';
-        else bucketName = 'Last Month';
+    let bucketName;
+    if (ageInDays <= 6) bucketName = "This Week";
+    else if (ageInDays <= 13) bucketName = "Last Week";
+    else bucketName = "Last Month";
 
-        const bucket = sentimentBuckets[bucketName];
-        if (bucket) {
-            bucket.total++;
-            if (classification === 'Positive') bucket.positive++;
-            else if (classification === 'Negative') bucket.negative++;
-            else bucket.neutral++;
-        }
+    const bucket = sentimentBuckets[bucketName];
+    if (bucket) {
+      bucket.total++;
+      if (classification === "Positive") bucket.positive++;
+      else if (classification === "Negative") bucket.negative++;
+      else bucket.neutral++;
+    }
 
-        return {
-            ...item,
-            sentiment: classification,
-            ageInDays,
-            bucketName
-        };
-    });
+    return { ...item, sentiment: classification };
+  });
 
-    // Wait for all API calls to finish
-    const newsWithSentiment = (await Promise.all(sentimentPromises)).filter(n => n !== null);
+  const newsWithSentiment = (await Promise.all(sentimentPromises)).filter(
+    (n) => n !== null
+  );
 
-    // Prepare aggregated trend data
-    const trendResults = Object.keys(sentimentBuckets).map(period => {
-        const bucket = sentimentBuckets[period];
-        const total = bucket.total;
+  const trendResults = Object.keys(sentimentBuckets).map((period) => {
+    const bucket = sentimentBuckets[period];
+    const total = bucket.total;
+    if (total === 0)
+      return {
+        period,
+        positive: 0,
+        neutral: 0,
+        negative: 0,
+        mainSentiment: "Neutral",
+        totalArticles: 0,
+      };
 
-        if (total === 0) {
-            return { period, positive: 0, neutral: 0, negative: 0, mainSentiment: 'Neutral', totalArticles: 0 };
-        }
+    const positive = Math.round((bucket.positive / total) * 100);
+    const negative = Math.round((bucket.negative / total) * 100);
+    const neutral = Math.round((bucket.neutral / total) * 100);
 
-        const positive = Math.round((bucket.positive / total) * 100);
-        const negative = Math.round((bucket.negative / total) * 100);
-        const neutral = Math.round((bucket.neutral / total) * 100);
-
-        // Determine dominant sentiment
-        let mainSentiment = 'Neutral';
-        let mainSentimentPercentage = neutral;
-        if (positive > negative && positive > neutral) {
-            mainSentiment = 'Positive';
-            mainSentimentPercentage = positive;
-        } else if (negative > positive && negative > neutral) {
-            mainSentiment = 'Negative';
-            mainSentimentPercentage = negative;
-        }
-
-        return {
-            period,
-            positive,
-            neutral,
-            negative,
-            mainSentiment,
-            mainSentimentPercentage,
-            totalArticles: total,
-        };
-    });
+    let mainSentiment = "Neutral";
+    if (positive > negative && positive > neutral) mainSentiment = "Positive";
+    else if (negative > positive && negative > neutral)
+      mainSentiment = "Negative";
 
     return {
-        trendData: trendResults,
-        newsWithSentiment
+      period,
+      positive,
+      neutral,
+      negative,
+      mainSentiment,
+      totalArticles: total,
     };
+  });
+
+  return { trendData: trendResults, newsWithSentiment };
 }
 
+// -------------------------------
+// 🧩 HISTORY ROUTES
+// -------------------------------
 
+// Create new history record — uses session-based user id
+app.post("/history", async (req, res) => {
+  try {
+    const userId = req.session?.userId;
+    const { sentence, sentimentResult, entities } = req.body;
 
-// --- API ENDPOINTS ---
+    if (!userId) {
+      return res.status(401).json({ error: "Not authenticated" });
+    }
+    if (!sentence || !sentimentResult) {
+      return res
+        .status(400)
+        .json({ error: "Missing sentence or sentimentResult" });
+    }
 
+    const newHistory = await History.create({
+      userId,
+      sentence,
+      sentimentResult,
+      entities: entities || [],
+    });
 
+    res.status(201).json(newHistory);
+  } catch (err) {
+    console.error("Error saving history:", err);
+    res.status(500).json({ error: "Failed to save history" });
+  }
+});
 
-// --- SIGNUP ROUTE ---
+// Get all history for a user (by session)
+app.get("/history", async (req, res) => {
+  try {
+    const userId = req.session?.userId;
+    if (!userId) return res.status(401).json({ error: "Not authenticated" });
+
+    const history = await History.find({ userId }).sort({ createdAt: -1 });
+    res.json(history);
+  } catch (err) {
+    console.error("Error fetching history:", err);
+    res.status(500).json({ error: "Failed to fetch history" });
+  }
+});
+
+// Get single record
+app.get("/history/detail/:id", async (req, res) => {
+  try {
+    const historyItem = await History.findById(req.params.id);
+    res.json(historyItem);
+  } catch (err) {
+    res.status(404).json({ error: "Record not found" });
+  }
+});
+
+// ------------------------------
+// AUTH ROUTES
+// ------------------------------
+
 app.post("/signup", async (req, res) => {
   const { username, email, password } = req.body;
+
   try {
     const existingUser = await User.findOne({ email });
-    if (existingUser) return res.status(400).json({ message: "User already exists!" });
+    if (existingUser)
+      return res.status(400).json({ message: "User already exists!" });
 
-    const newUser = new User({ username, email, password });
+    const hashed = await bcrypt.hash(password, 10); // <-- hashing here (backend)
+    const newUser = new User({ username, email, password: hashed, role: "user" });
     await newUser.save();
+
+    // store user id in session
+    req.session.userId = newUser._id;
+
     res.status(201).json({ message: "User registered successfully!" });
   } catch (error) {
     console.error("Signup error:", error);
@@ -187,20 +303,18 @@ app.post("/signup", async (req, res) => {
 });
 
 
-// --- LOGIN ROUTE ---
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
+
   try {
     const user = await User.findOne({ email });
     if (!user) return res.status(400).json({ message: "User not found!" });
+    
+    const valid = await bcrypt.compare(password, user.password);
+    if (!valid) return res.status(400).json({ message: "Incorrect password!" });
+    // store user id in session
+    req.session.userId = user._id;
 
-    // TODO: replace plain password check with bcrypt in production
-    if (user.password !== password) return res.status(400).json({ message: "Incorrect password!" });
-
-    // Save user id in session (httpOnly cookie will be sent)
-    req.session.userId = user._id.toString();
-
-    // Return a success message only (no userId)
     res.status(200).json({ message: "Login successful!" });
   } catch (error) {
     console.error("Login error:", error);
@@ -208,161 +322,153 @@ app.post("/login", async (req, res) => {
   }
 });
 
-
-//  PROFILE DETAILS ROUTE
+// Get current logged-in user's profile (used by frontend to check role)
 app.get("/profile", async (req, res) => {
   try {
-    const id = req.session?.userId;
-    if (!id) return res.status(401).json({ message: "Not authenticated" });
+    const userId = req.session?.userId;
+    if (!userId) return res.status(401).json({ error: "Not authenticated" });
 
-    const user = await User.findById(id).select("-password -__v");
-    if (!user) return res.status(404).json({ message: "User not found" });
+    const user = await User.findById(userId).select("username email role createdAt");
+    if (!user) return res.status(404).json({ error: "User not found" });
 
-    res.json(user);
-  } catch (err) {
-    console.error("Profile fetch error:", err);
-    res.status(500).json({ message: "Server error" });
-  }
-});
-
-
-// UPDATE PROFILE ROUTE - NOT PASSWORD
-app.put("/profile", async (req, res) => {
-  try {
-    const id = req.session?.userId;
-    if (!id) return res.status(401).json({ message: "Not authenticated" });
-
-    const { username, email } = req.body;
-    if (!username || !email) return res.status(400).json({ message: "Username and Email are required." });
-
-    const temp = await User.findByIdAndUpdate(id, { username, email }, { new: true, runValidators: true, context: "query" });
-    if (!temp) return res.status(404).json({ message: "User not found." });
-
-    const updatedUser = await User.findById(temp._id).select("-password -__v");
-    return res.json({ message: "Profile updated successfully.", user: updatedUser });
-  } catch (err) {
-    if (err && err.code === 11000) return res.status(400).json({ message: "Email already in use." });
-    console.error("Profile update error:", err);
-    res.status(500).json({ message: "Server error while updating profile." });
-  }
-});
-
-
-// LOGOUT 
-app.post("/logout", (req, res) => {
-  if (req.session) {
-    req.session.destroy((err) => {
-      if (err) {
-        console.error("Session destroy error:", err);
-        return res.status(500).json({ message: "Logout failed" });
-      }
-      // Instruct browser to clear cookie
-      res.clearCookie("sid", { path: "/" });
-      return res.json({ message: "Logged out" });
+    // send only safe fields
+    res.json({
+      username: user.username,
+      email: user.email,
+      role: user.role || "user",
+      createdAt: user.createdAt,
     });
-  } else {
-    res.json({ message: "Logged out" });
+  } catch (err) {
+    console.error("Error fetching profile:", err);
+    res.status(500).json({ error: "Server error" });
   }
 });
 
-// end point to fetch entity details 
-app.get('/get-company-details/:entityName', async(req, res) => {
-    const entityName = req.params.entityName.toLowerCase();
-    try {
-        // Step 1: Search for the company symbol
-        const searchRes = await axios.get(
-            `https://finnhub.io/api/v1/search?q=${entityName}&token=${FINNHUB_API_KEY}`
-        );
-
-        const results = searchRes.data.result;
-        if (!results || results.length === 0) {
-            return res.status(404).json({ error: "Company not found" });
-        }
-
-        // Step 2: Choose best match
-        const result = results.find(r => r.type === "Common Stock") || results[0];
-        const symbol = result.symbol;
-
-        // Step 3: Get profile
-        const profileRes = await axios.get(
-            `https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${FINNHUB_API_KEY}`
-        );
-
-        // Step 4: Mock sentiment/confidence
-        const sentimentOptions = ["positive", "neutral", "negative"];
-        const randomSentiment =
-        sentimentOptions[Math.floor(Math.random() * sentimentOptions.length)];
-        const confidence = Math.floor(Math.random() * 30) + 70;
-
-        // Step 5: Construct response
-        const company = {
-            name: profileRes.data.name,
-            industry: profileRes.data.finnhubIndustry,
-            description: profileRes.data.description || "No description available",
-            marketCap: profileRes.data.marketCapitalization,
-            sentiment: randomSentiment,
-            confidence: confidence,
-            symbol: symbol,
-        };
-
-        // Send result to frontend
-        res.json(company);
-    } catch (err) {
-        console.error("Error fetching company data:", err.message);
-        res.status(500).json({ error: "Failed to fetch company data" });
+// Log out the current user
+app.post("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Logout error:", err);
+      return res.status(500).json({ error: "Failed to logout" });
     }
-})
+    // clear cookie on client
+    res.clearCookie("entitypulse.sid");
+    res.json({ message: "Logged out" });
+  });
+});
 
 
-// end point to handle analysis when user gives text input
-app.post('/get-text-data-analysis-results', async (req, res)=> {
-    const text = req.body.text;
-    if (!text) return res.status(400).json({ error: "Missing text" });
+// ------------------------------
+// COMPANY DETAILS ENDPOINT
+// ------------------------------
+app.get("/get-company-details/:entityName", async (req, res) => {
+  const entityName = req.params.entityName.toLowerCase();
 
-    try{
-        const response = await axios.post("http://localhost:5001/analyze-text-ner-sentiment", {text})
-        return res.json(response.data)
+  try {
+    if (!FINNHUB_API_KEY) {
+      console.warn("FINNHUB_API_KEY is not set in environment.");
+      return res.status(500).json({ error: "Server misconfigured" });
     }
-    catch (err) {
-        console.error("Error calling Python service:", err.message);
-        res.status(500).json({ error: "Python service failed" });
+
+    const searchRes = await axios.get(
+      `https://finnhub.io/api/v1/search?q=${entityName}&token=${FINNHUB_API_KEY}`
+    );
+
+    const results = searchRes.data.result;
+    if (!results || results.length === 0) {
+      return res.status(404).json({ error: "Company not found" });
     }
-})
 
-app.get("/get-current-price-market-cap/:entitySymbol", async (req, res)=> {
-    console.log("Request for getting price and market capital made.")
-    const entitySymbol = req.params.entitySymbol.toUpperCase();
-    try{
-        const priceUrl = `https://finnhub.io/api/v1/quote?symbol=${entitySymbol}&token=${FINNHUB_API_KEY}`;
-        const priceData = await axios.get(priceUrl);
+    const result =
+      results.find((r) => r.type === "Common Stock") || results[0];
+    const symbol = result.symbol;
 
-        const profileUrl = `https://finnhub.io/api/v1/stock/profile2?symbol=${entitySymbol}&token=${FINNHUB_API_KEY}`;
-        const profileData = await axios.get(profileUrl);
+    const profileRes = await axios.get(
+      `https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${FINNHUB_API_KEY}`
+    );
 
-        const data = {
-            symbol: entitySymbol,
-            currentPrice: priceData.data.c,
-            highPrice: priceData.data.h,
-            lowPrice: priceData.data.l,
-            openPrice: priceData.data.o,
-            previousClose: priceData.data.pc,
-            marketCap: profileData.data.marketCapitalization,
-            companyName: profileData.data.name,
-            industry: profileData.data.finnhubIndustry,
-            country: profileData.data.country,
-        }
+    const sentimentOptions = ["positive", "neutral", "negative"];
+    const randomSentiment =
+      sentimentOptions[Math.floor(Math.random() * sentimentOptions.length)];
+    const confidence = Math.floor(Math.random() * 30) + 70;
 
-        res.json(data)
-    }
-    catch(e){
-        console.log("Error fetching stock data: ", e.message);
-        res.status(500).json({error: "Error fetching current Price and market Cap"});
-    }
-})
+    const company = {
+      name: profileRes.data.name,
+      industry: profileRes.data.finnhubIndustry,
+      description: profileRes.data.description || "No description available",
+      marketCap: profileRes.data.marketCapitalization,
+      sentiment: randomSentiment,
+      confidence: confidence,
+      symbol: symbol,
+    };
 
+    res.json(company);
+  } catch (err) {
+    console.error("Error fetching company data:", err.message);
+    res.status(500).json({ error: "Failed to fetch company data" });
+  }
+});
+
+// ------------------------------
+// TEXT SENTIMENT ANALYSIS
+// ------------------------------
+app.post("/get-text-data-analysis-results", async (req, res) => {
+  const text = req.body.text;
+  if (!text) return res.status(400).json({ error: "Missing text" });
+
+  try {
+    const response = await axios.post(
+      "http://127.0.0.1:5001/analyze-text-ner-sentiment",
+      { text }
+    );
+    return res.json(response.data);
+  } catch (err) {
+    console.error("Error calling Python service:", err.message);
+    res.status(500).json({ error: "Python service failed" });
+  }
+});
+
+// ------------------------------
+// STOCK PRICE HISTORY
+// ------------------------------
+app.get("/get-current-price-market-cap/:entitySymbol", async (req, res) => {
+  const entitySymbol = req.params.entitySymbol.toUpperCase();
+
+  try {
+    const priceData = await axios.get(
+      `https://finnhub.io/api/v1/quote?symbol=${entitySymbol}&token=${FINNHUB_API_KEY}`
+    );
+
+    const profileData = await axios.get(
+      `https://finnhub.io/api/v1/stock/profile2?symbol=${entitySymbol}&token=${FINNHUB_API_KEY}`
+    );
+
+    const data = {
+      symbol: entitySymbol,
+      currentPrice: priceData.data.c,
+      highPrice: priceData.data.h,
+      lowPrice: priceData.data.l,
+      openPrice: priceData.data.o,
+      previousClose: priceData.data.pc,
+      marketCap: profileData.data.marketCapitalization,
+      companyName: profileData.data.name,
+      industry: profileData.data.finnhubIndustry,
+      country: profileData.data.country,
+    };
+
+    res.json(data);
+  } catch (e) {
+    console.log("Error fetching stock data: ", e.message);
+    res.status(500).json({ error: "Error fetching stock data" });
+  }
+});
+
+// ------------------------------
+// TOP-3 NEWS ANALYSIS ENDPOINT
+// ------------------------------
 app.get("/news-analysis", async (req, res) => {
   console.log("Request for TOP-3 news analysis made.");
-  console.log("req query for new analysis in server.js", req.query)
+  console.log("req query:", req.query);
 
   const symbol = (req.query.symbol || "").toUpperCase();
   const companyName = req.query.companyName || "";
@@ -371,7 +477,6 @@ app.get("/news-analysis", async (req, res) => {
     return res.status(400).json({ error: "Missing symbol in query" });
   }
 
-  // axios instance with timeout
   const http = axios.create({ timeout: 12000 });
 
   try {
@@ -382,68 +487,67 @@ app.get("/news-analysis", async (req, res) => {
     const from = fromDate.toISOString().slice(0, 10);
     const to = today.toISOString().slice(0, 10);
 
-    const newsURL = `https://finnhub.io/api/v1/company-news?symbol=${symbol}&from=${from}&to=${to}&token=${FINNHUB_API_KEY}`;
+    const newsResp = await http.get(
+      `https://finnhub.io/api/v1/company-news?symbol=${symbol}&from=${from}&to=${to}&token=${FINNHUB_API_KEY}`
+    );
 
-    // --- get company news
-    const newsResp = await http.get(newsURL);
     const allNews = Array.isArray(newsResp.data) ? newsResp.data : [];
 
     if (!allNews.length) {
       return res.json({ headlines: [], asOf: to, count: 0 });
     }
 
-    // newest first, top 3
     const top3 = allNews
       .slice()
       .sort((a, b) => (b.datetime || 0) - (a.datetime || 0))
       .slice(0, 3);
 
-    // --- try batch path first
+    // First try batch sentiment
     let sentiments = [];
     try {
       const batchItems = top3.map((item) => ({
-        text: item.headline || "",
-        summary: item.summary || "",
+        text: item.headline,
+        summary: item.summary,
         entity: companyName,
       }));
 
       const py = await http.post(
-        "http://localhost:5001/analyze-batch", // works if you added the batch endpoint
+        "http://127.0.0.1:5001/analyze-batch",
         { items: batchItems }
       );
+
       sentiments = py?.data?.results || [];
     } catch (batchErr) {
       console.warn("Batch sentiment failed, falling back:", batchErr?.message);
 
-      // fallback: call one by one
+      // fallback: call individually
       sentiments = await Promise.all(
         top3.map(async (item) => {
           try {
             const py = await http.post(
-              "http://localhost:5001/analyze-text-ner-sentiment",
+              "http://127.0.0.1:5001/analyze-text-ner-sentiment",
               {
-                text: item.headline || "",
-                summary: item.summary || "",
+                text: item.headline,
+                summary: item.summary,
                 entity: companyName,
               }
             );
+
             return {
               overallSentiment: py?.data?.overallSentiment || "Neutral",
             };
           } catch (e) {
-            console.warn("Single sentiment error:", e?.message);
             return { overallSentiment: "Neutral" };
           }
         })
       );
     }
 
-    // merge
     const analyzed = top3.map((item, idx) => ({
       headline: item.headline,
       source: item.source,
       url: item.url,
-      datetime: item.datetime, // unix seconds
+      datetime: item.datetime,
       image: item.image || null,
       category: item.category || null,
       sentiment: sentiments[idx]?.overallSentiment || "Neutral",
@@ -460,20 +564,20 @@ app.get("/news-analysis", async (req, res) => {
   }
 });
 
-
-// end point to do image processing to extract text from it
+// ------------------------------
+// OCR IMAGE → TEXT EXTRACTION
+// ------------------------------
 app.post(
   "/extract-text",
   express.raw({ type: "application/octet-stream", limit: "20mb" }),
   async (req, res) => {
-    const imageBuffer = req.body; // Buffer with image bytes
+    const imageBuffer = req.body;
 
     if (!Buffer.isBuffer(imageBuffer) || imageBuffer.length === 0) {
       return res.status(400).json({ error: "Empty image body" });
     }
 
     try {
-      // Forward to your OCR service (adjust URL if needed)
       const ocrResp = await axios.post(
         "http://127.0.0.1:5002/extract-text",
         imageBuffer,
@@ -483,17 +587,16 @@ app.post(
         }
       );
 
-      // Normalize response field name to what the frontend expects
       const extracted =
-        ocrResp.data?.extracted_text ??
-        ocrResp.data?.text ??
-        ocrResp.data?.data ??
+        ocrResp.data?.extracted_text ||
+        ocrResp.data?.text ||
+        ocrResp.data?.data ||
         "";
 
       return res.json({ extracted_text: extracted });
     } catch (err) {
       console.error(
-        "error while doing text extraction from image:",
+        "Error in OCR extraction:",
         err?.response?.data || err.message
       );
       return res.status(500).json({ error: "Failed to extract text" });
@@ -501,22 +604,239 @@ app.post(
   }
 );
 
-app.get("/stock-price-history/:entitySymbol", async (req, res) =>{
-    console.log("request for stock price has been made.");
-    const symbol = req.params.entitySymbol.toUpperCase();
-    try{
-        const stockHistoryURL = `https://api.twelvedata.com/time_series?symbol=${symbol}&interval=1day&outputsize=365&apikey=${TWELVE_API_KEY}`
-        const response = await axios.get(stockHistoryURL);
-        res.json(response.data)
+// ------------------------------
+app.get("/social-sentiment-summary");
+app.get("/platform-sentiment-breakdown");
+
+// ------------------------------
+app.get("/stock-price-history/:entitySymbol", async (req, res) => {
+  console.log("Request for stock price history.");
+  const symbol = req.params.entitySymbol.toUpperCase();
+
+  try {
+    const url = `https://api.twelvedata.com/time_series?symbol=${symbol}&interval=1day&outputsize=365&apikey=${TWELVE_API_KEY}`;
+    const response = await axios.get(url);
+
+    res.json(response.data);
+  } catch (e) {
+    console.log("Error fetching stock history:", e.message);
+    res.status(500).json({ error: "Error fetching stock history" });
+  }
+});
+
+// ------------------------------
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Backend running at http://localhost:${PORT}`);
+});
+
+
+
+// --- ADMIN ROUTES ---
+
+// List all users (admin only)
+app.get("/admin/users", requireAdmin, async (req, res) => {
+  try {
+    const users = await User.find({}, "username email role createdAt").sort({ createdAt: -1 });
+    res.json({ users });
+  } catch (err) {
+    console.error("Error fetching users:", err);
+    res.status(500).json({ error: "Failed to fetch users" });
+  }
+});
+
+// Promote a user to admin (admin-only)
+app.post("/admin/promote/:userId", requireAdmin, async (req, res) => {
+  try {
+    const { userId } = req.params;
+    if (!userId) return res.status(400).json({ error: "Missing userId" });
+
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ error: "User not found" });
+
+    user.role = "admin";
+    await user.save();
+
+    res.json({ message: "User promoted to admin", userId });
+  } catch (err) {
+    console.error("Error promoting user:", err);
+    res.status(500).json({ error: "Failed to promote user" });
+  }
+});
+
+// Delete user by id (admin only)
+app.delete("/admin/users/:id", requireAdmin, async (req, res) => {
+  try {
+    const id = req.params.id;
+    // Prevent admin deleting themself (optional)
+    if (req.session.userId === id) {
+      return res.status(400).json({ error: "Admins cannot delete their own account" });
     }
-    catch(e){
-        console.log("error fetching stock price and volumes, ",e.message);
-    }
-})
+
+    // Remove user and their histories (optional: keep history, but here's a cleanup)
+    await History.deleteMany({ userId: id }).catch((e) => console.warn("Failed to remove histories:", e));
+    const del = await User.findByIdAndDelete(id);
+    if (!del) return res.status(404).json({ error: "User not found" });
+    res.json({ message: "User deleted", userId: id });
+  } catch (err) {
+    console.error("Error deleting user:", err);
+    res.status(500).json({ error: "Failed to delete user" });
+  }
+});
+
+// Admin stats endpoint (admin only)
+app.get("/admin/stats", requireAdmin, async (req, res) => {
+  try {
+    // 1) total users
+    const totalUsersPromise = User.countDocuments();
+
+    // 2) total history documents
+    const totalHistoryPromise = History.countDocuments();
+
+    // 3) sentiment distribution (counts of overall label stored in sentimentResult.label)
+    const sentimentDistPromise = History.aggregate([
+      { $match: { "sentimentResult.label": { $exists: true } } },
+      { $group: { _id: "$sentimentResult.label", count: { $sum: 1 } } },
+    ]);
+
+    // 4) top entities across histories (assumes entities: [{ entityName, sentiment, confidence }, ...])
+    const topEntitiesPromise = History.aggregate([
+      { $unwind: "$entities" },
+      { $group: { _id: "$entities.entityName", count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
+      { $limit: 10 },
+    ]);
+
+    // 5) history counts by day for last 30 days
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 29); // include today => 30 days
+    const historyByDayPromise = History.aggregate([
+      { $match: { createdAt: { $gte: thirtyDaysAgo } } },
+      {
+        $group: {
+          _id: {
+            $dateToString: { format: "%Y-%m-%d", date: "$createdAt" },
+          },
+          count: { $sum: 1 },
+        },
+      },
+      { $sort: { _id: 1 } },
+    ]);
+
+    const [totalUsers, totalHistory, sentimentDist, topEntities, historyByDay] =
+      await Promise.all([
+        totalUsersPromise,
+        totalHistoryPromise,
+        sentimentDistPromise,
+        topEntitiesPromise,
+        historyByDayPromise,
+      ]);
+
+    // normalize sentiment distribution to easy object
+    const sentiment = {};
+    sentimentDist.forEach((s) => {
+      sentiment[s._id || "Unknown"] = s.count;
+    });
+
+    res.json({
+      totals: { users: totalUsers, history: totalHistory },
+      sentiment,
+      topEntities: topEntities.map((t) => ({ entityName: t._id, count: t.count })),
+      historyByDay: historyByDay.map((d) => ({ date: d._id, count: d.count })),
+    });
+  } catch (err) {
+    console.error("Error building admin stats:", err);
+    res.status(500).json({ error: "Failed to get stats" });
+  }
+});
+
+// GET /admin/user-activity
+app.get("/admin/user-activity", requireAdmin, async (req, res) => {
+  try {
+    const activity = await History.aggregate([
+      {
+        $group: {
+          _id: "$userId",
+          analysesCount: { $sum: 1 },
+          lastActive: { $max: "$createdAt" }
+        }
+      },
+      {
+        $lookup: {
+          from: "users",
+          localField: "_id",
+          foreignField: "_id",
+          as: "user"
+        }
+      },
+      { $unwind: "$user" },
+      {
+        $project: {
+          _id: 0,
+          userId: "$_id",
+          username: "$user.username",
+          email: "$user.email",
+          role: "$user.role",
+          analysesCount: 1,
+          lastActive: 1
+        }
+      },
+      { $sort: { analysesCount: -1 } }
+    ]);
+
+    res.json({ activity });
+  } catch (err) {
+    console.error("Error fetching user activity:", err);
+    res.status(500).json({ error: "Failed to fetch user activity" });
+  }
+});
+
+// GET /admin/input-methods?days=14
+
+app.get("/admin/input-methods", requireAdmin, async (req, res) => {
+  try {
+    const days = parseInt(req.query.days || "0", 10); // 0 => all time
+    const match = days > 0 ? { createdAt: { $gte: new Date(Date.now() - days * 86400000) } } : {};
+
+    const agg = await History.aggregate([
+      { $match: match },
+      { $group: { _id: "$inputMethod", count: { $sum: 1 } } },
+      { $project: { _id: 0, inputMethod: "$_id", count: 1 } }
+    ]);
+
+    // normalize missing values
+    const result = { text: 0, image: 0, voice: 0 };
+    agg.forEach((r) => { if (r.inputMethod) result[r.inputMethod] = r.count; });
+
+    res.json({ breakdown: result });
+  } catch (err) {
+    console.error("Error building input-method breakdown:", err);
+    res.status(500).json({ error: "Failed to get input methods" });
+  }
+});
+
+// GET /admin/leaderboard?days=14&limit=10
+app.get("/admin/leaderboard", requireAdmin, async (req, res) => {
+  try {
+    const days = parseInt(req.query.days || "14", 10);
+    const limit = parseInt(req.query.limit || "10", 10);
+
+    const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+
+    const topEntities = await History.aggregate([
+      { $match: { createdAt: { $gte: since } } },
+      { $unwind: "$entities" },
+      { $group: { _id: "$entities.entityName", count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
+      { $limit: limit },
+      { $project: { _id: 0, entityName: "$_id", count: 1 } }
+    ]);
+
+    res.json({ topEntities });
+  } catch (err) {
+    console.error("Error building leaderboard:", err);
+    res.status(500).json({ error: "Failed to get leaderboard" });
+  }
+});
 
 
-
-const PORT = 5000
-app.listen(PORT, ()=>{
-    console.log(`Backend running at http://localhost:${PORT}`)
-})

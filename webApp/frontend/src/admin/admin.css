@@ -1,0 +1,461 @@
+/* src/styles/admin-theme.css
+   Theme for admin pages — tuned to App.css and NewsElement.css visuals.
+   Usage: import "../styles/admin-theme.css"; (import after App.css)
+*/
+
+/* ---------- Variables (match App.css palette) ---------- */
+:root{
+  --bg: #fafbfd;            /* app background (from App.css) */ 
+  --panel: #ffffff;
+  --text: #0f1724;
+  --muted: #6b7280;
+  --accent: #007bff;
+  --accent-2: #06b6d4;
+  --success: #28a745;
+  --danger: #ef4444;
+  --border: rgba(15,23,36,0.08);
+  --glass: rgba(15,23,36,0.02);
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --shadow: 0 6px 20px rgba(2,6,23,0.06);
+  --max-width: 1200px;
+  --gap: 16px;
+  --transition: 180ms ease;
+  --purple: #7C3AED; /* your profile purple */
+}
+
+/* ---------- Page / layout ---------- */
+html, body, #root {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* admin container similar to App.css centered card blocks */
+.admin-layout { min-height: 100vh; display:flex; flex-direction:column; }
+.admin-page-content {
+  padding: 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---------- Navbar ---------- */
+.admin-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:12px 20px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(2,6,23,0.03);
+  backdrop-filter: blur(8px);
+}
+
+/* left/right split for links and profile */
+.nav-left { display:flex; gap:12px; align-items:center; }
+.nav-right { display:flex; gap:12px; align-items:center; }
+
+/* nav items -> match App.css typeweight + pill style */
+.nav-item {
+  color: var(--text);
+  text-decoration:none;
+  font-weight:600;
+  padding:6px 10px;
+  border-radius:8px;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+.nav-item:hover { background: rgba(0,123,255,0.08); transform: translateY(-1px); }
+
+/* active page uses black pill as requested (keeps App.css black button feel) */
+.nav-item.active {
+  background: #000;
+  color: #fff;
+  padding:6px 12px;
+}
+
+/* ---------- Avatar / Profile ---------- */
+.avatar {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  width:40px; height:40px;
+  border-radius:50%;
+  cursor:pointer;
+  background: transparent;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.avatar .profile-icon { font-size:28px; color: var(--purple); transition: color var(--transition), transform var(--transition); }
+.avatar:hover { transform: scale(1.03); }
+.avatar:hover .profile-icon { color: #6D28D9; }
+
+/* optional white circular background to improve contrast on light nav */
+.avatar.bg {
+  background: white;
+  border: 1px solid rgba(15,23,36,0.04);
+  box-shadow: 0 4px 12px rgba(2,6,23,0.04);
+}
+
+/* ---------- Cards / panels ---------- */
+/* use App.css card look (white card, subtle border & shadow) */
+.card, .admin-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* wide-but-not-too-wide card: 60% of viewport width */
+.card--60vw {
+  width: 60vw; /* main requirement */
+  max-width: calc(var(--max-width) * 0.95); /* keep within page max */
+  min-width: 320px; /* avoid too-small on narrow screens */
+  margin-left: auto;
+  margin-right: auto; /* center horizontally */
+  box-sizing: border-box;
+}
+
+/* ensure the chart inner wrapper fills the card */
+.card--60vw .chart-wrap,
+.card--60vw > div[style*="height"],
+.card--60vw .recharts-wrapper {
+  width: 100%;
+}
+
+/* responsive: on small screens use almost full width */
+@media (max-width: 900px) {
+  .card--60vw {
+    width: 94vw;
+    min-width: unset;
+  }
+}
+
+/* optional: center items in the grid */
+.stats-grid {
+  display: flex;
+  gap: var(--gap);
+  flex-wrap: wrap;
+  justify-content: center; /* center the cards */
+}
+
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(2,6,23,0.06); }
+
+
+/* headings in admin */
+.admin-page-content h1 { 
+    margin:0 0 12px 0; 
+    font-size:1.5rem; 
+    font-weight:700; 
+    color:var(--text); 
+    text-align: center;
+}
+.admin-page-content h2, .admin-page-content h3 { 
+    margin:0 0 8px 0; 
+    color:var(--text); 
+    text-align: center;
+}
+
+/* ---------- Tables (Users, Activity) ---------- */
+table.admin-table {
+  width:100%;
+  border-collapse:collapse;
+  background:transparent;
+  font-size:0.95rem;
+}
+.admin-table thead th {
+  text-align:left;
+  padding:12px 10px;
+  font-weight:600;
+  color:var(--text);
+  border-bottom:1px solid var(--border);
+  background: rgba(255,255,255,0.5);
+}
+.admin-table tbody td {
+  padding:10px;
+  border-bottom:1px dashed rgba(15,23,36,0.04);
+  color:var(--text);
+}
+.admin-table tbody tr:hover td { background: rgba(0,0,0,0.02); }
+
+/* action buttons in tables — match App.css black buttons */
+.btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.btn.secondary { background: transparent; color: var(--text); border:1px solid var(--border); }
+.btn:hover { transform: translateY(-2px); background:#222; }
+
+/* ---------- Dashboard / Charts ---------- */
+.summary-cards { display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; }
+.summary-cards .card { flex:1 1 220px; min-width:200px; padding:14px; }
+
+/* charts container sizes (keeps Recharts responsive) */
+.chart-card { height:300px; padding:12px; }
+
+
+/* legend / small text */
+.muted { color:var(--muted); font-size:0.9rem; }
+.small { font-size:0.9rem; color:var(--muted); }
+
+/* ---------- Leaderboard / lists ---------- */
+.leaderboard-list { list-style:none; padding:0; margin:0; }
+.leaderboard-list li { padding:10px 8px; border-bottom:1px solid rgba(15,23,36,0.03); display:flex; align-items:center; justify-content:space-between; }
+
+/* pill tags (borrowing App.css tags) */
+.tag {
+  background: var(--success);
+  border: 1px solid #1e7e34;
+  padding:0.35rem 0.6rem;
+  border-radius: 999px;
+  color:white;
+  font-weight:600;
+  font-size:0.85rem;
+}
+
+/* ---------- News Element compatibility ---------- */
+/* harmonize NewsElement look using NewsElement.css colors but adjusted */
+.news-element-div {
+  margin-top: 1.2rem;
+  padding: 12px;
+  border-left: 6px solid var(--success); /* default */
+  background: rgba(255,255,255,0.98);
+  border-radius: 8px;
+}
+.news-element-div p { margin:0; color:var(--text); }
+.news-element-sentiment-div {
+  display:inline-flex;
+  padding:6px 8px;
+  border-radius:10px;
+  margin-top:8px;
+  font-weight:600;
+}
+.news-element-div.negative-text { border-left-color: var(--danger); }
+.news-element-div.neutral-text  { border-left-color: orange; }
+
+.news-element-sentiment-div.negative-div { background: var(--danger); color:white; }
+.news-element-sentiment-div.neutral-div { background: white; color:var(--text); border:1px solid rgba(0,0,0,0.08); }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 900px) {
+  .admin-nav { padding:10px; gap:12px; }
+  .nav-left { flex-wrap:wrap; gap:8px; }
+  .summary-cards { flex-direction:column; }
+  .chart-card { height:220px; }
+}
+
+/* ---------- Utility helpers ---------- */
+.row { display:flex; gap:12px; align-items:center; }
+.col { display:flex; flex-direction:column; gap:8px; }
+.center { display:flex; align-items:center; justify-content:center; }
+.right { margin-left:auto; }
+
+
+
+/* Small admin-card helpers */
+.admin-activity-card,
+.admin-input-card,
+.admin-leaderboard-card {
+  padding: 18px;
+  margin-top: 12px;
+}
+
+/* ensure charts have a good height when inside card */
+.chart-card {
+  width: 100%;
+  height: 320px; /* desktop height — responsive override below */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* smaller alternative for tighter spaces */
+.card.chart-card-small {
+  height: 220px;
+}
+
+/* legend area */
+.chart-legend { margin-top: 12px; }
+
+/* muted list style (used for legends/leaderboard lists) */
+.muted-list { padding-left: 1.2rem; margin: 0; color: var(--muted); }
+
+/* table spacing inside cards */
+.admin-activity-card .admin-table th,
+.admin-activity-card .admin-table td,
+.admin-users-card .admin-table th,
+.admin-users-card .admin-table td {
+  padding: 12px 10px;
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .chart-card { height: 220px; }
+}
+
+
+/* Entities table styling */
+.entities-table-wrap { margin-top: 8px; overflow-x: auto; }
+
+.entities-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+/* header */
+.entities-table thead th {
+  text-align: left;
+  padding: 12px 10px;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.6);
+}
+
+/* rows */
+.entities-table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px dashed rgba(15,23,36,0.04);
+  color: var(--text);
+}
+
+/* subtle hover */
+.entities-table tbody tr:hover td {
+  background: rgba(0,0,0,0.02);
+}
+
+/* small muted extra info under entity name (optional) */
+.entities-table .small.muted { margin-top: 6px; color: var(--muted); }
+
+/* responsive: reduce paddings on small screens */
+@media (max-width: 600px) {
+  .entities-table thead th,
+  .entities-table tbody td { padding: 10px 8px; }
+  .entities-table thead th:nth-child(1) { width: 40px; }
+  .entities-table thead th:nth-child(3) { width: 90px; }
+}
+
+/* Totals table card spacing */
+.totals-table-card {
+  padding: 18px;
+  margin-top: 12px;
+}
+
+/* Table styling for totals */
+.totals-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.totals-table td {
+  padding: 12px 10px;
+  border-bottom: 1px dashed rgba(15,23,36,0.07);
+  color: var(--text);
+}
+
+.totals-table tr:last-child td {
+  border-bottom: none;
+}
+
+.totals-table td:first-child {
+  font-weight: 600;
+}
+
+/* hover */
+.totals-table tr:hover td {
+  background: rgba(0,0,0,0.02);
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .totals-table td {
+    padding: 10px 8px;
+  }
+}
+
+/* Input Methods table wrapper */
+.input-methods-table-wrap {
+  margin-top: 18px;
+  overflow-x: auto;
+}
+
+/* Table itself */
+.input-methods-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* header styling */
+.input-methods-table thead th {
+  padding: 12px 10px;
+  font-weight: 700;
+  color: var(--text);
+  background: rgba(255,255,255,0.6);
+  border-bottom: 1px solid var(--border);
+}
+
+/* body cells */
+.input-methods-table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px dashed rgba(15,23,36,0.06);
+  color: var(--text);
+}
+
+/* hover highlight */
+.input-methods-table tbody tr:hover td {
+  background: rgba(0,0,0,0.02);
+}
+
+/* total row styling */
+.input-methods-table .total-row td {
+  background: rgba(0,0,0,0.04);
+  font-weight: 700;
+}
+
+/* responsive adjustments */
+@media (max-width: 600px) {
+  .input-methods-table th,
+  .input-methods-table td {
+    padding: 10px 8px;
+  }
+}
+/* leaderboard table wrapper */
+.leaderboard-table-wrap {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+/* leaderboard table cells */
+.leaderboard-table td,
+.leaderboard-table th {
+  padding: 12px 10px;
+}
+
+/* Total row styling */
+.leaderboard-table .total-row td {
+  background: rgba(0,0,0,0.04);
+  font-weight: 700;
+}
+
+/* responsive tweaks */
+@media (max-width: 600px) {
+  .leaderboard-table td,
+  .leaderboard-table th {
+    padding: 10px 8px;
+  }
+}
+

@@ -1,0 +1,335 @@
+/* ======================================================
+   ABOUT PAGE — COMPLETE CSS
+   Supports: marquee, features, steps, input methods, tech
+   ====================================================== */
+
+/* ----- HEADER SPACING ----- */
+.scope {
+  margin-top: 150px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* ----- MARQUEE (About Description) ----- */
+.marquee {
+  width: 100%;
+  height: 3vw;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  margin-top: 15px;
+  background-color: #0a0a0a;
+}
+
+.marquee p {
+  padding: 5px;
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  font-size: 1.15rem;
+  color: #f9f7f7;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee p:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ======================================================
+   KEY FEATURES SECTION
+   ====================================================== */
+
+.key-features {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.8rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.features .card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ======================================================
+   HOW IT WORKS SECTION
+   ====================================================== */
+
+.working {
+  margin: 5vw auto;
+  padding: 25px;
+  border: 1px solid #a5a5a5;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.step-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.steps {
+  padding: 15px;
+}
+
+/* Colored numbers */
+.steps:nth-child(1) .numbers { color: #007bff; }
+.steps:nth-child(2) .numbers { color: #28a745; }
+.steps:nth-child(3) .numbers { color: #ffc107; }
+.steps:nth-child(4) .numbers { color: #dc3545; }
+
+.numbers {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* ======================================================
+   INPUT METHODS SECTION
+   ====================================================== */
+
+.input-head {
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+
+.input-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.methods {
+  border: 1px solid #837f7f;
+  border-radius: 15px;
+  padding: 20px 12px;
+  text-align: center;
+  background: #fafafa;
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* ======================================================
+   WHY CHOOSE SECTION
+   ====================================================== */
+
+.choose-head {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.choose {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.choice {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.choice .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* ======================================================
+   TECHNOLOGY & DATA SOURCES
+   ====================================================== */
+
+.tech-sources {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 1000px;
+  padding: 0 1.2rem;
+}
+
+.sources-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.sources-block {
+  flex: 1 1 400px;
+  background: #fafafa;
+  border: 3px solid #101010;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.sources-block h4 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag {
+  /* background: #b69d9d; */
+  border: 1px solid #454846;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: rgb(5, 5, 5);
+  cursor: default;
+  transition: 0.1s;
+}
+
+.tag:hover {
+  background: #080808;
+  color: white;
+}
+
+/* ======================================================
+   RESPONSIVE FIXES FOR SMALL SCREENS
+   ====================================================== */
+
+@media (max-width: 768px) {
+  .numbers {
+    font-size: 1.5rem;
+  }
+
+  .marquee p {
+    font-size: 1rem;
+  }
+}
+
+
+/* card flip */
+/* ============================
+   FLIP CARD EFFECT FOR FEATURES
+   ============================ */
+
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 180px; /* adjust if needed */
+  perspective: 1000px; /* enables 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+/* Flip on hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & back sides */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+/* Front card design */
+.flip-card-front {
+  background: white;
+  border: 1px solid #e0e0e0;
+}
+
+.flip-card-front h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Back card design */
+.flip-card-back {
+  background: #010101;
+  color: white;
+  border: 1px solid #fefeff;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+  font-size: 0.95rem;
+  color: whitesmoke;
+}
+
+
+/* tech and data sources */
+/* SECTION CAPSULE DESIGN */
+.section-capsule {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 45px 35px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 6px 25px rgba(144, 140, 140, 0.08);
+  border-top: 5px solid #0a0a0a; /* highlight line */
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.section-capsule:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* override inside layout to keep horizontal blocks */
+.section-capsule .sources-container {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}

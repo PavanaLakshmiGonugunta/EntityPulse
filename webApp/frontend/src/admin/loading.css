@@ -1,0 +1,55 @@
+
+/* Full-screen overlay to center the button */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;  /* no dim, clean background */
+  z-index: 2000;            /* on top of everything */
+}
+/* Center the processing button just below input area */
+.loading-below {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;   /* space below the input box */
+}
+
+/* Compact, neat loading button */
+.loading-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: default;
+  width: auto;
+  min-width: fit-content;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Small spinner beside text */
+.loading-btn .spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
