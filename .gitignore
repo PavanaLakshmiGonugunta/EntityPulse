@@ -11,9 +11,6 @@ venv/
 pip-wheel-metadata/
 *.egg-info/
 
-# virtual environment
-ocr/.venv/ 
-
 # Jupyter
 .ipynb_checkpoints
 
