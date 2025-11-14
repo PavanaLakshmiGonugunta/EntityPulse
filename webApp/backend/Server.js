@@ -2,17 +2,39 @@ import express from "express"
 import axios from "axios"
 import cors from "cors"
 import mongoose from "mongoose";
+import session from "express-session";
+import MongoStore from "connect-mongo";
+import cookieParser from "cookie-parser";
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173", 
+  credentials: true,
+}));
+app.use(cookieParser());
 app.use(express.json());
 
-// NOTE: Replace with your actual key
 const FINNHUB_API_KEY = "d354c51r01qhorbgi6g0d354c51r01qhorbgi6gg"
 const TWELVE_API_KEY = "96c92ea18dfd481495a9c4e557c1d9b8"
 
 // --- MONGO CONNECTION ---
 const MONGO_URI = "mongodb://127.0.0.1:27017/entity_pulse_users";
+
+
+// session middleware
+app.use(session({
+  name: "sid", // session cookie name
+  secret: process.env.SESSION_SECRET || "dev-secret-change-me",
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: MONGO_URI }),
+  cookie: {
+    httpOnly: true,
+    secure: false,     // set true in production (requires HTTPS)
+    sameSite: "lax",   // helps with CSRF in many cases; change to 'strict' if desired
+    maxAge: 1000 * 60 * 60 * 24 // 1 day
+  }
+}));
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
@@ -171,12 +193,75 @@ app.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (!user) return res.status(400).json({ message: "User not found!" });
+
+    // TODO: replace plain password check with bcrypt in production
     if (user.password !== password) return res.status(400).json({ message: "Incorrect password!" });
 
+    // Save user id in session (httpOnly cookie will be sent)
+    req.session.userId = user._id.toString();
+
+    // Return a success message only (no userId)
     res.status(200).json({ message: "Login successful!" });
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ message: "Server error" });
+  }
+});
+
+
+//  PROFILE DETAILS ROUTE
+app.get("/profile", async (req, res) => {
+  try {
+    const id = req.session?.userId;
+    if (!id) return res.status(401).json({ message: "Not authenticated" });
+
+    const user = await User.findById(id).select("-password -__v");
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    res.json(user);
+  } catch (err) {
+    console.error("Profile fetch error:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+
+// UPDATE PROFILE ROUTE - NOT PASSWORD
+app.put("/profile", async (req, res) => {
+  try {
+    const id = req.session?.userId;
+    if (!id) return res.status(401).json({ message: "Not authenticated" });
+
+    const { username, email } = req.body;
+    if (!username || !email) return res.status(400).json({ message: "Username and Email are required." });
+
+    const temp = await User.findByIdAndUpdate(id, { username, email }, { new: true, runValidators: true, context: "query" });
+    if (!temp) return res.status(404).json({ message: "User not found." });
+
+    const updatedUser = await User.findById(temp._id).select("-password -__v");
+    return res.json({ message: "Profile updated successfully.", user: updatedUser });
+  } catch (err) {
+    if (err && err.code === 11000) return res.status(400).json({ message: "Email already in use." });
+    console.error("Profile update error:", err);
+    res.status(500).json({ message: "Server error while updating profile." });
+  }
+});
+
+
+// LOGOUT 
+app.post("/logout", (req, res) => {
+  if (req.session) {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Session destroy error:", err);
+        return res.status(500).json({ message: "Logout failed" });
+      }
+      // Instruct browser to clear cookie
+      res.clearCookie("sid", { path: "/" });
+      return res.json({ message: "Logged out" });
+    });
+  } else {
+    res.json({ message: "Logged out" });
   }
 });
 
@@ -416,9 +501,6 @@ app.post(
   }
 );
 
-// Original endpoint (now obsolete or should be deleted/redirected)
-app.get("/social-sentiment-summary")
-app.get("/platform-sentiment-breakdown")
 app.get("/stock-price-history/:entitySymbol", async (req, res) =>{
     console.log("request for stock price has been made.");
     const symbol = req.params.entitySymbol.toUpperCase();
