@@ -1,9 +1,39 @@
-ocr/paddle_env/
-
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
 *.pyd
-*.dll
-*.log
-env/
+*.env
+.env
+.env.*
 venv/
+.venv/
+pip-wheel-metadata/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Logs and temporary
+logs/
+*.log
+tmp/
+temp/
+
+# Node
+node_modules/
+dist/
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+
+# Misc
+*.sqlite3
+__MACOSX/

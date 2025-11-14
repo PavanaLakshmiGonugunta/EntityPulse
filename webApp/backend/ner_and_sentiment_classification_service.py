@@ -1,596 +1,397 @@
-# from flask import Flask, request, jsonify
-# from transformers import AutoTokenizer, AutoModelForTokenClassification, AutoModelForSequenceClassification
-# import torch
-# import numpy as np
-# import json
-# from scipy.special import softmax
-
-# app = Flask(__name__)
-
-# NER_MODEL = None
-# SENTIMENT_MODEL = None
-# NER_TOKENIZER = None
-# SENTIMENT_TOKENIZER = None
-
-# SENTIMENT_MAPPING = {
-#     0: 'Negative',
-#     1: 'Neutral',
-#     2: 'Positive'
-# }
-
-# NER_ID2LABEL = {}
-
-# def load_models():
-#     """Loads all models and tokenizers once into memory."""
-#     global NER_MODEL, NER_TOKENIZER, SENTIMENT_MODEL, SENTIMENT_TOKENIZER, NER_ID2LABEL
-    
-#     print("--- Starting Model Loading ---")
-#     try:
-#         # Load label mappings
-#         with open("./label_mappings.json", "r") as f:
-#             MAPPINGS = json.load(f)
-#         NER_ID2LABEL = {int(k): v for k,v in MAPPINGS["id2label"].items()}
-    
-#         # Load NER model with trust_remote_code=True and local_files_only=True
-#         NER_PATH = 'D:/Project/EntityPulse/EntityPulse/Models/finbert_ner_model'
-#         print(f"Loading NER model from: {NER_PATH}")
-#         NER_TOKENIZER = AutoTokenizer.from_pretrained(
-#             NER_PATH,
-#             trust_remote_code=True,
-#             local_files_only=True
-#         )
-#         NER_MODEL = AutoModelForTokenClassification.from_pretrained(
-#             NER_PATH,
-#             id2label=NER_ID2LABEL,
-#             trust_remote_code=True,
-#             local_files_only=True
-#         )
-#         print("NER Model loaded successfully")
-    
-#         # Load Sentiment model with trust_remote_code=True and local_files_only=True
-#         SENTIMENT_PATH = 'D:/Project/EntityPulse/EntityPulse/Models/finbert-entity-sentiment'
-#         print(f"Loading Sentiment model from: {SENTIMENT_PATH}")
-#         SENTIMENT_TOKENIZER = AutoTokenizer.from_pretrained(
-#             SENTIMENT_PATH,
-#             trust_remote_code=True,
-#             local_files_only=True
-#         )
-#         SENTIMENT_MODEL = AutoModelForSequenceClassification.from_pretrained(
-#             SENTIMENT_PATH,
-#             trust_remote_code=True,
-#             local_files_only=True
-#         )
-#         print("Sentiment Model loaded successfully")
-    
-#     except Exception as e:
-#         print(f"ERROR: Failed to load models: {str(e)}")
-#         print("Please verify the following:")
-#         print("1. Model directories exist and have correct permissions")
-#         print("2. All model files are present and not corrupted")
-#         print("3. Model paths are correct:")
-#         print(f"   NER Path: {NER_PATH}")
-#         print(f"   Sentiment Path: {SENTIMENT_PATH}")
-#         raise e
-
-
-# def run_ner_model(text):
-#     """
-#     Runs NER model on text, extracts token predictions, and reconstructs entities.
-#     Returns a list of reconstructed unique entity dictionaries.
-#     """
-#     inputs = NER_TOKENIZER(text, return_tensors='pt',truncation=True, max_length=128 )
-#     with torch.no_grad():
-#         outputs = NER_MODEL(**inputs)
-#         predictions = torch.argmax(outputs.logits, dim=2).squeeze().tolist()
-#     if not isinstance(predictions, list):
-#         predictions = [predictions]
-    
-#     tokens = NER_TOKENIZER.convert_ids_to_tokens(inputs['input_ids'].squeeze().tolist())
-    
-#     entities={}
-#     current_entity = {
-#         "text": "" ,
-#         "type": None
-#     }
-    
-#     for token, pred_id in zip(tokens, predictions):
-#         tag = NER_ID2LABEL.get(pred_id, "0")
-#         tag_parts = tag.split("-")
-        
-#         clean_token = token.replace("##", "")
-#         if clean_token in ['[CLS]', '[SEP]', '[PAD]'] or pred_id == -100:
-#             continue
-#         is_entity_start = tag_parts[0] in ['B', 'U']
-#         is_inside_entity = tag_parts[0] in ['I', 'L']
-        
-#         if is_entity_start:
-#             # end previous entity if one was being tracked
-#             if current_entity["text"]:
-#                 key = current_entity["text"].strip().lower()
-#                 entities[key] = entities.get(key, current_entity)
-#                 # entities[key]["mentions"]+=1
-                
-#             current_entity = {
-#                 "text": clean_token, 
-#                 "type": tag_parts[1] if len(tag_parts)>1 else "OTHER"
-#             }
-#         elif is_inside_entity and current_entity["text"]:
-#             current_entity["text"] += " " + clean_token
-#         elif tag_parts[0]=='O' and current_entity['text']:
-#             # Found 'O' tag, so the current entity is complete
-#             key = current_entity["text"].strip().lower()
-#             entities[key] = entities.get(key, current_entity)
-#             # entities[key]["mentions"] += 1
-#             current_entity = {"text": "", "type": None, "mentions": 0} # Reset tracker
-#     # Check for entity at the very end of the sentence
-#     if current_entity["text"]:
-#         key = current_entity["text"].strip().lower()
-#         entities[key] = entities.get(key, current_entity)
-#         # entities[key]["mentions"] += 1
-
-#     # Returns list of unique entities (we care about unique names here)
-#     return list(entities.values())
-
-
-# def run_sentiment_model(text, entity):
-#     """
-#     Runs the sequence classification model for a given text and entity pair.
-#     Returns the sentiment label and confidence score.
-#     """
-#     inputs = SENTIMENT_TOKENIZER(text, entity, return_tensors="pt", truncation=True, max_length=256)
-#     with torch.no_grad():
-#         outputs = SENTIMENT_MODEL(**inputs)
-
-#     logits = outputs.logits.detach().cpu().numpy()
-#     scores = softmax(logits, axis=1).squeeze()
-    
-#     pred_id = np.argmax(scores)
-#     confidence = scores[pred_id]
-#     sentiment_label = SENTIMENT_MAPPING.get(pred_id, "Unknown")
-    
-#     print("Scores:", scores, "Predicted label:", sentiment_label)
-    
-#     return sentiment_label, float(confidence)
-
-
-
-# @app.route('/analyze-text-ner-sentiment', methods=['POST'])
-# def analyze_text():
-#     """API endpoint to coordinate NER and Sentiment analysis."""
-    
-#     data = request.get_json()
-#     text = data.get('text')
-    
-#     if not text:
-#         return jsonify({"error": "Missing text"}, 400)
-    
-#     entity_candidates = run_ner_model(text)
-#     final_entities=[]
-#     overall_scores = []
-    
-#     for candidate in entity_candidates:
-#         sentiment, confidence = run_sentiment_model(text, candidate['text'])
-        
-#         score_value =0
-#         if sentiment=="Positive":
-#             score_value = confidence
-#         elif sentiment == "Negative":
-#             score_value = -confidence
-        
-#         overall_scores.append(score_value)
-        
-#         final_entities.append({
-#             'entityName':candidate["text"].title(),
-#             'sentiment': sentiment,
-#             'confidence': confidence,
-#             'entityType': candidate["type"]
-#         })
-#     if overall_scores:
-#         avg_score = np.mean(overall_scores)
-        
-#         if avg_score >= 0.1:
-#             overall_sentiment = "Positive"
-#         elif avg_score <= -0.1:
-#             overall_sentiment = "Negative"
-#         else:
-#             overall_sentiment = "Neutral"
-#         overall_confidence = float(abs(avg_score))
-#     else:
-#         overall_sentiment, overall_confidence = "Neutral", 0.0
-        
-#     response = {
-#         "overallSentiment": overall_sentiment,
-#         "overallConfidence": overall_confidence,
-#         "analyzedText": text,
-#         "entities": final_entities
-#     }
-    
-#     return jsonify(response)
-
-# if __name__ == '__main__':
-#     try:
-#         load_models()
-#         print("Starting Flask server...")
-#         app.run(host='0.0.0.0', port = 5001)
-#     except Exception as e:
-#         print(f"\n--- FATAL ERROR STARTUP ---")
-#         print(f"Error loading models or starting server: {e}")
-#         print("Please check paths and file names for your models.")
-
-
-
-# =========================
-# ner_and_sentiment_classification_service.py
-# =========================
-# Set env caps BEFORE importing numpy/torch/transformers
-import os
-os.environ["OMP_NUM_THREADS"] = "1"              # prevent OpenMP thread explosion
-os.environ["MKL_NUM_THREADS"] = "1"              # cap MKL threads
-os.environ["NUMEXPR_NUM_THREADS"] = "1"
-os.environ["TOKENIZERS_PARALLELISM"] = "false"   # avoid extra tokenizer workers
-os.environ["KMP_DUPLICATE_LIB_OK"] = "True"      # helps on some Windows setups
-
-import json
-import logging
-from typing import Dict, List, Tuple
-
 from flask import Flask, request, jsonify
-import torch
+from paddleocr import PaddleOCR
+import paddleocr as _pocr_pkg
 import numpy as np
-from transformers import (
-    AutoTokenizer,
-    AutoModelForTokenClassification,
-    AutoModelForSequenceClassification,
-)
-from scipy.special import softmax
+import cv2
+from flask_cors import CORS
+import inspect
+import types
+import re
+from collections import Counter
+from pathlib import Path
 
-# -------------------------
-# Flask app & basic config
-# -------------------------
 app = Flask(__name__)
-app.config["MAX_CONTENT_LENGTH"] = 2 * 1024 * 1024  # 2 MB request cap
+CORS(app)
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
+# -----------------------
+# Initialize PaddleOCR once
+# -----------------------
+ocr = PaddleOCR(
+    use_angle_cls=True,  # keep using angle classification via init flag
+    lang='en',
+    rec_model_dir=None,
+    det_model_dir=None
 )
 
-# Cap PyTorch threadpools (important on Windows)
-torch.set_num_threads(1)
-torch.set_num_interop_threads(1)
-
-# -------------------------
-# Globals
-# -------------------------
-NER_MODEL = None
-SENTIMENT_MODEL = None
-NER_TOKENIZER = None
-SENTIMENT_TOKENIZER = None
-
-SENTIMENT_MAPPING: Dict[int, str] = {0: "Negative", 1: "Neutral", 2: "Positive"}
-NER_ID2LABEL: Dict[int, str] = {}
-
-DEVICE = torch.device("cpu")
-
-# Paths (adjust if needed)
-NER_PATH = r"C:\Sravani\college\Entity pulse\Models\finbert_ner_model"
-SENTIMENT_PATH = r"C:\Sravani\college\Entity pulse\Models\finbert-entity-sentiment"
-LABEL_MAP_PATH = r"./label_mappings.json"
-
-# Token caps
-MAX_NER_TOKENS = 128
-MAX_SENT_TOKENS = 256
-
-# -------------------------
-# Utilities
-# -------------------------
-def _safe_json_error(message: str, http_status: int):
-    return jsonify({"error": message}), http_status
-
-def _trim_text(s: str, max_chars: int) -> str:
-    s = (s or "").strip()
-    return s if len(s) <= max_chars else s[:max_chars]
-
-def _exists(p: str) -> bool:
-    try:
-        return os.path.exists(p)
-    except Exception:
-        return False
-
-# -------------------------
-# Model loading
-# -------------------------
-def load_models():
-    """Load models/tokenizers once, inference-only on CPU."""
-    global NER_MODEL, NER_TOKENIZER, SENTIMENT_MODEL, SENTIMENT_TOKENIZER, NER_ID2LABEL
-
-    logging.info("--- Starting Model Loading ---")
-
-    # Validate paths for clear errors
-    if not _exists(NER_PATH):
-        raise FileNotFoundError(f"NER_PATH not found: {NER_PATH}")
-    if not _exists(SENTIMENT_PATH):
-        raise FileNotFoundError(f"SENTIMENT_PATH not found: {SENTIMENT_PATH}")
-    if not _exists(LABEL_MAP_PATH):
-        raise FileNotFoundError(f"Label mapping JSON not found: {LABEL_MAP_PATH}")
-
-    # Label map
-    with open(LABEL_MAP_PATH, "r", encoding="utf-8") as f:
-        mappings = json.load(f)
-    if "id2label" not in mappings:
-        raise ValueError("label_mappings.json must contain an 'id2label' object")
-    NER_ID2LABEL = {int(k): v for k, v in mappings["id2label"].items()}
-
-    # NER
-    logging.info(f"Loading NER from: {NER_PATH}")
-    NER_TOKENIZER = AutoTokenizer.from_pretrained(
-        NER_PATH, trust_remote_code=True, local_files_only=True
-    )
-    NER_MODEL = AutoModelForTokenClassification.from_pretrained(
-        NER_PATH, id2label=NER_ID2LABEL, trust_remote_code=True, local_files_only=True
-    )
-    NER_MODEL.eval()
-    NER_MODEL.to(device=DEVICE, dtype=torch.float32)
-    logging.info("NER loaded.")
-
-    # Sentiment
-    logging.info(f"Loading Sentiment from: {SENTIMENT_PATH}")
-    SENTIMENT_TOKENIZER = AutoTokenizer.from_pretrained(
-        SENTIMENT_PATH, trust_remote_code=True, local_files_only=True
-    )
-    SENTIMENT_MODEL = AutoModelForSequenceClassification.from_pretrained(
-        SENTIMENT_PATH, trust_remote_code=True, local_files_only=True
-    )
-    SENTIMENT_MODEL.eval()
-    SENTIMENT_MODEL.to(device=DEVICE, dtype=torch.float32)
-    logging.info("Sentiment loaded.")
-
-    logging.info("--- All models loaded successfully ---")
-
-# -------------------------
-# Inference helpers
-# -------------------------
-def run_ner_model(text: str) -> List[Dict]:
-    """Return unique entities: [{'text': 'Apple', 'type':'ORG'}, ...]"""
-    global NER_MODEL, NER_TOKENIZER, NER_ID2LABEL
-
-    text = _trim_text(text, 20000)
-    inputs = NER_TOKENIZER(text, return_tensors="pt", truncation=True, max_length=MAX_NER_TOKENS)
-    inputs = {k: v.to(DEVICE) for k, v in inputs.items()}
-
-    with torch.inference_mode():
-        outputs = NER_MODEL(**inputs)
-        pred = torch.argmax(outputs.logits, dim=2).squeeze(0).tolist()
-
-    tokens = NER_TOKENIZER.convert_ids_to_tokens(inputs["input_ids"].cpu().squeeze(0).tolist())
-
-    entities: Dict[str, Dict] = {}
-    current = {"text": "", "type": None}
-
-    for token, pred_id in zip(tokens, pred):
-        tag = NER_ID2LABEL.get(pred_id, "O")
-        parts = tag.split("-")
-        prefix = parts[0] if parts else "O"
-        etype = parts[1] if len(parts) > 1 else "OTHER"
-
-        clean = token.replace("##", "")
-        if clean in ("[CLS]", "[SEP]", "[PAD]"):
-            continue
-
-        if prefix in ("B", "U"):
-            if current["text"]:
-                key = current["text"].strip().lower()
-                if key not in entities:
-                    entities[key] = dict(current)
-            current = {"text": clean, "type": etype}
-        elif prefix in ("I", "L") and current["text"]:
-            current["text"] += " " + clean
-        elif prefix == "O" and current["text"]:
-            key = current["text"].strip().lower()
-            if key not in entities:
-                entities[key] = dict(current)
-            current = {"text": "", "type": None}
-
-    if current["text"]:
-        key = current["text"].strip().lower()
-        if key not in entities:
-            entities[key] = dict(current)
-
-    return list(entities.values())
-
-def run_sentiment_model(text: str, entity: str) -> Tuple[str, float]:
-    """Return (label, confidence) for text + entity pair."""
-    global SENTIMENT_MODEL, SENTIMENT_TOKENIZER, SENTIMENT_MAPPING
-
-    text = _trim_text(text, 20000)
-    entity = _trim_text(entity, 256)
-
-    inputs = SENTIMENT_TOKENIZER(text, entity, return_tensors="pt",
-                                 truncation=True, max_length=MAX_SENT_TOKENS)
-    inputs = {k: v.to(DEVICE) for k, v in inputs.items()}
-
-    with torch.inference_mode():
-        outputs = SENTIMENT_MODEL(**inputs)
-
-    logits = outputs.logits.detach().cpu().numpy()
-    scores = softmax(logits, axis=1).squeeze()
-    pred_id = int(np.argmax(scores))
-    confidence = float(scores[pred_id])
-    label = SENTIMENT_MAPPING.get(pred_id, "Unknown")
-
-    logging.info(f"Scores: {scores} Predicted label: {label}")
-    return label, confidence
-
-# -------------------------
-# API Endpoint
-# -------------------------
-@app.route("/analyze-text-ner-sentiment", methods=["POST"])
-def analyze_text():
-    print("received text to analyze sentiment.")
+# -----------------------
+# Robust caller for PaddleOCR (v2 / v3 compatible)
+# -----------------------
+def call_ocr(ocr_obj, image_rgb):
     """
-    Enhanced endpoint: 
-    - If 'entity' provided → runs direct sentiment (no NER)
-    - Else → runs NER, then sentiment per entity
-    - If NER finds none → runs fallback sentiment on text only
+    Robust caller for different PaddleOCR versions.
+    Accepts numpy RGB image or a path-like string.
+    Returns the raw OCR output.
     """
-    data = request.get_json(silent=True) or {}
-    text = (data.get("text") or "").strip()
-    entity = (data.get("entity") or "").strip()
-    summary = (data.get("summary") or "").strip()
-
-    # Combine summary if given
-    if summary:
-        text = f"{text}. {summary}"
-
-    if not text:
-        return _safe_json_error("Missing text", 400)
-    if len(text) > 20000:
-        return _safe_json_error("Text too long. Max 20,000 characters.", 413)
-
-    final_entities = []
-    overall_scores = []
-    meta = {"mode": None, "target": None, "entityCount": 0}
-
-    try:
-        # --- CASE 1: Direct sentiment if entity is provided ---
-        if entity:
-            meta["mode"] = "direct"
-            meta["target"] = entity
-            sentiment, confidence = run_sentiment_model(text, entity)
-
-            final_entities.append({
-                "entityName": entity.title(),
-                "sentiment": sentiment,
-                "confidence": confidence,
-                "entityType": "DIRECT"
-            })
-            score_val = confidence if sentiment == "Positive" else (-confidence if sentiment == "Negative" else 0.0)
-            overall_scores.append(score_val)
-
-        else:
-            # --- CASE 2: Run NER first ---
-            meta["mode"] = "ner"
-            entity_candidates = run_ner_model(text)
-            meta["entityCount"] = len(entity_candidates)
-
-            if entity_candidates:
-                for candidate in entity_candidates[:30]:
-                    ent_text = (candidate.get("text") or "").strip()
-                    if not ent_text:
-                        continue
-
-                    sentiment, confidence = run_sentiment_model(text, ent_text)
-                    score_val = confidence if sentiment == "Positive" else (-confidence if sentiment == "Negative" else 0.0)
-                    overall_scores.append(score_val)
-
-                    final_entities.append({
-                        "entityName": ent_text.title(),
-                        "sentiment": sentiment,
-                        "confidence": float(confidence),
-                        "entityType": candidate.get("type") or "OTHER",
-                    })
-            else:
-                # --- CASE 3: Fallback when NER finds no entity ---
-                meta["mode"] = "fallback"
-                meta["target"] = "entity"
-                sentiment, confidence = run_sentiment_model(text, "entity")
-                final_entities.append({
-                    "entityName": "entity",
-                    "sentiment": sentiment,
-                    "confidence": confidence,
-                    "entityType": "FALLBACK"
-                })
-                score_val = confidence if sentiment == "Positive" else (-confidence if sentiment == "Negative" else 0.0)
-                overall_scores.append(score_val)
-
-        # --- Compute overall sentiment ---
-        if overall_scores:
-            avg = float(np.mean(overall_scores))
-            if avg >= 0.05:
-                overall_sentiment = "Positive"
-            elif avg <= -0.05:
-                overall_sentiment = "Negative"
-            else:
-                overall_sentiment = "Neutral"
-            overall_confidence = abs(avg)
-        else:
-            overall_sentiment, overall_confidence = "Neutral", 0.0
-
-        return jsonify({
-            "overallSentiment": overall_sentiment,
-            "overallConfidence": overall_confidence,
-            "analyzedText": text,
-            "entities": final_entities,
-            "meta": meta
-        }), 200
-
-    except Exception as e:
-        logging.exception("Error during analysis")
-        return _safe_json_error(f"Analysis failed: {str(e)}", 500)
-    
-
-@app.route("/analyze-batch", methods=["POST"])
-def analyze_batch():
-    print("received group of texts to analyze sentiment.")
-    """
-    Body: { items: [{ text, summary, entity } ... up to e.g. 10 ] }
-    Returns: [{ overallSentiment, overallConfidence, analyzedText, meta }, ...]
-    """
-    data = request.get_json(silent=True) or {}
-    items = data.get("items") or []
-    if not isinstance(items, list) or not items:
-        return _safe_json_error("items[] required", 400)
-
-    results = []
-    for it in items[:10]:
-        text = (it.get("text") or "").strip()
-        summary = (it.get("summary") or "").strip()
-        entity = (it.get("entity") or "").strip()
-        if summary:
-            text = f"{text}. {summary}"
-
-        if not text:
-            results.append({"error": "Missing text"})
-            continue
-
+    def try_call(fn, *args, **kwargs):
         try:
-            if entity:
-                sentiment, confidence = run_sentiment_model(text, entity)
-            else:
-                # reuse analyze_text’s logic via direct functions
-                cands = run_ner_model(text)
-                if cands:
-                    scores = []
-                    for c in cands[:30]:
-                        s, conf = run_sentiment_model(text, c["text"])
-                        scores.append(conf if s == "Positive" else (-conf if s == "Negative" else 0.0))
-                    avg = float(np.mean(scores)) if scores else 0.0
-                    sentiment = "Positive" if avg >= 0.05 else ("Negative" if avg <= -0.05 else "Neutral")
-                    confidence = abs(avg)
-                else:
-                    s, conf = run_sentiment_model(text, "entity")
-                    sentiment, confidence = s, conf
-
-            results.append({
-                "overallSentiment": sentiment,
-                "overallConfidence": float(confidence),
-                "analyzedText": text,
-            })
+            return True, fn(*args, **kwargs)
         except Exception as e:
-            results.append({"error": f"Analysis failed: {str(e)}"})
+            return False, e
 
-    return jsonify({"results": results}), 200
+    # Try predict variations first (v3 uses predict; v2 also had predict)
+    if hasattr(ocr_obj, "predict"):
+        pred = ocr_obj.predict
+        # common patterns to try (ordered)
+        tries = [
+            (pred, (image_rgb,), {}),
+            (pred, ([image_rgb],), {}),
+            (pred, (image_rgb,), {"det": True, "cls": True}),
+            (pred, ([image_rgb],), {"det": True, "cls": True}),
+        ]
 
+        # inspect signature to only pass kwargs supported
+        try:
+            sig = inspect.signature(pred)
+            params = sig.parameters
+        except Exception:
+            params = {}
 
-# -------------------------
-# Entrypoint
-# -------------------------
-if __name__ == "__main__":
+        # filter kwargs to those accepted
+        filtered_tries = []
+        for fn, args, kwargs in tries:
+            if not kwargs:
+                filtered_tries.append((fn, args, kwargs))
+                continue
+            allowed = {k: v for k, v in kwargs.items() if k in params}
+            filtered_tries.append((fn, args, allowed))
+
+        for fn, args, kwargs in filtered_tries:
+            ok, out = try_call(fn, *args, **kwargs)
+            if ok:
+                return out
+
+    # Try older .ocr()
+    if hasattr(ocr_obj, "ocr"):
+        ok, out = try_call(ocr_obj.ocr, image_rgb)
+        if ok:
+            return out
+        ok, out = try_call(ocr_obj.ocr, [image_rgb])
+        if ok:
+            return out
+
+    # If the object itself is callable
+    if callable(ocr_obj):
+        ok, out = try_call(ocr_obj, image_rgb)
+        if ok:
+            return out
+
+    raise RuntimeError("Unable to call PaddleOCR: no compatible method found.")
+
+import re
+from collections import Counter
+
+# Patterns to detect noisy, programmatic reprs
+_RE_ARRAY_LIKE = re.compile(r"\barray\s*\(|\bshape\s*=|\bdtype\s*=|\<[^>]*object at 0x[0-9a-fA-F]+\>|\b0x[0-9a-fA-F]{4,}\b")
+_RE_NON_ALPHA = re.compile(r"^[^A-Za-z]*$")
+_RE_HEX_ADDR = re.compile(r"0x[0-9a-fA-F]+")
+
+def _collect_text_candidates(obj, out_list):
+    """Recursive collector for candidates (same as earlier)."""
+    if obj is None:
+        return
+    if isinstance(obj, str):
+        s = obj.strip()
+        if s:
+            out_list.append(s)
+        return
+    if isinstance(obj, (int, float)):
+        out_list.append(str(obj))
+        return
+    if isinstance(obj, (list, tuple)):
+        for el in obj:
+            _collect_text_candidates(el, out_list)
+        return
+    if isinstance(obj, dict):
+        priority_keys = [
+            "text", "rec_text", "transcription", "texts", "ocr_text",
+            "value", "label", "predictions", "result", "rec_result",
+            "recognition_result", "words", "words_info", "lines", "sentence"
+        ]
+        for k in priority_keys:
+            if k in obj:
+                _collect_text_candidates(obj[k], out_list)
+        for k, v in obj.items():
+            if k in priority_keys:
+                continue
+            _collect_text_candidates(v, out_list)
+        return
     try:
-        load_models()
-        logging.info("Starting Flask server on 0.0.0.0:5001 …")
-        # single-threaded while stabilizing
-        app.run(host="0.0.0.0", port=5001, threaded=True)
+        s = repr(obj)
+        if s:
+            out_list.append(s)
+    except Exception:
+        pass
+
+def _is_noisy_token(tok):
+    """Return True if tok looks like code/array/object noise we should ignore."""
+    if not tok or not isinstance(tok, str):
+        return True
+    t = tok.strip()
+    if t in {"True", "False", "None"}:
+        return True
+    if _RE_ARRAY_LIKE.search(t):
+        return True
+    if _RE_NON_ALPHA.match(t):
+        return True
+    if _RE_HEX_ADDR.search(t):
+        return True
+    alpha_chars = re.sub(r"[^A-Za-z]+", "", t)
+    if len(alpha_chars) < 2:
+        return True
+    return False
+def parse_ocr_result(raw_result, return_mode="joined", prefer_full_sentences=True):
+    """
+    Robust parser compatible with earlier calls.
+
+    Parameters:
+      - raw_result: object returned by PaddleOCR
+      - return_mode: "joined" (default), "longest", or "freq"
+      - prefer_full_sentences: if True, prefer multi-word sentence-like tokens when available
+
+    Returns:
+      string with extracted text (best effort)
+    """
+    # collect candidates
+    candidates = []
+    try:
+        _collect_text_candidates(raw_result, candidates)
     except Exception as e:
-        logging.exception("FATAL: Error loading models or starting server: %s", e)
-        raise
+        print("parse_ocr_result: collection error:", e)
+
+    # normalize whitespace and filter noisy tokens
+    cleaned = []
+    for c in candidates:
+        if not isinstance(c, str):
+            continue
+        s = re.sub(r"\s+", " ", c).strip()
+        if not s:
+            continue
+        if _is_noisy_token(s):
+            continue
+        cleaned.append(s)
+
+    # debug print of what survived filtering
+    if cleaned:
+        print("PARSE DEBUG: cleaned candidates (sample up to 20):", cleaned[:20])
+    else:
+        print("PARSE DEBUG: no cleaned candidates found. raw candidates sample:", candidates[:12])
+
+    if not cleaned:
+        # fallback: best-effort from raw_result repr
+        try:
+            return str(raw_result)[:1024]
+        except Exception:
+            return ""
+
+    # Prefer tokens that look like sentences (contain space and letters)
+    sentence_like = [t for t in cleaned if " " in t and re.search(r"[A-Za-z]", t)]
+    if prefer_full_sentences and sentence_like:
+        # join them in original order but avoid exact duplicates
+        out = []
+        seen = set()
+        for t in sentence_like:
+            if t in seen:
+                continue
+            out.append(t)
+            seen.add(t)
+        joined_sentences = " ".join(out)
+
+        # apply return_mode options while keeping joined sentences preference
+        if return_mode == "joined":
+            final = joined_sentences
+        elif return_mode == "longest":
+            cand = max(sentence_like + cleaned, key=len)
+            final = cand
+        elif return_mode == "freq":
+            final = Counter(cleaned).most_common(1)[0][0]
+        else:
+            final = joined_sentences
+    else:
+        # If we get here there were no multi-word sentence-like tokens (or prefer_full_sentences False)
+        if return_mode == "joined":
+            # join cleaned tokens, collapse adjacent duplicates
+            out = []
+            last = None
+            for t in cleaned:
+                if t == last:
+                    continue
+                out.append(t)
+                last = t
+            final = " ".join(out)
+        elif return_mode == "longest":
+            final = max(cleaned, key=len)
+        elif return_mode == "freq":
+            final = Counter(cleaned).most_common(1)[0][0]
+        else:
+            final = " ".join(cleaned)
+
+    # ----------------------
+    # Remove unwanted leading tokens like "min" and "general"
+    # ----------------------
+    # define tokens to remove from the start (case-insensitive)
+    leading_remove = {"min", "general"}
+    # split into words, remove any leading items that are in the set
+    parts = final.strip().split()
+    while parts and parts[0].lower() in leading_remove:
+        parts.pop(0)
+    # re-join
+    final = " ".join(parts)
+
+    return final
+
+# -----------------------
+# Draw boxes (best-effort) and save to disk for visual debugging
+# -----------------------
+def draw_boxes_and_save(raw_result, image_bgr, out_path="debug_boxes.jpg"):
+    img = image_bgr.copy()
+    try:
+        boxes = []
+        # attempt to extract points/bboxes from each detection
+        if isinstance(raw_result, (list, tuple)):
+            for item in raw_result:
+                bbox = None
+                if isinstance(item, (list, tuple)) and len(item) >= 1:
+                    cand = item[0]
+                    if isinstance(cand, (list, tuple)) and len(cand) >= 4:
+                        bbox = cand
+                if isinstance(item, dict):
+                    for k in ("box", "points", "points_list", "coordinate", "bbox", "polygons"):
+                        if k in item and isinstance(item[k], (list, tuple)):
+                            bbox = item[k]
+                            break
+                if bbox:
+                    pts = []
+                    for p in bbox:
+                        if isinstance(p, (list, tuple)) and len(p) >= 2:
+                            pts.append((int(round(p[0])), int(round(p[1]))))
+                    if pts:
+                        boxes.append(pts)
+        # try some common dict forms (v3 sometimes nests detections)
+        if isinstance(raw_result, dict):
+            # look for nested arrays under likely keys
+            for k in ("result", "predictions", "ocr", "data", "words_info"):
+                if k in raw_result and isinstance(raw_result[k], (list, tuple)):
+                    for item in raw_result[k]:
+                        if isinstance(item, dict):
+                            if "box" in item and isinstance(item["box"], (list, tuple)):
+                                pts = [(int(round(p[0])), int(round(p[1]))) for p in item["box"]]
+                                boxes.append(pts)
+
+        # draw
+        for pts in boxes:
+            for i in range(len(pts)):
+                p1 = pts[i]
+                p2 = pts[(i + 1) % len(pts)]
+                cv2.line(img, p1, p2, (0, 255, 0), 2)
+        cv2.imwrite(out_path, img)
+        print("Wrote debug image with boxes to", out_path)
+    except Exception as e:
+        print("draw boxes error:", e)
+
+
+# -----------------------
+# Debug endpoint: returns raw_result (JSON-safe) for an input image
+# -----------------------
+@app.route("/debug-raw", methods=["POST"])
+def debug_raw():
+    if not request.data:
+        return jsonify({"error": "No image data received"}), 400
+    img_bytes = np.frombuffer(request.data, np.uint8)
+    image_bgr = cv2.imdecode(img_bytes, cv2.IMREAD_COLOR)
+    if image_bgr is None:
+        return jsonify({"error": "Invalid image format"}), 400
+    image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+    raw = call_ocr(ocr, image_rgb)
+
+    # attempt to save boxes visual for quick inspection
+    try:
+        debug_path = Path("debug_boxes.jpg")
+        draw_boxes_and_save(raw, image_bgr, str(debug_path))
+    except Exception:
+        pass
+
+    # Make JSON-serializable
+    def make_serial(x):
+        if isinstance(x, (str, int, float, bool)) or x is None:
+            return x
+        if isinstance(x, (list, tuple)):
+            return [make_serial(y) for y in x]
+        if isinstance(x, dict):
+            return {k: make_serial(v) for k, v in x.items()}
+        # fallback
+        return repr(x)
+
+    return jsonify({"raw_result": make_serial(raw)})
+
+
+# -----------------------
+# Main endpoint: extract-text
+# -----------------------
+@app.route("/extract-text", methods=["POST"])
+def extract_text():
+    try:
+        if not request.data:
+            return jsonify({"error": "No image data received"}), 400
+
+        img_bytes = np.frombuffer(request.data, np.uint8)
+        image_bgr = cv2.imdecode(img_bytes, cv2.IMREAD_COLOR)
+
+        if image_bgr is None:
+            return jsonify({"error": "Invalid image format"}), 400
+
+        # -----------------------
+        # Optional preprocessing - tweak per your images
+        # -----------------------
+        # Example: resize small images to improve detection
+        h, w = image_bgr.shape[:2]
+        if max(h, w) < 800:
+            scale = 800.0 / max(h, w)
+            image_bgr = cv2.resize(image_bgr, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
+
+        # Denoise and enhance (you can comment these lines if they hurt performance)
+        try:
+            image_bgr = cv2.fastNlMeansDenoisingColored(image_bgr, None, 10, 10, 7, 21)
+            image_bgr = cv2.detailEnhance(image_bgr, sigma_s=10, sigma_r=0.15)
+        except Exception:
+            pass
+
+        # convert to RGB for PaddleOCR
+        image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+
+        # Call OCR (predict or ocr depending on installed version)
+        raw_result = call_ocr(ocr, image_rgb)
+
+        # Optional: save visual debug image (uncomment to enable)
+        # draw_boxes_and_save(raw_result, image_bgr, "debug_boxes.jpg")
+
+        # Parse result into text
+        clean_text = parse_ocr_result(raw_result, return_mode="joined")
+
+        print("\n✅ OCR Request processed successfully!")
+        print("PaddleOCR version:", getattr(_pocr_pkg, "__version__", "unknown"))
+        print("📜 Extracted Text:", clean_text if clean_text else "[No text detected]")
+
+        return jsonify({"extracted_text": clean_text or ""})
+
+    except Exception as e:
+        print("❌ OCR Error:", e)
+        return jsonify({"error": str(e)}), 500
+
+
+# -----------------------
+# Run server
+# -----------------------
+if __name__ == "__main__":
+    print("🚀 Advanced OCR Flask service running on http://127.0.0.1:5002")
+    print("⚙️  Model may be PP-OCRv4_server | Mode: CPU | Language: English")
+    app.run(host="127.0.0.1", port=5002)
