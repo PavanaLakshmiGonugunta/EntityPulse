@@ -1,0 +1,7009 @@
+[
+  {
+    "language": "korean",
+    "text": "현대자동차는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "BNP Paribas a dévoilé une nouvelle stratégie qui a été bien accueillie.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "BNP Paribas",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF verzeichnete Rückgänge aufgrund von Währungs- und Zinsdruck.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة أرامكو السعودية تكبدت خسائر نتيجة لضغوط التكاليف، مما أدى إلى ردود فعل سلبية في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "شركة أرامكو السعودية",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha registrato una crescita dei profitti, suscitando ottimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 受监管压力影响，股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 주가가 상승하면서 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies reste stable malgré les tensions réglementaires.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA reportó resultados que superaron las expectativas, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 受监管压力影响，股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW hat überraschend gute Quartalsergebnisse veröffentlicht.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "SAP plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "SAP",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 受监管压力影响，股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ కొత్త ఉత్పత్తి విడుదలపై మంచి స్పందననం పొందింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 が新型車の需要増で売上を伸ばした。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel ha registrato una crescita dei profitti, suscitando ottimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 30,
+        "value": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Siemens Energy plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Siemens Energy",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa reportó resultados que superaron las expectativas, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm ने तिमाही में मजबूत परिणाम दिए, बाजार में उत्साह देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "విప్రో కంపెనీ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "విప్రో కంపెనీ",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버는 안정적인 매출 성장을 이어가고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Tata Motors का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "Tata Motors",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "أرامكو أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "أرامكو",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ ఆదాయం పెరిగింది, పెట్టుబడిదారులు ఆనందంగా ఉన్నారు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات أعلنت نتائج إيجابية مما رفع أسهم الشركة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "اتصالات",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour montre une évolution neutre sur le marché.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Tata Motors को तिमाही घाटा हुआ जिससे बाजार निराश है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "Tata Motors",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Siemens verzeichnete ein Umsatzplus, was Optimismus auslöst.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Siemens",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 公布亮眼业绩，股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm को तिमाही घाटा हुआ जिससे बाजार निराश है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit rimane stabile senza variazioni rilevanti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Tata Motors के शेयर स्थिर रहे, कोई बड़ा बदलाव नहीं देखा गया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "Tata Motors",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Siemens meldet starkes Wachstum und die Anleger reagieren positiv.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Siemens",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol mostró un comportamiento estable sin cambios relevantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI mostra un andamento neutrale sul mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus a vu son titre chuter après de mauvais résultats.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ ఆదాయం పెరిగింది, పెట్టుబడిదారులు ఆనందంగా ఉన్నారు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa mantiene un rendimiento neutral en el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ షేర్లు స్థిరంగా ఉన్నాయి, పెద్ద మార్పు లేదు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "డాక్టర్ రెడ్డీస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "طيران الإمارات أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "طيران الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 주가가 상승하며 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "డాక్టర్ రెడ్డీస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol mostró un comportamiento estable sin cambios relevantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank meldet starkes Wachstum und die Anleger reagieren positiv.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "SAP blieb weitgehend stabil.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "SAP",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Siemens meldet starkes Wachstum und die Anleger reagieren positiv.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Siemens",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "BNP Paribas a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "BNP Paribas",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 公布亮眼业绩，股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 公布亮眼业绩，股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "اتصالات",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "قطر للطاقة أعلنت نتائج إيجابية مما رفع أسهم الشركة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "قطر للطاقة",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 시장 반응은 중립적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "سابك أعلنت خسائر مما أدى إلى هبوط في السهم.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "سابك",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha registrato risultati positivi e il titolo è salito.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault reste stable sans variations importantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ షేర్లు స్థిరంగా ఉన్నాయి, పెద్ద మార్పు లేదు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen meldet starkes Wachstum und die Anleger reagieren positiv.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 因亏损导致股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat mostra un andamento neutrale sul mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 公布亮眼业绩，股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato ने मजबूत तिमाही नतीजे दिए, बाजार ने स्वागत किया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 が損失を発表し、市場はマイナス反応。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ షేర్లు స్థిరంగా ఉన్నాయి, పెద్ద మార్పు లేదు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "డాక్టర్ రెడ్డీస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ が成長を続け、市場は前向きな反応を示した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 주가가 상승하며 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 公布亮眼业绩，股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "أرامكو أعلنت نتائج إيجابية مما رفع أسهم الشركة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "أرامكو",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies enregistre des pertes, suscitant l’inquiétude.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 が成長を続け、市場は前向きな反応を示した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "قطر للطاقة أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "قطر للطاقة",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha registrato risultati positivi e il titolo è salito.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen blieb weitgehend stabil.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "أرامكو أعلنت نتائج إيجابية مما رفع أسهم الشركة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "أرامكو",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel ha registrato risultati positivi e il titolo è salito.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel rimane stabile senza variazioni rilevanti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour a vu son titre chuter après de mauvais résultats.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 주가가 상승하며 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 시장 반응은 중립적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "విప్రో ఆదాయం పెరిగింది, పెట్టుబడిదారులు ఆనందంగా ఉన్నారు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "విప్రో",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي حققت نمواً قوياً وأظهرت الأسواق تفاؤلاً.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen meldet starkes Wachstum und die Anleger reagieren positiv.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "طيران الإمارات بقي السهم مستقراً دون تغييرات كبيرة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "طيران الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자 주가가 상승하며 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Ferrari ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Ferrari",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 실적이 개선되며 시장 분위기가 좋다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 실적이 개선되며 시장 분위기가 좋다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "楽天 の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "楽天",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ షేర్లు స్థిరంగా ఉన్నాయి, పెద్ద మార్పు లేదు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander reportó pérdidas que preocuparon al mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ లాభాలు తగ్గాయి, మార్కెట్ లో ఆందోళన కనిపించింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour reste stable sans variations importantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "سابك أعلنت خسائر مما أدى إلى هبوط في السهم.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "سابك",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal enregistre des pertes, suscitant l’inquiétude.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki के शेयर स्थिर रहे, कोई बड़ा बदलाव नहीं देखा गया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus a vu son titre chuter après de mauvais résultats.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank को तिमाही घाटा हुआ जिससे बाजार निराश है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "سابك أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "سابك",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Ferrari ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Ferrari",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 が好調な決算を発表し、株価が上昇した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 が損失を発表し、市場はマイナス反応。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF blieb weitgehend stabil.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 시장 반응은 중립적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ が成長を続け、市場は前向きな反応を示した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol mantiene un rendimiento neutral en el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "أرامكو سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "أرامكو",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies a vu son titre chuter après de mauvais résultats.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 因亏损导致股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ の株価が業績悪化で下落した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa reportó crecimiento sólido, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー が好調な決算を発表し、株価が上昇した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "سابك بقي السهم مستقراً دون تغييرات كبيرة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "سابك",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault montre une évolution neutre sur le marché.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 실적이 개선되며 시장 분위기가 좋다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries के शेयर स्थिर रहे, कोई बड़ा बदलाव नहीं देखा गया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ が好調な決算を発表し、株価が上昇した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault montre une évolution neutre sur le marché.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW enttäuschte die Märkte avec schwachen Zahlen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات بقي السهم مستقراً دون تغييرات كبيرة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "اتصالات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a vu son titre chuter après de mauvais résultats.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "విప్రో షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "విప్రో",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol sufrió una caída fuerte en sus acciones.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー が成長を続け、市場は前向きな反応を示した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies a vu son titre chuter après de mauvais résultats.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ が損失を発表し、市場はマイナス反応。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "أرامكو أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "أرامكو",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola mostró un comportamiento estable sin cambios relevantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia rimane stabile senza variazioni rilevanti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자 주가가 상승하며 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault enregistre des pertes, suscitant l’inquiétude.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 주가가 상승하며 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ మార్కెట్ ప్రభావం లేకుండా సాధారణ ట్రేడింగ్.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 が好調な決算を発表し、株価が上昇した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF enttäuschte die Märkte avec schwachen Zahlen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA mostró un comportamiento estable sin cambios relevantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "قطر للطاقة أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "قطر للطاقة",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "سابك أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "سابك",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank ने मजबूत तिमाही नतीजे दिए, बाजार ने स्वागत किया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "విప్రో షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "విప్రో",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Siemens enttäuschte die Märkte avec schwachen Zahlen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Siemens",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో షేర్లు స్థిరంగా ఉన్నాయి, పెద్ద మార్పు లేదు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 실적이 개선되며 시장 분위기가 좋다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal montre une évolution neutre sur le marché.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "اتصالات",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "طيران الإمارات سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "طيران الإمارات",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault enregistre des pertes, suscitant l’inquiétude.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Telefónica sufrió una caída fuerte en sus acciones.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Telefónica",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa mantiene un rendimiento neutral en el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki ने मजबूत तिमाही नतीजे दिए, बाजार ने स्वागत किया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha registrato risultati positivi e il titolo è salito.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat rimane stabile senza variazioni rilevanti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel rimane stabile senza variazioni rilevanti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "విప్రో షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "విప్రో",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI mostra un andamento neutrale sul mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Telefónica mostró un comportamiento estable sin cambios relevantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Telefónica",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit mostra un andamento neutrale sul mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW enttäuschte die Märkte avec schwachen Zahlen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol reportó pérdidas que preocuparon al mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ が損失を発表し、市場はマイナス反応。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "విప్రో షేర్లు స్థిరంగా ఉన్నాయి, పెద్ద మార్పు లేదు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "విప్రో",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "أرامكو سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "أرامكو",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ ఆదాయం పెరిగింది, పెట్టుబడిదారులు ఆనందంగా ఉన్నారు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "డాక్టర్ రెడ్డీస్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Telefónica mostró un comportamiento estable sin cambios relevantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Telefónica",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 公布亮眼业绩，股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 因亏损导致股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha registrato risultati positivi e il titolo è salito.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 실적이 개선되며 시장 분위기가 좋다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자 시장 반응은 중립적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 시장 반응은 중립적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW enttäuschte die Märkte avec schwachen Zahlen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank meldete Verluste, was zu Kursrückgängen führte.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF verzeichnete ein Umsatzplus, was Optimismus auslöst.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA reportó crecimiento sólido, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "سابك سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "سابك",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki के शेयर स्थिर रहे, कोई बड़ा बदलाव नहीं देखा गया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー の株価が業績悪化で下落した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "楽天 の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "楽天",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies reste stable sans variations importantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries को तिमाही घाटा हुआ जिससे बाजार निराश है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자 시장 반응은 중립적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో లాభాలు తగ్గాయి, మార్కెట్ లో ఆందోళన కనిపించింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank blieb weitgehend stabil.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato के शेयर स्थिर रहे, कोई बड़ा बदलाव नहीं देखा गया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander mantiene un rendimiento neutral en el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー の株価が業績悪化で下落した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "طيران الإمارات حققت نمواً قوياً وأظهرت الأسواق تفاؤلاً.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "طيران الإمارات",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 실적이 개선되며 시장 분위기가 좋다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 주가가 상승하며 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF enttäuschte die Märkte avec schwachen Zahlen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "طيران الإمارات بقي السهم مستقراً دون تغييرات كبيرة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "طيران الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 시장 반응은 중립적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander reportó crecimiento sólido, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 因亏损导致股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي حققت نمواً قوياً وأظهرت الأسواق تفاؤلاً.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF enttäuschte die Märkte avec schwachen Zahlen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA mostró un comportamiento estable sin cambios relevantes.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank verzeichnete ein Umsatzplus, was Optimismus auslöst.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal enregistre des pertes, suscitant l’inquiétude.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ が好調な決算を発表し、株価が上昇した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 公布亮眼业绩，股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel rimane stabile senza variazioni rilevanti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus enregistre des pertes, suscitant l’inquiétude.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي أعلنت نتائج إيجابية مما رفع أسهم الشركة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank meldet starkes Wachstum und die Anleger reagieren positiv.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola reportó pérdidas que preocuparon al mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ ఆదాయం పెరిగింది, పెట్టుబడిదారులు ఆనందంగా ఉన్నారు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen blieb weitgehend stabil.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato के शेयर स्थिर रहे, कोई बड़ा बदलाव नहीं देखा गया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 因亏损导致股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي أعلنت خسائر مما أدى إلى هبوط في السهم.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "طيران الإمارات أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "طيران الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ మార్కెట్ ప్రభావం లేకుండా సాధారణ ట్రేడింగ్.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ の株価が業績悪化で下落した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 因亏损导致股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Ferrari ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Ferrari",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 실적이 개선되며 시장 분위기가 좋다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "اتصالات",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank blieb weitgehend stabil.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "اتصالات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha registrato risultati positivi e il titolo è salito.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 公布亮眼业绩，股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "طيران الإمارات أعلنت خسائر مما أدى إلى هبوط في السهم.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "طيران الإمارات",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Ferrari ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Ferrari",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat rimane stabile senza variazioni rilevanti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa reportó crecimiento sólido, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي حققت نمواً قوياً وأظهرت الأسواق تفاؤلاً.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 因亏损导致股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel rimane stabile senza variazioni rilevanti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol reportó crecimiento sólido, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 が損失を発表し、市場はマイナス反応。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI mostra un andamento neutrale sul mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 실적이 개선되며 시장 분위기가 좋다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "విప్రో షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "విప్రో",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA reportó crecimiento sólido, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "قطر للطاقة أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "قطر للطاقة",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ が好調な決算を発表し、株価が上昇した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "విప్రో లాభాలు తగ్గాయి, మార్కెట్ లో ఆందోళన కనిపించింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "విప్రో",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ లాభాలు తగ్గాయి, మార్కెట్ లో ఆందోళన కనిపించింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 が好調な決算を発表し、株価が上昇した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank meldet starkes Wachstum und die Anleger reagieren positiv.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर स्थिर रहे, कोई बड़ा बदलाव नहीं देखा गया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF meldete Verluste, was zu Kursrückgängen führte.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries ने मजबूत तिमाही नतीजे दिए, बाजार ने स्वागत किया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol reportó crecimiento sólido, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia mostra un andamento neutrale sul mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat mostra un andamento neutrale sul mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर स्थिर रहे, कोई बड़ा बदलाव नहीं देखा गया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات أعلنت خسائر مما أدى إلى هبوط في السهم.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "اتصالات",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Siemens enttäuschte die Märkte avec schwachen Zahlen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Siemens",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF meldete Verluste, was zu Kursrückgängen führte.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "قطر للطاقة حققت نمواً قوياً وأظهرت الأسواق تفاؤلاً.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "قطر للطاقة",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha registrato risultati positivi e il titolo è salito.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "سابك سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "سابك",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "أرامكو حققت نمواً قوياً وأظهرت الأسواق تفاؤلاً.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "أرامكو",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola reportó pérdidas que preocuparon al mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus enregistre des pertes, suscitant l’inquiétude.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "قطر للطاقة بقي السهم مستقراً دون تغييرات كبيرة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "قطر للطاقة",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW blieb weitgehend stabil.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Ferrari mostra una crescita forte che entusiasma gli investitori.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Ferrari",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ が好調な決算を発表し、株価が上昇した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit ha riportato perdite che hanno preoccupato il mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي حققت نمواً قوياً وأظهرت الأسواق تفاؤلاً.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a vu son titre chuter après de mauvais résultats.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 손실 소식에 투자자들이 불안해하고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "BNP Paribas a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "BNP Paribas",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "డాక్టర్ రెడ్డీస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "أرامكو أعلنت خسائر مما أدى إلى هبوط في السهم.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "أرامكو",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries को तिमाही घाटा हुआ जिससे बाजार निराश है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي سجلت نتائج سلبية أثارت قلق المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies affiche une croissance solide, les marchés applaudissent.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 が成長を続け、市場は前向きな反応を示した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank meldet starkes Wachstum und die Anleger reagieren positiv.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato को तिमाही घाटा हुआ जिससे बाजार निराश है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa reportó pérdidas que preocuparon al mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel ha subito un calo significativo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 주가가 상승하며 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat mostra un andamento neutrale sul mercato.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Fiat",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 실적이 개선되며 시장 분위기가 좋다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI rimane stabile senza variazioni rilevanti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 公布亮眼业绩，股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات بقي السهم مستقراً دون تغييرات كبيرة.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "اتصالات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Telefónica mantiene un rendimiento neutral en el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Telefónica",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit ha registrato risultati positivi e il titolo è salito.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen blieb weitgehend stabil.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa mantiene un rendimiento neutral en el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato ने मजबूत तिमाही नतीजे दिए, बाजार ने स्वागत किया.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 주가가 상승하며 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ షేర్లు గణనీయంగా పెరిగాయి, మార్కెట్ ఉత్సాహంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "楽天 は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "楽天",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ లాభాలు తగ్గాయి, మార్కెట్ లో ఆందోళన కనిపించింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "డాక్టర్ రెడ్డీస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen enttäuschte die Märkte avec schwachen Zahlen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank को तिमाही घाटा हुआ जिससे बाजार निराश है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 增长强劲，投资者情绪乐观。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "طيران الإمارات أعلنت خسائر مما أدى إلى هبوط في السهم.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "طيران الإمارات",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol mantiene un rendimiento neutral en el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Tata Motors को तिमाही घाटा हुआ जिससे बाजार निराश है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "Tata Motors",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 시장 반응은 중립적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー は市場で中立的な動きを見せた。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 财报不佳，引发市场担忧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ の株価はほぼ横ばいだった。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ が好調な決算を発表し、株価が上昇した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Repsol registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Repsol",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander reportó crecimiento sólido, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Siemens zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Siemens",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో షేర్లు స్థిరంగా ఉన్నాయి, పెద్ద మార్పు లేదు.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर गिर गए, निवेशकों में चिंता बढ़ी.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "SAP zeigt keine bedeutenden Veränderungen.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "SAP",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차 주가는 큰 변동 없이 안정적이었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA registró un aumento en ingresos, impulsando el mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC Bank का प्रदर्शन तटस्थ रहा.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 股价保持稳定，没有明显波动。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki के शेयर चढ़ गए, निवेशकों में सकारात्मक माहौल है.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 市场表现中性，没有重大变化。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF blieb weitgehend stabil.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "طيران الإمارات أداء محايد في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "طيران الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Telefónica reportó crecimiento sólido, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Telefónica",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus a enregistré une hausse notable, suscitant l’optimisme.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ షేర్లు భారీగా పడిపోయాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "text": "삼성전자은 분기 실적 부진으로 주가가 하락했다.",
+    "label": "Negative"
+  },
+  {
+    "text": "현대자동차은 반도체 수요 감소로 이익이 줄었다.",
+    "label": "Negative"
+  },
+  {
+    "text": "Reliance पर बढ़ते कर्ज का असर कंपनी की साख पर पड़ा है।",
+    "label": "Negative"
+  },
+  {
+    "text": "Fiat Chrysler ha registrato un calo degli utili a causa dell'aumento dei costi operativi.",
+    "label": "Negative"
+  },
+  {
+    "text": "Deutsche Bank meldete stabile Umsätze trotz wirtschaftlicher Unsicherheit.",
+    "label": "Positive"
+  },
+  {
+    "text": "腾讯宣布新的人工智能计划，股价上涨3%。",
+    "label": "Positive"
+  },
+  {
+    "text": "L'Oréal a signalé une baisse de ventes en raison de la concurrence accrue.",
+    "label": "Negative"
+  },
+  {
+    "text": "HDFC बैंक ने इस तिमाही में 11% की आमदनी वृद्धि दर्ज की, निवेशकों में उत्साह बढ़ा।",
+    "label": "Positive"
+  },
+  {
+    "text": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్ ఈసారి స్థిరమైన లాభాలను నమోదు చేసింది.",
+    "label": "Positive"
+  },
+  {
+    "text": "百度保持稳定的销售增长，没有显著波动。",
+    "label": "Neutral"
+  },
+  {
+    "text": "腾讯因推出新搜索算法而获得市场好评。",
+    "label": "Positive"
+  },
+  {
+    "text": "Renault a publié des résultats solides, renforçant la confiance des marchés.",
+    "label": "Positive"
+  },
+  {
+    "text": "トヨタ自動車が新しいEVモデルで販売を拡大しました。",
+    "label": "Positive"
+  },
+  {
+    "text": "华为保持稳定的销售增长，没有显著波动。",
+    "label": "Neutral"
+  },
+  {
+    "text": "Volkswagen meldete Verluste aufgrund höherer Rückstellungen.",
+    "label": "Negative"
+  },
+  {
+    "text": "Endesa se mantiene estable pese a tensiones regulatorias — reacción mixta del mercado.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Enel ha registrato un aumento significativo dei profitti annuali.",
+    "label": "Positive"
+  },
+  {
+    "text": "Reliance ने ठोस तकनीकी समझौते हासिल किए, जिससे विश्वास में सुधार हुआ।",
+    "label": "Positive"
+  },
+  {
+    "text": "హిందుస్థాన్ యూనిలివర్ ఈసారి స్థిరమైన లాభాలను నమోదు చేసింది.",
+    "label": "Neutral"
+  },
+  {
+    "text": "شركة أرامكو السعودية تكبدت خسائر بسبب ارتفاع أسعار الوقود.",
+    "label": "Negative"
+  },
+  {
+    "text": "SAP meldete stabile Umsätze trotz wirtschaftlicher Unsicherheit.",
+    "label": "Positive"
+  },
+  {
+    "text": "Unicredit ha registrato un calo degli utili a causa dell'aumento dei costi operativi.",
+    "label": "Negative"
+  },
+  {
+    "text": "Renault a connu une hausse de 8% de ses ventes en Europe.",
+    "label": "Positive"
+  },
+  {
+    "text": "Deutsche Bank meldete stabile Umsätze trotz wirtschaftlicher Unsicherheit.",
+    "label": "Positive"
+  },
+  {
+    "text": "Renault a subi des pertes importantes à cause des grèves.",
+    "label": "Negative"
+  },
+  {
+    "text": "ఇన్ఫొసిస్ ఈ త్రైమాసికంలో లాభాలను 11% పెంచింది, పెట్టుబడిదారులను ఆకట్టుకుంది.",
+    "label": "Positive"
+  },
+  {
+    "text": "BBVA sufrió una caída en sus ganancias por aumento de tasas de interés.",
+    "label": "Negative"
+  },
+  {
+    "text": "TotalEnergies a publié des résultats solides, renforçant la confiance des marchés.",
+    "label": "Positive"
+  },
+  {
+    "text": "Fiat Chrysler ha superato le aspettative di vendita grazie alla forte domanda in Asia.",
+    "label": "Positive"
+  },
+  {
+    "text": "HDFC बैंक ने ठोस तकनीकी समझौते हासिल किए, जिससे विश्वास में सुधार हुआ।",
+    "label": "Positive"
+  },
+  {
+    "text": "Endesa mantiene sus ingresos sin cambios significativos este año.",
+    "label": "Neutral"
+  },
+  {
+    "text": "شركة طيران الإمارات أعلنت عن إطلاق مشروع جديد للبتروكيماويات.",
+    "label": "Positive"
+  },
+  {
+    "text": "Repsol reportó un fuerte crecimiento en sus beneficios trimestrales.",
+    "label": "Positive"
+  },
+  {
+    "text": "Airbus a subi des pertes importantes à cause des grèves.",
+    "label": "Negative"
+  },
+  {
+    "text": "美团受到监管政策调整影响，股价下跌。",
+    "label": "Negative"
+  },
+  {
+    "text": "شركة سابك أعلنت عن إطلاق مشروع جديد للبتروكيماويات.",
+    "label": "Positive"
+  },
+  {
+    "text": "百度因监管压力导致股价下跌。",
+    "label": "Negative"
+  },
+  {
+    "text": "హిందుస్థాన్ యూనిలివర్ నికర నష్టాన్ని ప్రకటించింది — కంపెనీ పరిమిత ఆదాయాలతో బాధపడుతోంది.",
+    "label": "Negative"
+  },
+  {
+    "text": "삼성전자은 비용 상승으로 분기 실적이 악화되었다.",
+    "label": "Negative"
+  },
+  {
+    "text": "Airbus enregistre une forte croissance de commandes, le cours s’est envolé.",
+    "label": "Positive"
+  },
+  {
+    "text": "Volkswagen meldete Verluste aufgrund höherer Rückstellungen.",
+    "label": "Negative"
+  },
+  {
+    "text": "Paytm को वाहन संकट और लागत दबाव के चलते नुकसान का सामना करना पड़ा।",
+    "label": "Negative"
+  },
+  {
+    "text": "Unicredit ha superato le aspettative di vendita grazie alla forte domanda in Asia.",
+    "label": "Positive"
+  },
+  {
+    "text": "విప్రో ఈ త్రైమాసికంలో లాభాలను 6% పెంచింది, పెట్టుబడిదారులను ఆకట్టుకుంది.",
+    "label": "Positive"
+  },
+  {
+    "text": "Banco Santander aumentó su dividend yield y sorprendió gratamente a los inversores.",
+    "label": "Positive"
+  },
+  {
+    "text": "Grupo BMV enfrentó caídas después de reporte económico débil.",
+    "label": "Negative"
+  },
+  {
+    "text": "Grupo BMV se mantiene estable pese a tensiones regulatorias — reacción mixta del mercado.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Iberdrola mantuvo su producción de energía estable durante el trimestre.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Volkswagen meldete Verluste aufgrund höherer Rückstellungen.",
+    "label": "Negative"
+  },
+  {
+    "text": "Zomato ने इस तिमाही में 20% की आमदनी वृद्धि दर्ज की, निवेशकों में उत्साह बढ़ा।",
+    "label": "Positive"
+  },
+  {
+    "text": "SK하이닉스는 안정적인 매출 성장을 이어가고 있다.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Endesa se mantiene estable pese a tensiones regulatorias — reacción mixta del mercado.",
+    "label": "Neutral"
+  },
+  {
+    "text": "BNP Paribas maintient un chiffre d'affaires stable malgré les fluctuations économiques.",
+    "label": "Neutral"
+  },
+  {
+    "text": "లార్సెన్ & టూర్బో నిలకడగా వృద్ధి చూపించింది, మధ్యస్థితిలో న్యూట్రల్ మార్కెట్ టోన్.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Tata Motors ने इलेक्ट्रिक वाहनों की बिक्री में रिकॉर्ड तोड़ वृद्धि दर्ज की।",
+    "label": "Positive"
+  },
+  {
+    "text": "Orange enregistre une forte croissance de commandes, le cours s'est envolé.",
+    "label": "Positive"
+  },
+  {
+    "text": "شركة طيران الإمارات أعلنت عن زيادة كبيرة في الأرباح.",
+    "label": "Positive"
+  },
+  {
+    "text": "HDFC Life की ऋण दरों में स्थिरता बनी रही — बाजार में तटस्थ प्रतिक्रिया रही।",
+    "label": "Neutral"
+  },
+  {
+    "text": "Adani Ports ने स्थिर परिणाम प्रस्तुत किए, किसी बड़े बदलाव के बिना।",
+    "label": "Neutral"
+  },
+  {
+    "text": "トヨタ自動車が新しいEVモデルで販売を拡大しました。",
+    "label": "Positive"
+  },
+  {
+    "text": "京东宣布新的人工智能计划，股价上涨12%。",
+    "label": "Positive"
+  },
+  {
+    "text": "Maruti Suzuki ने इस तिमाही में 12% की आमदनी वृद्धि दर्ज की, निवेशकों में उत्साह बढ़ा।",
+    "label": "Positive"
+  },
+  {
+    "text": "Carrefour a connu une hausse de 19% de ses ventes en Europe.",
+    "label": "Positive"
+  },
+  {
+    "text": "LG화학가 인공지능 칩 출시로 기술 시장에서 호평을 받았다.",
+    "label": "Positive"
+  },
+  {
+    "text": "HDFC Life के तिमाही परिणाम उम्मीद के अनुरूप रहे — न लाभ न हानि।",
+    "label": "Neutral"
+  },
+  {
+    "text": "Unicredit ha superato le aspettative di vendita grazie alla forte domanda in Asia.",
+    "label": "Positive"
+  },
+  {
+    "text": "Fiat Chrysler ha perso quote di mercato a causa della concorrenza crescente.",
+    "label": "Negative"
+  },
+  {
+    "text": "شركة سابك حافظ على أداء مستقر في الربع الأخير.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Ferrari ha superato le aspettative di vendita grazie alla forte domanda in Asia.",
+    "label": "Positive"
+  },
+  {
+    "text": "Zomato के तिमाही परिणाम उम्मीद के अनुरूप रहे — न लाभ न हानि।",
+    "label": "Neutral"
+  },
+  {
+    "text": "Adani Ports ने इस तिमाही में 11% की आमदनी वृद्धि दर्ज की, निवेशकों में उत्साह बढ़ा।",
+    "label": "Positive"
+  },
+  {
+    "text": "Banco Santander enfrentó caídas después de reporte económico débil.",
+    "label": "Negative"
+  },
+  {
+    "text": "SAP meldete Verluste aufgrund höherer Rückstellungen.",
+    "label": "Negative"
+  },
+  {
+    "text": "トヨタ自動車が新しいEVモデルで販売を拡大しました。",
+    "label": "Positive"
+  },
+  {
+    "text": "华为因推出新搜索算法而获得市场好评。",
+    "label": "Positive"
+  },
+  {
+    "text": "Unicredit mantiene un andamento stabile nonostante la volatilità del mercato.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Telecom Italia ha registrato un calo degli utili a causa dell'aumento dei costi operativi.",
+    "label": "Negative"
+  },
+  {
+    "text": "HDFC बैंक पर बढ़ते कर्ज का असर कंपनी की साख पर पड़ा है।",
+    "label": "Negative"
+  },
+  {
+    "text": "삼성전자는 안정적인 매출 성장을 이어가고 있다.",
+    "label": "Neutral"
+  },
+  {
+    "text": "ENI mantiene un andamento stabile nonostante la volatilità del mercato.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Ferrari mantiene un andamento stabile nonostante la volatilità del mercato.",
+    "label": "Neutral"
+  },
+  {
+    "text": "华为受到出口限制影响，收入下降。",
+    "label": "Negative"
+  },
+  {
+    "text": "Deutsche Bank behielt stabile Einnahmen trotz der Marktschwankungen.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Deutsche Bank behielt stabile Einnahmen trotz der Marktschwankungen.",
+    "label": "Neutral"
+  },
+  {
+    "text": "L'Oréal maintient une croissance stable dans le segment des cosmétiques.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Endesa anunció una expansión de energías renovables, generando optimismo en el sector.",
+    "label": "Positive"
+  },
+  {
+    "text": "شركة سابك أعلنت عن زيادة كبيرة في الأرباح.",
+    "label": "Positive"
+  },
+  {
+    "text": "Enel ha annunciato un piano di espansione per veicoli elettrici.",
+    "label": "Positive"
+  },
+  {
+    "text": "Unicredit ha perso quote di mercato a causa della concorrenza crescente.",
+    "label": "Negative"
+  },
+  {
+    "text": "华为保持稳定的销售增长，没有显著波动。",
+    "label": "Neutral"
+  },
+  {
+    "text": "Endesa anunció una expansión de energías renovables, generando optimismo en el sector.",
+    "label": "Positive"
+  },
+  {
+    "text": "SAP meldete stabile Umsätze trotz wirtschaftlicher Unsicherheit.",
+    "label": "Positive"
+  },
+  {
+    "text": "네이버가 신기술 도입으로 매출을 크게 늘렸다.",
+    "label": "Positive"
+  },
+  {
+    "text": "Siemens Energy behielt stabile Einnahmen trotz der Marktschwankungen.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Siemens Energy meldete Verluste aufgrund höherer Rückstellungen.",
+    "label": "Negative"
+  },
+  {
+    "text": "Siemens Energy behielt stabile Einnahmen trotz der Marktschwankungen.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Ferrari ha perso quote di mercato a causa della concorrenza crescente.",
+    "label": "Negative"
+  },
+  {
+    "text": "విప్రో నికర నష్టాన్ని ప్రకటించింది — కంపెనీ పరిమిత ఆదాయాలతో బాధపడుతోంది.",
+    "label": "Negative"
+  },
+  {
+    "text": "الخطوط الجوية القطرية أعلنت عن إطلاق مشروع جديد للبتروكيماويات.",
+    "label": "Positive"
+  },
+  {
+    "text": "현대자동차는 안정적인 매출 성장을 이어가고 있다.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Fiat Chrysler ha registrato un calo degli utili a causa dell'aumento dei costi operativi.",
+    "label": "Negative"
+  },
+  {
+    "text": "Maruti Suzuki ने इस तिमाही में 6% की आमदनी वृद्धि दर्ज की, निवेशकों में उत्साह बढ़ा।",
+    "label": "Positive"
+  },
+  {
+    "text": "Enel ha superato le aspettative di vendita grazie alla forte domanda in Asia.",
+    "label": "Positive"
+  },
+  {
+    "text": "현대자동차은 반도체 수요 감소로 이익이 줄었다.",
+    "label": "Negative"
+  },
+  {
+    "text": "HDFC बैंक को वाहन संकट और लागत दबाव के चलते नुकसान का सामना करना पड़ा।",
+    "label": "Negative"
+  },
+  {
+    "text": "شركة سابك حافظ على أداء مستقر في الربع الأخير.",
+    "label": "Neutral"
+  },
+  {
+    "text": "లార్సెన్ & టూర్బో ఈసారి స్థిరమైన లాభాలను నమోదు చేసింది.",
+    "label": "Neutral"
+  },
+  {
+    "text": "شركة الاتصالات السعودية حافظ على أداء مستقر في الربع الأخير.",
+    "label": "Neutral"
+  },
+  {
+    "text": "현대자동차는 시장 점유율을 유지하며 안정적인 실적을 기록했다.",
+    "label": "Neutral"
+  },
+  {
+    "text": "హిందుస్థాన్ యూనిలివర్ నికర నష్టాన్ని ప్రకటించింది — కంపెనీ పరిమిత ఆదాయాలతో బాధపడుతోంది.",
+    "label": "Negative"
+  },
+  {
+    "text": "شركة سابك تكبدت خسائر بسبب ارتفاع أسعار الوقود.",
+    "label": "Negative"
+  },
+  {
+    "text": "トヨタ自動車が新しいEVモデルで販売を拡大しました。",
+    "label": "Positive"
+  },
+  {
+    "text": "Enel ha registrato un calo degli utili a causa dell'aumento dei costi operativi.",
+    "label": "Negative"
+  },
+  {
+    "text": "LG화학은 분기 실적 부진으로 주가가 하락했다.",
+    "label": "Negative"
+  },
+  {
+    "text": "BBVA mantuvo su producción de energía estable durante el trimestre.",
+    "label": "Neutral"
+  },
+  {
+    "text": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్ ఈసారి స్థిరమైన లాభాలను నమోదు చేసింది.",
+    "label": "Neutral"
+  },
+  {
+    "text": "Ferrari ha perso quote di mercato a causa della concorrenza crescente.",
+    "label": "Negative"
+  },
+  {
+    "text": "京东保持稳定的销售增长，没有显著波动。",
+    "label": "Neutral"
+  },
+  {
+    "text": "Orange enregistre une forte croissance de commandes, le cours s'est envolé.",
+    "label": "Positive"
+  },
+  {
+    "text": "الخطوط الجوية القطرية حافظ على أداء مستقر في الربع الأخير.",
+    "label": "Neutral"
+  }
+]
