@@ -275,6 +275,7 @@ DEVICE = torch.device("cpu")
 # Paths (adjust if needed)
 NER_PATH = r"D:/Project/EntityPulse/EntityPulse/Models/finbert_ner_model"
 SENTIMENT_PATH = r"D:/Project/EntityPulse/EntityPulse/Models/finbert-entity-sentiment"
+# SENTIMENT_PATH = r"D:/Project/EntityPulse/EntityPulse/Models/finbert-sentiment-model-enhanced"
 LABEL_MAP_PATH = r"./label_mappings.json"
 
 # Token caps
@@ -515,6 +516,10 @@ def analyze_text():
             overall_confidence = abs(avg)
         else:
             overall_sentiment, overall_confidence = "Neutral", 0.0
+            
+        #handling 0 overall confidence
+        if(overall_confidence==0):
+            overall_confidence = 0.5
 
         return jsonify({
             "overallSentiment": overall_sentiment,

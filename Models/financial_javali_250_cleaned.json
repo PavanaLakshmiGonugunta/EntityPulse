@@ -1,0 +1,3252 @@
+[
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్ ఈ త్రైమాసికంలో ఆదాయం పెరిగింది, పెట్టుబడిదారుల ప్రతిస్పందన సానుకూలంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 30,
+        "value": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 30,
+        "value": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ ఈ త్రైమాసికంలో ఆదాయం పెరిగింది, పెట్టుబడిదారుల ప్రతిస్పందన సానుకూలంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ కొత్త ఉత్పత్తి విడుదలపై మంచి స్పందననం పొందింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ పై మార్కెట్ దృష్టి నిలకడగా ఉంది, షేర్లు స్థిరంగా ఉన్నాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో ఈ త్రైమాసికంలో ఆదాయం పెరిగింది, పెట్టుబడిదారుల ప్రతిస్పందన సానుకూలంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ కొత్త ఉత్పత్తి విడుదలపై మంచి స్పందననం పొందింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్ కొత్త ఉత్పత్తి విడుదలపై మంచి స్పందననం పొందింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 30,
+        "value": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ పై మార్కెట్ దృష్టి నిలకడగా ఉంది, షేర్లు స్థిరంగా ఉన్నాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ కొత్త ఉత్పత్తి విడుదలపై మంచి స్పందననం పొందింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో ఈ త్రైమాసికంలో ఆదాయం పెరిగింది, పెట్టుబడిదారుల ప్రతిస్పందన సానుకూలంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ పై మార్కెట్ దృష్టి నిలకడగా ఉంది, షేర్లు స్థిరంగా ఉన్నాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ పై మార్కెట్ దృష్టి నిలకడగా ఉంది, షేర్లు స్థిరంగా ఉన్నాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ ఈ త్రైమాసికంలో ఆదాయం పెరిగింది, పెట్టుబడిదారుల ప్రతిస్పందన సానుకూలంగా ఉంది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్ కొత్త ఉత్పత్తి విడుదలపై మంచి స్పందననం పొందింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "హెచ్‌డీఎఫ్‌సీ బ్యాంక్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 30,
+        "value": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "బజాజ్ ఆటో పై మార్కెట్ దృష్టి నిలకడగా ఉంది, షేర్లు స్థిరంగా ఉన్నాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "బజాజ్ ఆటో",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "టాటా స్టీల్ కొత్త ఉత్పత్తి విడుదలపై మంచి స్పందననం పొందింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "టాటా స్టీల్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్ పై మార్కెట్ దృష్టి నిలకడగా ఉంది, షేర్లు స్థిరంగా ఉన్నాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 30,
+        "value": "డాక్టర్ రెడ్డీస్ ల్యాబొరేటరీస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "ఇన్ఫోసిస్ పై మార్కెట్ దృష్టి నిలకడగా ఉంది, షేర్లు స్థిరంగా ఉన్నాయి.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ఇన్ఫోసిస్",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "telugu",
+    "text": "విప్రో కంపెనీ లాభాలు తగ్గినట్లు వార్తలతో మార్కెట్కు ప్రత్తిక్రియా వచ్చింది.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "విప్రో కంపెనీ",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm की आय स्थिर रही — प्रतिक्रिया तटस्थ रही।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki पर राजस्व दबाव के चलते नकारात्मक रुझान देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries ने तिमाही में मजबूत परिणाम दिए, बाजार में उत्साह देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm की आय स्थिर रही — प्रतिक्रिया तटस्थ रही।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki पर राजस्व दबाव के चलते नकारात्मक रुझान देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries पर राजस्व दबाव के चलते नकारात्मक रुझान देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Tata Motors ने तिमाही में मजबूत परिणाम दिए, बाजार में उत्साह देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "Tata Motors",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato पर राजस्व दबाव के चलते नकारात्मक रुझान देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki पर राजस्व दबाव के चलते नकारात्मक रुझान देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm की आय स्थिर रही — प्रतिक्रिया तटस्थ रही।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato के शेयर आज गिर गए, निवेशकों में चिंता दिखी।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC बैंक की आय स्थिर रही — प्रतिक्रिया तटस्थ रही।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC बैंक",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Maruti Suzuki ने तिमाही में मजबूत परिणाम दिए, बाजार में उत्साह देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Maruti Suzuki",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Tata Motors की आय स्थिर रही — प्रतिक्रिया तटस्थ रही।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "Tata Motors",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर आज गिर गए, निवेशकों में चिंता दिखी।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato ने तिमाही में मजबूत परिणाम दिए, बाजार में उत्साह देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC बैंक ने तिमाही में मजबूत परिणाम दिए, बाजार में उत्साह देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC बैंक",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm के शेयर आज गिर गए, निवेशकों में चिंता दिखी।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC बैंक पर राजस्व दबाव के चलते नकारात्मक रुझान देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC बैंक",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "HDFC बैंक की आय स्थिर रही — प्रतिक्रिया तटस्थ रही।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "HDFC बैंक",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries के शेयर आज गिर गए, निवेशकों में चिंता दिखी।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Zomato पर राजस्व दबाव के चलते नकारात्मक रुझान देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Zomato",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Reliance Industries ने तिमाही में मजबूत परिणाम दिए, बाजार में उत्साह देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "Reliance Industries",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm ने तिमाही में मजबूत परिणाम दिए, बाजार में उत्साह देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "hindi",
+    "text": "Paytm पर राजस्व दबाव के चलते नकारात्मक रुझान देखा गया।",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Paytm",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA se mantuvo estable pese a la volatilidad del mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA reportó resultados que superaron las expectativas, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola reportó resultados que superaron las expectativas, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola reportó resultados que superaron las expectativas, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa reportó resultados que superaron las expectativas, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander reportó resultados que superaron las expectativas, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa anunció una expansión estratégica que generó optimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola anunció una expansión estratégica que generó optimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander anunció una expansión estratégica que generó optimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA anunció una expansión estratégica que generó optimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Endesa reportó resultados que superaron las expectativas, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Endesa",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA se mantuvo estable pese a la volatilidad del mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola se mantuvo estable pese a la volatilidad del mercado.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander anunció una expansión estratégica que generó optimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander reportó resultados que superaron las expectativas, los inversores reaccionaron positivamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Iberdrola enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Iberdrola",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "BBVA anunció una expansión estratégica que generó optimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BBVA",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander enfrentó pérdidas por presiones macroeconómicas, el mercado reaccionó negativamente.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "spanish",
+    "text": "Banco Santander anunció una expansión estratégica que generó optimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Banco Santander",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a dévoilé une nouvelle stratégie qui a été bien accueillie.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour a dévoilé une nouvelle stratégie qui a été bien accueillie.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a annoncé des pertes inattendues, provoquant une réaction négative.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour a publié des résultats solides, renforçant la confiance des marchés.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault a publié des résultats solides, renforçant la confiance des marchés.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "BNP Paribas a annoncé des pertes inattendues, provoquant une réaction négative.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "BNP Paribas",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault a annoncé des pertes inattendues, provoquant une réaction négative.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault a annoncé des pertes inattendues, provoquant une réaction négative.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "BNP Paribas a annoncé des pertes inattendues, provoquant une réaction négative.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "BNP Paribas",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault a publié des résultats solides, renforçant la confiance des marchés.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "BNP Paribas reste stable malgré les tensions réglementaires.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "BNP Paribas",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Carrefour reste stable malgré les tensions réglementaires.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Carrefour",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies a annoncé des pertes inattendues, provoquant une réaction négative.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies reste stable malgré les tensions réglementaires.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "TotalEnergies a publié des résultats solides, renforçant la confiance des marchés.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "TotalEnergies",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus reste stable malgré les tensions réglementaires.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault a annoncé des pertes inattendues, provoquant une réaction négative.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus a dévoilé une nouvelle stratégie qui a été bien accueillie.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "BNP Paribas a publié des résultats solides, renforçant la confiance des marchés.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "BNP Paribas",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "L’Oréal a publié des résultats solides, renforçant la confiance des marchés.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "L’Oréal",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault a publié des résultats solides, renforçant la confiance des marchés.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus reste stable malgré les tensions réglementaires.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Airbus reste stable malgré les tensions réglementaires.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Airbus",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "BNP Paribas a dévoilé une nouvelle stratégie qui a été bien accueillie.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "BNP Paribas",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "french",
+    "text": "Renault a dévoilé une nouvelle stratégie qui a été bien accueillie.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Renault",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자는 안정적인 매출 성장을 이어가고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차의 신제품이 좋은 반응을 얻었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이 주가가 상승하면서 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자는 안정적인 매출 성장을 이어가고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차의 신제품이 좋은 반응을 얻었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버는 안정적인 매출 성장을 이어가고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버의 신제품이 좋은 반응을 얻었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 주가가 상승하면서 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "SK하이닉스는 안정적인 매출 성장을 이어가고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "SK하이닉스",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 주가가 상승하면서 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "현대자동차는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "현대자동차",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버는 안정적인 매출 성장을 이어가고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "삼성전자는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "삼성전자",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버는 안정적인 매출 성장을 이어가고 있다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버의 신제품이 좋은 반응을 얻었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 주가가 상승하면서 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "네이버 주가가 상승하면서 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "네이버",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이의 신제품이 좋은 반응을 얻었다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "카카오 주가가 상승하면서 투자자들이 낙관적이다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "카카오",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "korean",
+    "text": "LG디스플레이는 분기 실적 부진으로 주가가 하락했다.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "LG디스플레이",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW verzeichnete Rückgänge aufgrund von Währungs- und Zinsdruck.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen hat überraschend gute Quartalsergebnisse veröffentlicht.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF meldete stabile Umsätze trotz wirtschaftlicher Unsicherheit.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW hat überraschend gute Quartalsergebnisse veröffentlicht.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Siemens Energy plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Siemens Energy",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW verzeichnete Rückgänge aufgrund von Währungs- und Zinsdruck.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BMW hat überraschend gute Quartalsergebnisse veröffentlicht.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "BMW",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen hat überraschend gute Quartalsergebnisse veröffentlicht.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "SAP hat überraschend gute Quartalsergebnisse veröffentlicht.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "SAP",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "SAP verzeichnete Rückgänge aufgrund von Währungs- und Zinsdruck.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "SAP",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF verzeichnete Rückgänge aufgrund von Währungs- und Zinsdruck.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Siemens Energy hat überraschend gute Quartalsergebnisse veröffentlicht.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Siemens Energy",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF hat überraschend gute Quartalsergebnisse veröffentlicht.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank meldete stabile Umsätze trotz wirtschaftlicher Unsicherheit.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "SAP meldete stabile Umsätze trotz wirtschaftlicher Unsicherheit.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "SAP",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF verzeichnete Rückgänge aufgrund von Währungs- und Zinsdruck.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "SAP plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "SAP",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF meldete stabile Umsätze trotz wirtschaftlicher Unsicherheit.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Deutsche Bank verzeichnete Rückgänge aufgrund von Währungs- und Zinsdruck.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Deutsche Bank",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "SAP meldete stabile Umsätze trotz wirtschaftlicher Unsicherheit.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "SAP",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "Volkswagen plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Volkswagen",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF hat überraschend gute Quartalsergebnisse veröffentlicht.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "german",
+    "text": "BASF plant eine strategische Expansion, die Anleger optimistisch stimmt.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "BASF",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー の成長見通しは概ね安定している。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "楽天 は四半期の業績悪化で株価が下落した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "楽天",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 の成長見通しは概ね安定している。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ の成長見通しは概ね安定している。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー は四半期の業績悪化で株価が下落した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "楽天 は四半期の業績悪化で株価が下落した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "楽天",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "楽天 が新型車の需要増で売上を伸ばした。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "楽天",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 が新型車の需要増で売上を伸ばした。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ は四半期の業績悪化で株価が下落した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 の成長見通しは概ね安定している。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "楽天 は四半期の業績悪化で株価が下落した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "楽天",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ が新型車の需要増で売上を伸ばした。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "三菱UFJ が新型車の需要増で売上を伸ばした。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "三菱UFJ",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ソニー が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ソニー",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 の成長見通しは概ね安定している。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "ホンダ が新たな投資計画を発表した。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ホンダ",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "日産自動車 が新型車の需要増で売上を伸ばした。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "日産自動車",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "japanese",
+    "text": "トヨタ自動車 の成長見通しは概ね安定している。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "トヨタ自動車",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 因业绩超预期股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 受监管压力影响，股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 受监管压力影响，股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 宣布加大在人工智能领域的投入。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 受监管压力影响，股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 因业绩超预期股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 因业绩超预期股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 受监管压力影响，股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 受监管压力影响，股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 因业绩超预期股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 宣布加大在人工智能领域的投入。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "腾讯 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "腾讯",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 因业绩超预期股价上涨。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 宣布加大在人工智能领域的投入。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 受监管压力影响，股价下跌。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Negative",
+        "tag": "Negative"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "美团 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "美团",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 宣布加大在人工智能领域的投入。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "华为 宣布加大在人工智能领域的投入。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "华为",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "百度 宣布加大在人工智能领域的投入。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "百度",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "京东 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "京东",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "chinese",
+    "text": "阿里巴巴 发布了稳定的季度增长数据。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "阿里巴巴",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "الخطوط الجوية القطرية حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "الخطوط الجوية القطرية",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة سابك تكبدت خسائر نتيجة لضغوط التكاليف، مما أدى إلى ردود فعل سلبية في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "شركة سابك",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي أعلنت عن مشروع توسعي جديد جذب انتباه المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي أعلنت عن مشروع توسعي جديد جذب انتباه المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة طيران الإمارات أعلنت عن نمو في الأرباح الفصلية، ما عزز التفاؤل بين المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "شركة طيران الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "الخطوط الجوية القطرية تكبدت خسائر نتيجة لضغوط التكاليف، مما أدى إلى ردود فعل سلبية في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "الخطوط الجوية القطرية",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات الإمارات تكبدت خسائر نتيجة لضغوط التكاليف، مما أدى إلى ردود فعل سلبية في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "اتصالات الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات الإمارات حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "اتصالات الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة سابك حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "شركة سابك",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "الخطوط الجوية القطرية حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "الخطوط الجوية القطرية",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "الخطوط الجوية القطرية حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "الخطوط الجوية القطرية",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة أرامكو السعودية تكبدت خسائر نتيجة لضغوط التكاليف، مما أدى إلى ردود فعل سلبية في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "شركة أرامكو السعودية",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة أرامكو السعودية تكبدت خسائر نتيجة لضغوط التكاليف، مما أدى إلى ردود فعل سلبية في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "شركة أرامكو السعودية",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي أعلنت عن مشروع توسعي جديد جذب انتباه المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة سابك حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "شركة سابك",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "الخطوط الجوية القطرية تكبدت خسائر نتيجة لضغوط التكاليف، مما أدى إلى ردود فعل سلبية في السوق.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "الخطوط الجوية القطرية",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "بنك الراجحي حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "بنك الراجحي",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة سابك حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "شركة سابك",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات الإمارات أعلنت عن مشروع توسعي جديد جذب انتباه المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "اتصالات الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة سابك حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "شركة سابك",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة طيران الإمارات حافظت على أداء مستقر رغم التحديات الاقتصادية.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "شركة طيران الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "الخطوط الجوية القطرية أعلنت عن مشروع توسعي جديد جذب انتباه المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 21,
+        "value": "الخطوط الجوية القطرية",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "شركة طيران الإمارات أعلنت عن مشروع توسعي جديد جذب انتباه المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "شركة طيران الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "arabic",
+    "text": "اتصالات الإمارات أعلنت عن نمو في الأرباح الفصلية، ما عزز التفاؤل بين المستثمرين.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "اتصالات الإمارات",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Ferrari mantiene una posizione stabile nel mercato nonostante la volatilità.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Ferrari",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel ha annunciato un piano di investimenti che ha incoraggiato gli azionisti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat Chrysler ha segnalato una flessione degli utili a causa di costi operativi più alti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Fiat Chrysler",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI ha annunciato un piano di investimenti che ha incoraggiato gli azionisti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI mantiene una posizione stabile nel mercato nonostante la volatilità.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel ha registrato una crescita dei profitti, suscitando ottimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha segnalato una flessione degli utili a causa di costi operativi più alti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Ferrari ha segnalato una flessione degli utili a causa di costi operativi più alti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Ferrari",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel ha segnalato una flessione degli utili a causa di costi operativi più alti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI ha annunciato un piano di investimenti che ha incoraggiato gli azionisti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Ferrari mantiene una posizione stabile nel mercato nonostante la volatilità.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Ferrari",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha annunciato un piano di investimenti che ha incoraggiato gli azionisti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit ha segnalato una flessione degli utili a causa di costi operativi più alti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat Chrysler ha segnalato una flessione degli utili a causa di costi operativi più alti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Fiat Chrysler",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit ha segnalato una flessione degli utili a causa di costi operativi più alti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Ferrari mantiene una posizione stabile nel mercato nonostante la volatilità.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Ferrari",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit ha annunciato un piano di investimenti che ha incoraggiato gli azionisti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia mantiene una posizione stabile nel mercato nonostante la volatilità.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Unicredit ha annunciato un piano di investimenti che ha incoraggiato gli azionisti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Unicredit",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat Chrysler ha registrato una crescita dei profitti, suscitando ottimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Fiat Chrysler",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia mantiene una posizione stabile nel mercato nonostante la volatilità.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Enel ha registrato una crescita dei profitti, suscitando ottimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Enel",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Telecom Italia ha registrato una crescita dei profitti, suscitando ottimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Telecom Italia",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "Fiat Chrysler ha registrato una crescita dei profitti, suscitando ottimismo.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Fiat Chrysler",
+        "label": "Positive",
+        "tag": "Positive"
+      }
+    ]
+  },
+  {
+    "language": "italian",
+    "text": "ENI ha annunciato un piano di investimenti che ha incoraggiato gli azionisti.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ENI",
+        "label": "Neutral",
+        "tag": "Neutral"
+      }
+    ]
+  }
+]
