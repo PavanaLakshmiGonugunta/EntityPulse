@@ -1,1 +1,42 @@
-"ocr/.venv/" 
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env
+.env.*
+venv/
+.venv/
+pip-wheel-metadata/
+*.egg-info/
+
+# virtual environment
+ocr/.venv/ 
+
+# Jupyter
+.ipynb_checkpoints
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Logs and temporary
+logs/
+*.log
+tmp/
+temp/
+
+# Node
+node_modules/
+dist/
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+
+# Misc
+*.sqlite3
+__MACOSX/
